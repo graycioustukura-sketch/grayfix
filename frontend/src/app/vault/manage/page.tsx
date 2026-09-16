@@ -111,7 +111,7 @@ function ActionBtn({
   const base =
     "px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed";
   const styles = {
-    accent-primary: "bg-accent-primary text-text-inverse hover:bg-accent-primary-hover",
+    "accent-primary": "bg-accent-primary text-text-inverse hover:bg-accent-primary-hover",
     danger:
       "border border-status-danger/40 text-status-danger hover:bg-status-danger/10",
     ghost:

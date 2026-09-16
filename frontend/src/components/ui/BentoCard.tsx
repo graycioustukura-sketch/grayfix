@@ -16,7 +16,7 @@ export function BentoCard({
   ...props
 }: BentoCardProps) {
   const glowClasses = {
-    accent-primary: "hover:shadow-glow-accent",
+    "accent-primary": "hover:shadow-glow-accent",
     emerald: "hover:shadow-glow-emerald",
     none: "",
   };

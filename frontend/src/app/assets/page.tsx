@@ -174,7 +174,7 @@ interface SummaryCardProps {
 
 function SummaryCard({ label, value, sub, icon, accent = "accent-primary", loading }: SummaryCardProps) {
   const accentMap = {
-    accent-primary:    "text-accent-primary bg-accent-primary-muted border-accent-primary/20",
+    "accent-primary": "text-accent-primary bg-accent-primary-muted border-accent-primary/20",
     emerald: "text-emerald bg-emerald-muted border-emerald/20",
     danger:  "text-status-danger bg-status-danger/10 border-status-danger/20",
     warning: "text-status-warning bg-status-warning/10 border-status-warning/20",
