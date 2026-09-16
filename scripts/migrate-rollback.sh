@@ -45,11 +45,11 @@ if [[ -f "$ROOT_DIR/.env.$ENV" ]]; then
   # shellcheck disable=SC1090
   set -o allexport; source "$ROOT_DIR/.env.$ENV"; set +o allexport
 fi
-DB_URL="${DATABASE_URL:-postgresql://postgres:password@localhost:5432/agropush}"
+DB_URL="${DATABASE_URL:-postgresql://postgres:password@localhost:5432/grayfix}"
 
 echo ""
 echo "═══════════════════════════════════════════════════════════════"
-echo "  AgroPush — Migration Rollback  (env: $ENV, mode: $MODE)"
+echo "  Grayfix — Migration Rollback  (env: $ENV, mode: $MODE)"
 echo "═══════════════════════════════════════════════════════════════"
 
 # Safety gate for production

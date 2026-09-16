@@ -37,11 +37,11 @@ if [[ -f "$ROOT_DIR/.env.$ENV" ]]; then
   set -o allexport; source "$ROOT_DIR/.env.$ENV"; set +o allexport
 fi
 
-DB_URL="${DATABASE_URL:-postgresql://postgres:password@localhost:5432/agropush}"
+DB_URL="${DATABASE_URL:-postgresql://postgres:password@localhost:5432/grayfix}"
 
 echo ""
 echo "═══════════════════════════════════════════════════════════════"
-echo "  AgroPush — Migration Safety Checks  (env: $ENV)"
+echo "  Grayfix — Migration Safety Checks  (env: $ENV)"
 echo "═══════════════════════════════════════════════════════════════"
 
 WARNINGS=0

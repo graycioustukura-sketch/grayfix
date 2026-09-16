@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# dev-up.sh — Start the AgroPush local development stack (postgres + redis)
+# dev-up.sh — Start the Grayfix local development stack (postgres + redis)
 # Usage: ./scripts/dev-up.sh [--reset]
 set -euo pipefail
 
@@ -42,7 +42,7 @@ cd "$ROOT_DIR"
 echo ""
 echo "✓ Dev stack is up!"
 echo ""
-echo "  Postgres : localhost:${POSTGRES_PORT:-5432}  (db: ${POSTGRES_DB:-agropush})"
+echo "  Postgres : localhost:${POSTGRES_PORT:-5432}  (db: ${POSTGRES_DB:-grayfix})"
 echo "  Redis    : localhost:${REDIS_PORT:-6379}"
 echo ""
 echo "  Next steps:"

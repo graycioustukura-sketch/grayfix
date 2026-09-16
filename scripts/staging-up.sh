@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# staging-up.sh — Start the AgroPush staging stack with seeded synthetic data
+# staging-up.sh — Start the Grayfix staging stack with seeded synthetic data
 # Usage: ./scripts/staging-up.sh [--reset] [--skip-seed] [--skip-validate]
 set -euo pipefail
 
@@ -60,12 +60,12 @@ echo "  redis-staging is ready."
 
 echo "→ Running database migrations..."
 cd "$BACKEND_DIR"
-DATABASE_URL="${STAGING_DATABASE_URL:-postgresql://postgres:staging-password@localhost:5434/agropush_staging}" \
+DATABASE_URL="${STAGING_DATABASE_URL:-postgresql://postgres:staging-password@localhost:5434/grayfix_staging}" \
   npx prisma migrate deploy
 
 if [[ "$SKIP_SEED" == "false" ]]; then
   echo "→ Seeding staging data..."
-  DATABASE_URL="${STAGING_DATABASE_URL:-postgresql://postgres:staging-password@localhost:5434/agropush_staging}" \
+  DATABASE_URL="${STAGING_DATABASE_URL:-postgresql://postgres:staging-password@localhost:5434/grayfix_staging}" \
     npx tsx prisma/seed.staging.ts
 fi
 
@@ -79,5 +79,5 @@ fi
 echo ""
 echo "✓ Staging stack is up!"
 echo ""
-echo "  Postgres : localhost:${STAGING_POSTGRES_PORT:-5434}  (db: agropush_staging)"
+echo "  Postgres : localhost:${STAGING_POSTGRES_PORT:-5434}  (db: grayfix_staging)"
 echo "  Redis    : localhost:${STAGING_REDIS_PORT:-6380}"

@@ -13,7 +13,7 @@
 #   1 — one or more checks failed
 set -euo pipefail
 
-DB_URL="${STAGING_DATABASE_URL:-postgresql://postgres:staging-password@localhost:5434/agropush_staging}"
+DB_URL="${STAGING_DATABASE_URL:-postgresql://postgres:staging-password@localhost:5434/grayfix_staging}"
 
 PASS=0
 FAIL=0
@@ -54,7 +54,7 @@ check_gte() {
 
 echo ""
 echo "═══════════════════════════════════════════════════════════════"
-echo "  AgroPush — Staging Validation Checks"
+echo "  Grayfix — Staging Validation Checks"
 echo "═══════════════════════════════════════════════════════════════"
 
 # ── Connectivity ─────────────────────────────────────────────────────────────

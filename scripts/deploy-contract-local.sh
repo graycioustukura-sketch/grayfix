@@ -4,7 +4,7 @@ set -euo pipefail
 # ─────────────────────────────────────────────────────────────────────────────
 # Local Soroban Contract Deployment Script
 #
-# Deploys the AgroPush escrow contract to a local Soroban network for development
+# Deploys the Grayfix escrow contract to a local Soroban network for development
 # and testing. Supports both fresh deployments and contract upgrades.
 #
 # Usage:
@@ -30,7 +30,7 @@ set -euo pipefail
 # ─────────────────────────────────────────────────────────────────────────────
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-contract_dir="$repo_root/contracts/agropush_escrow"
+contract_dir="$repo_root/contracts/grayfix_escrow"
 
 # Defaults
 NETWORK="standalone"
@@ -102,7 +102,7 @@ fi
 # Use token contract as source token if not specified
 SOURCE_TOKEN="${SOURCE_TOKEN:-$TOKEN_CONTRACT}"
 
-echo "🚀 Deploying AgroPush Escrow Contract to Local Network"
+echo "🚀 Deploying Grayfix Escrow Contract to Local Network"
 echo ""
 echo "Configuration:"
 echo "  Network:        $NETWORK"
@@ -119,7 +119,7 @@ echo "📦 Building WASM artifact..."
 cd "$contract_dir"
 cargo build --target wasm32-unknown-unknown --features wasm --release 2>&1 | grep -E "Compiling|Finished|error" || true
 
-WASM_FILE="target/wasm32-unknown-unknown/release/agropush_escrow.wasm"
+WASM_FILE="target/wasm32-unknown-unknown/release/grayfix_escrow.wasm"
 if [[ ! -f "$WASM_FILE" ]]; then
   echo "❌ WASM build failed: $WASM_FILE not found" >&2
   exit 1

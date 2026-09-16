@@ -1,6 +1,6 @@
 # k6 Load Testing Suite
 
-This folder contains reproducible k6 scenarios for the AgroPush trade API and Stellar-facing paths. The main throughput script exercises realistic trade creation and settlement flows under increasing load so the team can observe scaling limits and regressions.
+This folder contains reproducible k6 scenarios for the Grayfix trade API and Stellar-facing paths. The main throughput script exercises realistic trade creation and settlement flows under increasing load so the team can observe scaling limits and regressions.
 
 ## Prerequisites
 

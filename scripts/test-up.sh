@@ -37,18 +37,18 @@ echo "  redis-test is ready."
 
 echo "→ Applying migrations to test database..."
 cd "$BACKEND_DIR"
-DATABASE_URL="postgresql://postgres:password@localhost:${TEST_POSTGRES_PORT:-5433}/agropush_test" \
+DATABASE_URL="postgresql://postgres:password@localhost:${TEST_POSTGRES_PORT:-5433}/grayfix_test" \
   npx prisma migrate deploy
 cd "$ROOT_DIR"
 
 echo ""
 echo "✓ Test stack is up!"
 echo ""
-echo "  Postgres (test) : localhost:${TEST_POSTGRES_PORT:-5433}  (db: agropush_test)"
+echo "  Postgres (test) : localhost:${TEST_POSTGRES_PORT:-5433}  (db: grayfix_test)"
 echo "  Redis (test)    : localhost:${TEST_REDIS_PORT:-6381}"
 echo ""
 echo "  Run tests with:"
-echo "    DATABASE_URL=postgresql://postgres:password@localhost:${TEST_POSTGRES_PORT:-5433}/agropush_test \\"
+echo "    DATABASE_URL=postgresql://postgres:password@localhost:${TEST_POSTGRES_PORT:-5433}/grayfix_test \\"
 echo "    REDIS_URL=redis://localhost:${TEST_REDIS_PORT:-6381} \\"
 echo "    cd backend && npm test"
 echo ""

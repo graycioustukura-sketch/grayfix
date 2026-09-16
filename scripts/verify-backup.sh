@@ -16,7 +16,7 @@
 #                           restores into, and drops. Must point at the same
 #                           server/role as DATABASE_URL, differing only in
 #                           dbname (e.g. same as DATABASE_URL with
-#                           `/agropush` replaced by `/backup_verify`).
+#                           `/grayfix` replaced by `/backup_verify`).
 #   S3_BUCKET            — S3 bucket backups are stored in (passed through
 #                           to db-restore.sh)
 #

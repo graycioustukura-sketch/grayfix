@@ -2,7 +2,7 @@
 set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-contract_dir="$repo_root/contracts/agropush_escrow"
+contract_dir="$repo_root/contracts/grayfix_escrow"
 manifest="$contract_dir/Cargo.toml"
 contract_src="$contract_dir/src/lib.rs"
 
