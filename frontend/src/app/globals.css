@@ -6,8 +6,8 @@
      surface-0 / text-primary, not the Next.js light/dark scaffold default.
      Pages/components that don't set their own background fall through to
      this, so it must match the theme or they render as unstyled white. */
-  --background: #0b1a14;
-  --foreground: #f0f5f1;
+  --background: #0a0c10;
+  --foreground: #f5f6f8;
 }
 
 @theme inline {
@@ -48,13 +48,13 @@ body {
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #0b1a14;
+    background: #0a0c10;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(139, 168, 154, 0.2);
+    background: rgba(154, 163, 178, 0.2);
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(139, 168, 154, 0.4);
+    background: rgba(154, 163, 178, 0.4);
   }
 }
