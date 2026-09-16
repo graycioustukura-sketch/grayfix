@@ -27,9 +27,9 @@ const variantStyles = {
     dot: "bg-status-danger",
   },
   locked: {
-    bg: "bg-gold-muted",
-    text: "text-gold",
-    dot: "bg-gold",
+    bg: "bg-accent-primary-muted",
+    text: "text-accent-primary",
+    dot: "bg-accent-primary",
   },
   draft: {
     bg: "bg-status-draft/15",

@@ -14,7 +14,7 @@ describe("Navigation UI", () => {
     expect(link).toHaveAttribute("href", "/dashboard");
     expect(link).toHaveAttribute("aria-current", "page");
     expect(link).toHaveClass("bg-surface-2");
-    expect(link).toHaveClass("text-gold");
+    expect(link).toHaveClass("text-accent-primary");
   });
 
   it("renders a button with inactive styles and focus-visible outline", async () => {

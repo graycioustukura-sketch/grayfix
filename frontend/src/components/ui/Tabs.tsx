@@ -34,9 +34,9 @@ export function Tabs<T extends React.Key = string>({
               onClick={() => onChange(item.value)}
               aria-selected={isActive}
               role="tab"
-              className={`pb-3 px-1 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2 ${
+              className={`pb-3 px-1 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-2 ${
                 isActive
-                  ? "text-gold underline underline-offset-8 decoration-gold decoration-2"
+                  ? "text-accent-primary underline underline-offset-8 decoration-accent-primary decoration-2"
                   : "text-text-secondary hover:text-text-primary"
               }`}
             >
@@ -52,9 +52,9 @@ export function Tabs<T extends React.Key = string>({
             onClick={() => onChange(item.value)}
             aria-selected={isActive}
             role="tab"
-            className={`text-xs font-semibold uppercase tracking-widest pb-px transition-colors focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2 ${
+            className={`text-xs font-semibold uppercase tracking-widest pb-px transition-colors focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-2 ${
               isActive
-                ? "text-gold border-b-2 border-gold"
+                ? "text-accent-primary border-b-2 border-accent-primary"
                 : "text-text-secondary hover:text-text-primary"
             }`}
           >

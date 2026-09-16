@@ -32,9 +32,9 @@ const TIER_CONFIG: Record<
     labelKey: "trust.tier.established",
   },
   trusted: {
-    color: "text-gold",
-    bgColor: "bg-gold/10",
-    borderColor: "border-gold/30",
+    color: "text-accent-primary",
+    bgColor: "bg-accent-primary/10",
+    borderColor: "border-accent-primary/30",
     labelKey: "trust.tier.trusted",
   },
   elite: {

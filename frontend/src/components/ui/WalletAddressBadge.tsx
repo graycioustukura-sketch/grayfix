@@ -83,7 +83,7 @@ export function WalletAddressBadge({
           href={`https://stellar.expert/explorer/${explorerNetwork}/account/${address}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="opacity-0 group-hover:opacity-100 transition-opacity text-text-muted hover:text-gold"
+          className="opacity-0 group-hover:opacity-100 transition-opacity text-text-muted hover:text-accent-primary"
           aria-label="Open wallet in Stellar Expert"
           title="Open wallet in Stellar Expert"
         >

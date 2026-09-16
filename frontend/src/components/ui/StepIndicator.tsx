@@ -38,7 +38,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
           circleClass += "bg-accent-emerald text-inverse";
           content = <Icon name="check" size="sm" className="text-inverse" />;
         } else if (isCurrent) {
-          circleClass += "border-2 border-gold font-bold text-gold bg-bg-primary";
+          circleClass += "border-2 border-accent-primary font-bold text-accent-primary bg-bg-primary";
           content = index + 1;
         } else {
           circleClass += "border-2 border-border-default text-text-muted bg-bg-primary";
@@ -59,7 +59,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
               
               {/* Label below the circle */}
               <div className="absolute top-12 flex flex-col items-center w-max min-w-[60px] max-w-[120px]">
-                <span className={`text-sm font-medium transition-colors text-center w-full truncate ${isCurrent ? "text-gold" : isCompleted ? "text-primary" : "text-text-muted"}`}>
+                <span className={`text-sm font-medium transition-colors text-center w-full truncate ${isCurrent ? "text-accent-primary" : isCompleted ? "text-primary" : "text-text-muted"}`}>
                   {step.label}
                 </span>
                 {step.description && (

@@ -51,7 +51,7 @@ export function FormField({
         className="text-sm font-medium text-text-secondary dark:text-text-secondary"
       >
         {label}
-        {required && <span className="text-gold ml-0.5">*</span>}
+        {required && <span className="text-accent-primary ml-0.5">*</span>}
       </label>
       {childWithProps}
       {!error && hint && (

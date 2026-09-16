@@ -3,7 +3,7 @@ import * as React from "react";
 interface BentoCardProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   icon?: React.ReactNode;
-  glowVariant?: "gold" | "emerald" | "none";
+  glowVariant?: "accent-primary" | "emerald" | "none";
   children: React.ReactNode;
 }
 
@@ -16,7 +16,7 @@ export function BentoCard({
   ...props
 }: BentoCardProps) {
   const glowClasses = {
-    gold: "hover:shadow-glow-gold",
+    accent-primary: "hover:shadow-glow-accent",
     emerald: "hover:shadow-glow-emerald",
     none: "",
   };
@@ -24,7 +24,7 @@ export function BentoCard({
   return (
     <div
       className={[
-        "bg-[#101E18F2]",
+        "bg-[#13161CF2]",
         "dark:bg-surface-1",
         "border border-border-default",
         "dark:border-border-default",
@@ -44,7 +44,7 @@ export function BentoCard({
       {...props}
     >
       <div className="flex items-center gap-2 mb-4">
-        {icon && <span className="text-gold dark:text-gold">{icon}</span>}
+        {icon && <span className="text-accent-primary dark:text-accent-primary">{icon}</span>}
         <h3 className="text-lg font-semibold text-text-primary dark:text-text-primary">
           {title}
         </h3>

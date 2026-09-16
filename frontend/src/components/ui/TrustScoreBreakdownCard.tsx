@@ -37,7 +37,7 @@ export function TrustScoreBreakdownCard({
       label: t("trust.breakdown.volumeBonus"),
       value: breakdown.volumeBonus,
       icon: <TrendingUp className="w-4 h-4" />,
-      color: "text-gold",
+      color: "text-accent-primary",
       prefix: "+",
     },
     {
@@ -85,7 +85,7 @@ export function TrustScoreBreakdownCard({
           <span className="text-sm font-semibold text-text-primary">
             {t("trust.breakdown.finalScore")}
           </span>
-          <span className="text-lg font-bold text-gold">
+          <span className="text-lg font-bold text-accent-primary">
             {breakdown.finalScore}
           </span>
         </div>

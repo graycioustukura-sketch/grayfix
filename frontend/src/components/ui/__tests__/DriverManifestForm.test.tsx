@@ -208,7 +208,7 @@ describe('DriverManifestForm Component', () => {
         render(<DriverManifestForm {...defaultProps} />);
 
         const submitButton = screen.getByText('Submit Manifest');
-        expect(submitButton).toHaveClass('flex-1', 'px-4', 'py-2', 'rounded-lg', 'bg-gold');
+        expect(submitButton).toHaveClass('flex-1', 'px-4', 'py-2', 'rounded-lg', 'bg-accent-primary');
     });
 
     it('applies correct styling to cancel button', () => {

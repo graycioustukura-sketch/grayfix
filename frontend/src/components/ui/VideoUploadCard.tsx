@@ -84,7 +84,7 @@ export function VideoUploadCard({ tradeId, onUpload }: VideoUploadCardProps) {
     <BentoCard
       title="Evidence Upload"
       icon={<Video className="w-5 h-5" />}
-      glowVariant="gold"
+      glowVariant="accent-primary"
       className="h-full"
     >
       {/* Drop zone */}
@@ -127,7 +127,7 @@ export function VideoUploadCard({ tradeId, onUpload }: VideoUploadCardProps) {
         ref={inputRef}
         type="file"
         accept="video/mp4,video/webm"
-        className="hidden file:rounded-full file:bg-elevated file:text-gold"
+        className="hidden file:rounded-full file:bg-elevated file:text-accent-primary"
         onChange={handleChange}
       />
 
@@ -140,7 +140,7 @@ export function VideoUploadCard({ tradeId, onUpload }: VideoUploadCardProps) {
           </div>
           <div className="w-full bg-bg-elevated rounded-full h-1.5 overflow-hidden">
             <div
-              className="h-full bg-gold rounded-full transition-all duration-200"
+              className="h-full bg-accent-primary rounded-full transition-all duration-200"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -162,10 +162,10 @@ export function VideoUploadCard({ tradeId, onUpload }: VideoUploadCardProps) {
             href={`https://gateway.pinata.cloud/ipfs/${ipfsHash}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 text-gold hover:text-gold-hover transition-colors"
+            className="shrink-0 text-accent-primary hover:text-accent-primary-hover transition-colors"
             aria-label="View on IPFS"
           >
-            <Icon name="external-link" size="sm" className="text-gold" />
+            <Icon name="external-link" size="sm" className="text-accent-primary" />
           </a>
         </div>
       )}
@@ -175,8 +175,8 @@ export function VideoUploadCard({ tradeId, onUpload }: VideoUploadCardProps) {
         disabled={!ipfsHash || uploading}
         className="
           mt-4 w-full py-2 rounded-xl text-sm font-semibold
-          bg-gold text-text-inverse
-          hover:bg-gold-hover
+          bg-accent-primary text-text-inverse
+          hover:bg-accent-primary-hover
           disabled:opacity-40 disabled:cursor-not-allowed
           transition-colors duration-200
         "

@@ -33,14 +33,14 @@ describe('BentoCard Component', () => {
 
     it('does not render icon when not provided', () => {
         const { container } = render(<BentoCard {...defaultProps} />);
-        const iconContainer = container.querySelector('.text-gold');
+        const iconContainer = container.querySelector('.text-accent-primary');
         expect(iconContainer).not.toBeInTheDocument();
     });
 
-    it('applies gold glow variant', () => {
-        const { container } = render(<BentoCard {...defaultProps} glowVariant="gold" />);
+    it('applies accent-primary glow variant', () => {
+        const { container } = render(<BentoCard {...defaultProps} glowVariant="accent-primary" />);
         const card = container.firstChild as HTMLElement;
-        expect(card).toHaveClass('hover:shadow-glow-gold');
+        expect(card).toHaveClass('hover:shadow-glow-accent');
     });
 
     it('applies emerald glow variant', () => {
@@ -52,7 +52,7 @@ describe('BentoCard Component', () => {
     it('applies none glow variant by default', () => {
         const { container } = render(<BentoCard {...defaultProps} />);
         const card = container.firstChild as HTMLElement;
-        expect(card).not.toHaveClass('hover:shadow-glow-gold');
+        expect(card).not.toHaveClass('hover:shadow-glow-accent');
         expect(card).not.toHaveClass('hover:shadow-glow-emerald');
     });
 
@@ -66,7 +66,7 @@ describe('BentoCard Component', () => {
         const { container } = render(<BentoCard {...defaultProps} />);
         const card = container.firstChild as HTMLElement;
         expect(card).toHaveClass(
-            'bg-[#101E18F2]',
+            'bg-[#13161CF2]',
             'border',
             'border-border-default',
             'rounded-2xl',
@@ -92,7 +92,7 @@ describe('BentoCard Component', () => {
         const { container } = render(
             <BentoCard {...defaultProps} icon={<svg data-testid="test-icon" />} />
         );
-        const iconContainer = container.querySelector('.text-gold');
+        const iconContainer = container.querySelector('.text-accent-primary');
         expect(iconContainer).toBeInTheDocument();
     });
 

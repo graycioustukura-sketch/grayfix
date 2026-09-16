@@ -63,7 +63,7 @@ export function DriverManifestForm({ isOpen, onComplete, onDismiss }: DriverMani
     onDismiss?.();
   };
 
-  const iconAccent = useMemo(() => "bg-gold/15 text-gold", []);
+  const iconAccent = useMemo(() => "bg-accent-primary/15 text-accent-primary", []);
 
   return (
     <Dialog.Root open={isOpen} onOpenChange={(nextOpen) => !nextOpen && onDismiss?.()}>
@@ -73,7 +73,7 @@ export function DriverManifestForm({ isOpen, onComplete, onDismiss }: DriverMani
             <div className="p-6 border-b border-border-default">
               <div className="flex items-center gap-3 mb-4">
                 <span className={clsx("rounded-lg p-2", iconAccent)}>
-                  <Icon name="truck" size="lg" aria-label="driver vehicle" className="text-gold" />
+                  <Icon name="truck" size="lg" aria-label="driver vehicle" className="text-accent-primary" />
                 </span>
                 <div>
                   <Dialog.Title className="text-xl font-semibold text-primary">Driver Manifest</Dialog.Title>
@@ -89,7 +89,7 @@ export function DriverManifestForm({ isOpen, onComplete, onDismiss }: DriverMani
                 <input
                   type="text"
                   name="driver-name"
-                  className="w-full rounded-xl border border-border-default bg-bg-input px-4 py-2 text-sm outline-none focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  className="w-full rounded-xl border border-border-default bg-bg-input px-4 py-2 text-sm outline-none focus:border-accent-primary focus:ring-2 focus:ring-accent-primary/30"
                   value={driverName}
                   onChange={(event) => setDriverName(event.target.value)}
                   placeholder="e.g. Amina Khalid"
@@ -106,7 +106,7 @@ export function DriverManifestForm({ isOpen, onComplete, onDismiss }: DriverMani
                 <input
                   type="tel"
                   name="driver-phone"
-                  className="w-full rounded-xl border border-border-default bg-bg-input px-4 py-2 text-sm outline-none focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  className="w-full rounded-xl border border-border-default bg-bg-input px-4 py-2 text-sm outline-none focus:border-accent-primary focus:ring-2 focus:ring-accent-primary/30"
                   value={driverPhone}
                   onChange={(event) => setDriverPhone(event.target.value)}
                   placeholder="e.g. +234 803 000 0000"
@@ -119,7 +119,7 @@ export function DriverManifestForm({ isOpen, onComplete, onDismiss }: DriverMani
                 <input
                   type="text"
                   name="license-plate"
-                  className="w-full rounded-xl border border-border-default bg-bg-input px-4 py-2 text-sm outline-none focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  className="w-full rounded-xl border border-border-default bg-bg-input px-4 py-2 text-sm outline-none focus:border-accent-primary focus:ring-2 focus:ring-accent-primary/30"
                   value={licensePlate}
                   onChange={(event) => setLicensePlate(event.target.value)}
                   placeholder="e.g. GEG 1123 H"
@@ -138,7 +138,7 @@ export function DriverManifestForm({ isOpen, onComplete, onDismiss }: DriverMani
                 <button
                   type="submit"
                   disabled={!submitEnabled}
-                  className="flex-1 px-4 py-2 rounded-lg bg-gold text-text-inverse font-medium hover:bg-gold-hover transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+                  className="flex-1 px-4 py-2 rounded-lg bg-accent-primary text-text-inverse font-medium hover:bg-accent-primary-hover transition-colors disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   Submit Manifest
                 </button>

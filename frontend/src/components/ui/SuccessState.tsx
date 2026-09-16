@@ -18,8 +18,8 @@ function ShieldSuccessIcon({ className }: { className?: string }) {
         />
         <defs>
           <linearGradient id="shield-gradient" x1="6" y1="4" x2="42" y2="46" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#E0BA6A" />
-            <stop offset="1" stopColor="#D4A853" />
+            <stop stopColor="#9184F5" />
+            <stop offset="1" stopColor="#7C6FEF" />
           </linearGradient>
         </defs>
       </svg>
@@ -35,13 +35,13 @@ function ShieldSuccessIcon({ className }: { className?: string }) {
 function Sparkles() {
   return (
     <div className="absolute inset-0 pointer-events-none">
-      <svg className="absolute -top-2 -left-4 w-4 h-4 text-gold" viewBox="0 0 16 16" fill="currentColor">
+      <svg className="absolute -top-2 -left-4 w-4 h-4 text-accent-primary" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 0L9.5 6.5L16 8L9.5 9.5L8 16L6.5 9.5L0 8L6.5 6.5L8 0Z" />
       </svg>
-      <svg className="absolute -top-1 left-1/2 w-3 h-3 text-gold/60" viewBox="0 0 16 16" fill="currentColor">
+      <svg className="absolute -top-1 left-1/2 w-3 h-3 text-accent-primary/60" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 0L9 7L16 8L9 9L8 16L7 9L0 8L7 7L8 0Z" />
       </svg>
-      <svg className="absolute -top-2 -right-4 w-4 h-4 text-gold" viewBox="0 0 16 16" fill="currentColor">
+      <svg className="absolute -top-2 -right-4 w-4 h-4 text-accent-primary" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 0L9.5 6.5L16 8L9.5 9.5L8 16L6.5 9.5L0 8L6.5 6.5L8 0Z" />
       </svg>
     </div>
@@ -103,8 +103,8 @@ interface ActionButtonProps {
 function ActionButton({ label, onClick, variant = "primary", icon = "none", className }: ActionButtonProps) {
   const baseStyles = "px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2";
   const variants = {
-    primary: "bg-gold hover:bg-gold-hover text-text-inverse",
-    outline: "border border-border-default hover:border-border-hover text-gold bg-transparent",
+    primary: "bg-accent-primary hover:bg-accent-primary-hover text-text-inverse",
+    outline: "border border-border-default hover:border-border-hover text-accent-primary bg-transparent",
   };
 
   return (
@@ -236,7 +236,7 @@ export function SuccessState({
           <div className="flex justify-center mb-6">
             <div className="relative">
               {showSparkles && <Sparkles />}
-              <div className="w-20 h-20 bg-gold/10 rounded-xl flex items-center justify-center">
+              <div className="w-20 h-20 bg-accent-primary/10 rounded-xl flex items-center justify-center">
                 <ShieldSuccessIcon className="w-12 h-12" />
               </div>
             </div>
@@ -285,7 +285,7 @@ export function SuccessState({
     <div className={`flex flex-col items-center ${className || ""}`}>
       {/* Icon with glow effect */}
       <div className="relative mb-8">
-        <div className="absolute inset-0 bg-gold/20 blur-2xl rounded-full" />
+        <div className="absolute inset-0 bg-accent-primary/20 blur-2xl rounded-full" />
         <ShieldSuccessIcon className="w-20 h-20 relative" />
       </div>
 
@@ -321,7 +321,7 @@ export function SuccessState({
               <TransactionDetail
                 label="Deposit Amount"
                 value={transactionDetails.depositAmount}
-                valueClassName="text-gold text-2xl"
+                valueClassName="text-accent-primary text-2xl"
                 suffix={transactionDetails.depositCurrency}
               />
             )}

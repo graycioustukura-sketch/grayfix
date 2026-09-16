@@ -16,10 +16,10 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const baseStyles = "font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed";
+  const baseStyles = "font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed";
   
   const variantStyles = {
-    primary: "bg-gold text-text-inverse hover:bg-gold-hover",
+    primary: "bg-accent-primary text-text-inverse hover:bg-accent-primary-hover",
     secondary: "bg-bg-elevated text-text-primary border border-border-default hover:border-border-hover",
   };
   

@@ -25,9 +25,9 @@ export function Button({
     const isDisabled = disabled || loading;
 
     const variants = {
-        primary: "bg-gradient-gold-cta text-inverse hover:shadow-glow-gold",
+        primary: "bg-gradient-accent-cta text-inverse hover:shadow-glow-accent",
         secondary:
-            "bg-transparent border border-gold text-gold hover:bg-gold-muted",
+            "bg-transparent border border-accent-primary text-accent-primary hover:bg-accent-primary-muted",
         ghost: "No border/bg, text-muted hover:bg-white/5",
         danger: "bg-status-danger text-white",
     };
@@ -45,7 +45,7 @@ export function Button({
                 "inline-flex items-center justify-center gap-2 px-6 py-4 cursor-pointer",
                 "rounded-full font-medium",
                 "transition-all duration-150",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary",
                 "disabled:opacity-50 disabled:cursor-not-allowed",
                 variants[variant],
                 sizes[size],

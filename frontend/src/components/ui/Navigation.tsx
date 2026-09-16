@@ -4,8 +4,8 @@ import Link from "next/link";
 import type { ReactNode, ButtonHTMLAttributes } from "react";
 
 export const NAV_ITEM_BASE =
-  "rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2";
-export const NAV_ITEM_ACTIVE = "bg-surface-2 text-gold shadow-elev-1";
+  "rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-2";
+export const NAV_ITEM_ACTIVE = "bg-surface-2 text-accent-primary shadow-elev-1";
 export const NAV_ITEM_INACTIVE =
   "text-text-secondary hover:text-text-primary hover:bg-surface-2/60";
 

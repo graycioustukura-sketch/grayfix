@@ -89,7 +89,7 @@ export function ModalContent({
           "data-[state=open]:opacity-100 data-[state=closed]:opacity-0",
           "data-[state=open]:scale-100 data-[state=closed]:scale-95",
           // focus-visible ring so the dialog itself is reachable via keyboard
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary",
           mobileFullScreen
             ? "inset-0 rounded-none sm:inset-auto sm:left-1/2 sm:top-1/2 sm:w-[min(92vw,640px)] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-2xl"
             : "left-1/2 top-1/2 w-[min(92vw,640px)] -translate-x-1/2 -translate-y-1/2 rounded-2xl",
@@ -100,7 +100,7 @@ export function ModalContent({
         {showCloseButton ? (
           <Dialog.Close
             aria-label="Close dialog"
-            className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-lg text-text-secondary dark:text-text-secondary transition-colors hover:bg-elevated dark:hover:bg-surface-2 hover:text-text-primary dark:hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-lg text-text-secondary dark:text-text-secondary transition-colors hover:bg-elevated dark:hover:bg-surface-2 hover:text-text-primary dark:hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary"
           >
             <X size={18} />
           </Dialog.Close>

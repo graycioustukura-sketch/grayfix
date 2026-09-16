@@ -50,7 +50,7 @@ export function LegalDisclaimerModal({
               during transit:
             </p>
 
-            <div className="bg-gold-muted/30 text-gold p-4 rounded-lg font-medium border border-gold/20">
+            <div className="bg-accent-primary-muted/30 text-accent-primary p-4 rounded-lg font-medium border border-accent-primary/20">
               <p className="text-sm mb-2">Loss Allocation:</p>
               <div className="flex justify-between items-center">
                 <span>Buyer bears:</span>
@@ -100,7 +100,7 @@ export function LegalDisclaimerModal({
           </button>
           <button
             onClick={onAccept}
-            className="flex-1 px-4 py-2 rounded-lg bg-gold text-text-inverse font-medium hover:bg-gold-hover transition-colors"
+            className="flex-1 px-4 py-2 rounded-lg bg-accent-primary text-text-inverse font-medium hover:bg-accent-primary-hover transition-colors"
           >
             Accept & Proceed
           </button>

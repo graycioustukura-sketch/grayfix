@@ -43,8 +43,8 @@ export function RepScoreRing({
         aria-hidden="true"
       >
         <defs>
-          <linearGradient id="gold-emerald-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#D4A853" />
+          <linearGradient id="accent-primary-emerald-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#7C6FEF" />
             <stop offset="100%" stopColor="#34D399" />
           </linearGradient>
         </defs>
@@ -65,7 +65,7 @@ export function RepScoreRing({
           cy={center}
           r={radius}
           fill="none"
-          stroke="url(#gold-emerald-gradient)"
+          stroke="url(#accent-primary-emerald-gradient)"
           strokeWidth={strokeWidth}
           strokeLinecap="round"
           strokeDasharray={circumference}
@@ -81,7 +81,7 @@ export function RepScoreRing({
           y={center}
           textAnchor="middle"
           dominantBaseline="central"
-          fill="#F0F5F1"
+          fill="#F5F6F8"
           fontSize={SIZE_CONFIG[size].svgSize * 0.18}
           fontWeight="600"
           fontFamily="var(--font-geist-sans), Geist, ui-sans-serif, system-ui, sans-serif"
