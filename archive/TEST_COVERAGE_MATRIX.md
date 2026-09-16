@@ -67,7 +67,7 @@
 | app/vault/page.tsx | ✗ | ✗ | ✗ | ✗ | ✗ |
 | app/vault/loading.tsx | ✗ | ✗ | ✗ | ✗ | ✗ |
 
-| contracts/agropush_escrow (lib.rs) | ✗ | ✗ | ✓ | ✓ | ✗ |
+| contracts/grayfix_escrow (lib.rs) | ✗ | ✗ | ✓ | ✓ | ✗ |
 
 ## Missing Test Coverage
 
@@ -98,7 +98,7 @@ Below are components/services with no tests detected (partial scan). Estimated L
 | useFreighterIdentity.ts | High | 70 |
 | app/trades/create steps | High | 220 |
 | mediator panel pages | Critical | 200 |
-| contracts/agropush_escrow | Critical | 400 |
+| contracts/grayfix_escrow | Critical | 400 |
 | auth.middleware.ts | High | 60 |
 | errorHandler.ts | Medium | 60 |
 | logger.ts | Low | 50 |

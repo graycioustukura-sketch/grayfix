@@ -1,6 +1,6 @@
 #873 MEDIUM: Mobile — outdated deps with CVEs and no test framework configured
 Repo Avatar
-KingFRANKHOOD/AgroPush
+KingFRANKHOOD/Grayfix
 ﻿File: mobile/package.json
 
 Issues:
@@ -20,7 +20,7 @@ Add Jest + React Native Testing Library for unit tests
 
 #872 LOW: Backend — eventListener outbox detection uses fragile runtime type introspection
 Repo Avatar
-KingFRANKHOOD/AgroPush
+KingFRANKHOOD/Grayfix
 ﻿File: backend/src/services/eventListener.service.ts:266-274
 
 Description
@@ -39,7 +39,7 @@ Suggested Fix: Either make the outbox feature compile-time (conditional import v
 
 #870 MEDIUM: Frontend — trade detail page renders [object Object] and has no loading state
 Repo Avatar
-KingFRANKHOOD/AgroPush
+KingFRANKHOOD/Grayfix
 ﻿File: frontend/src/app/trades/[id]/page.tsx
 
 Issues:
@@ -58,7 +58,7 @@ Handle 404 responses specifically from the trade detail API
 
 #871 MEDIUM: Frontend — useAuth hook conflates wallet, auth, and user concerns (hard to test)
 Repo Avatar
-KingFRANKHOOD/AgroPush
+KingFRANKHOOD/Grayfix
 ﻿File: frontend/src/hooks/useAuth.tsx
 
 Description

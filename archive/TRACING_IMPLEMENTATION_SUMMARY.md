@@ -2,7 +2,7 @@
 
 ## Overview
 
-This implementation adds comprehensive distributed tracing and correlation IDs across the AgroPush frontend-backend architecture, enabling end-to-end request tracking for faster production incident triage.
+This implementation adds comprehensive distributed tracing and correlation IDs across the Grayfix frontend-backend architecture, enabling end-to-end request tracking for faster production incident triage.
 
 ## Files Created/Modified
 
@@ -105,7 +105,7 @@ ZIPKIN_ENDPOINT=http://localhost:9411/api/v2/spans
 PROMETHEUS_PORT=9464
 
 # Service Configuration
-OTEL_SERVICE_NAME=agropush-backend
+OTEL_SERVICE_NAME=grayfix-backend
 OTEL_EXPORTER_JAEGER_AGENT_HOST=localhost
 OTEL_EXPORTER_JAEGER_AGENT_PORT=6831
 ```

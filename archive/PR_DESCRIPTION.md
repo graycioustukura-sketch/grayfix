@@ -53,10 +53,10 @@ None intended. Public API contracts are unchanged.
 
 ## Related issues
 
-Closes KingFRANKHOOD/AgroPush#467  
-Closes KingFRANKHOOD/AgroPush#469  
-Closes KingFRANKHOOD/AgroPush#472  
-Closes KingFRANKHOOD/AgroPush#480
+Closes KingFRANKHOOD/Grayfix#467  
+Closes KingFRANKHOOD/Grayfix#469  
+Closes KingFRANKHOOD/Grayfix#472  
+Closes KingFRANKHOOD/Grayfix#480
 
 ## Checklist
 
