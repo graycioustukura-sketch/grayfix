@@ -6,7 +6,7 @@
 //! verify the backward-compatible default for instances that predate the marker.
 extern crate std;
 
-use agropush_escrow::{CURRENT_SCHEMA_VERSION, DataKey, EscrowContract, EscrowContractClient};
+use grayfix_escrow::{CURRENT_SCHEMA_VERSION, DataKey, EscrowContract, EscrowContractClient};
 use soroban_sdk::{Address, Env, testutils::Address as _};
 
 fn setup() -> (Env, Address) {

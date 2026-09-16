@@ -365,7 +365,7 @@
           "v0": {
             "topics": [
               {
-                "symbol": "agropush"
+                "symbol": "grayfix"
               },
               {
                 "symbol": "initialized"

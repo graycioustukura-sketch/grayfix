@@ -4,7 +4,7 @@ use soroban_sdk::{Address, Env, testutils::Address as _};
 
 mod local_deployment_tests {
     use super::*;
-    use agropush_escrow::EscrowContractClient;
+    use grayfix_escrow::EscrowContractClient;
 
     /// Test that contract can be initialized with any token contract address
     /// (not just cNGN), supporting local network deployments with test tokens.
@@ -13,7 +13,7 @@ mod local_deployment_tests {
         let env = Env::default();
         env.mock_all_auths();
 
-        let contract_id = env.register(agropush_escrow::EscrowContract, ());
+        let contract_id = env.register(grayfix_escrow::EscrowContract, ());
         let client = EscrowContractClient::new(&env, &contract_id);
 
         let admin = Address::generate(&env);
@@ -35,7 +35,7 @@ mod local_deployment_tests {
         let env = Env::default();
         env.mock_all_auths();
 
-        let contract_id = env.register(agropush_escrow::EscrowContract, ());
+        let contract_id = env.register(grayfix_escrow::EscrowContract, ());
         let client = EscrowContractClient::new(&env, &contract_id);
 
         let admin = Address::generate(&env);
@@ -62,7 +62,7 @@ mod local_deployment_tests {
         let env = Env::default();
         env.mock_all_auths();
 
-        let contract_id = env.register(agropush_escrow::EscrowContract, ());
+        let contract_id = env.register(grayfix_escrow::EscrowContract, ());
         let client = EscrowContractClient::new(&env, &contract_id);
 
         let admin = Address::generate(&env);
@@ -84,7 +84,7 @@ mod local_deployment_tests {
         let env = Env::default();
         // Do NOT mock all auths — this tests that admin.require_auth() is enforced
 
-        let contract_id = env.register(agropush_escrow::EscrowContract, ());
+        let contract_id = env.register(grayfix_escrow::EscrowContract, ());
         let client = EscrowContractClient::new(&env, &contract_id);
 
         let admin = Address::generate(&env);
@@ -103,7 +103,7 @@ mod local_deployment_tests {
         let env = Env::default();
         env.mock_all_auths();
 
-        let contract_id = env.register(agropush_escrow::EscrowContract, ());
+        let contract_id = env.register(grayfix_escrow::EscrowContract, ());
         let client = EscrowContractClient::new(&env, &contract_id);
 
         let admin = Address::generate(&env);
@@ -121,7 +121,7 @@ mod local_deployment_tests {
         let env = Env::default();
         env.mock_all_auths();
 
-        let contract_id = env.register(agropush_escrow::EscrowContract, ());
+        let contract_id = env.register(grayfix_escrow::EscrowContract, ());
         let client = EscrowContractClient::new(&env, &contract_id);
 
         let admin = Address::generate(&env);
@@ -144,7 +144,7 @@ mod local_deployment_tests {
         let env = Env::default();
         env.mock_all_auths();
 
-        let contract_id = env.register(agropush_escrow::EscrowContract, ());
+        let contract_id = env.register(grayfix_escrow::EscrowContract, ());
         let client = EscrowContractClient::new(&env, &contract_id);
 
         let admin = Address::generate(&env);
@@ -163,7 +163,7 @@ mod local_deployment_tests {
         let env = Env::default();
         env.mock_all_auths();
 
-        let contract_id = env.register(agropush_escrow::EscrowContract, ());
+        let contract_id = env.register(grayfix_escrow::EscrowContract, ());
         let client = EscrowContractClient::new(&env, &contract_id);
 
         let admin = Address::generate(&env);

@@ -15,7 +15,7 @@
 
 extern crate std;
 
-use agropush_escrow::{
+use grayfix_escrow::{
     DisputeRecord, EscrowContract, EscrowContractClient, EvidenceRecord, TradeStatus,
 };
 use soroban_sdk::{

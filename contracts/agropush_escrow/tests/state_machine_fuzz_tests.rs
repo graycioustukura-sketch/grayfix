@@ -1,6 +1,6 @@
 extern crate std;
 
-use agropush_escrow::{EscrowContract, EscrowContractClient, TradeStatus};
+use grayfix_escrow::{EscrowContract, EscrowContractClient, TradeStatus};
 use quickcheck::TestResult;
 use quickcheck_macros::quickcheck;
 use soroban_sdk::{Address, Env, String as SStr, testutils::Address as _, token};

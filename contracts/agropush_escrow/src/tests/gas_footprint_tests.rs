@@ -1,7 +1,7 @@
 /// Issue #388/#552/#544 — Gas and footprint regression checks for hot paths
 ///
 /// Measures CPU instructions and memory bytes consumed by the escrow hot paths.
-/// See `contracts/agropush_escrow/docs/gas-estimation.md` for the methodology,
+/// See `contracts/grayfix_escrow/docs/gas-estimation.md` for the methodology,
 /// re-baselining policy, and CI assumptions.
 #[cfg(test)]
 #[allow(clippy::module_inception)]

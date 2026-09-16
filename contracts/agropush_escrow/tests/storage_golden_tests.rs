@@ -6,10 +6,10 @@
 ///
 /// Golden values were captured from a clean build and are stored inline as
 /// hex-encoded XDR bytes.  To regenerate them run:
-///   AGROPUSH_REGEN_GOLDEN=1 cargo test -- storage_golden 2>&1 | grep GOLDEN
+///   GRAYFIX_REGEN_GOLDEN=1 cargo test -- storage_golden 2>&1 | grep GOLDEN
 extern crate std;
 
-use agropush_escrow::DataKey;
+use grayfix_escrow::DataKey;
 use soroban_sdk::{Address, Bytes, Env, testutils::Address as _, xdr::ToXdr};
 use std::string::String;
 
@@ -29,14 +29,14 @@ fn key_to_hex(env: &Env, key: &DataKey) -> String {
 
 macro_rules! assert_golden {
     ($hex:expr, $golden:expr, $variant:expr) => {{
-        let regen = std::env::var("AGROPUSH_REGEN_GOLDEN").is_ok();
+        let regen = std::env::var("GRAYFIX_REGEN_GOLDEN").is_ok();
         if regen {
             std::eprintln!("GOLDEN {} = {}", $variant, $hex);
         } else {
             assert_eq!(
                 $hex, $golden,
                 "[#384] DataKey::{} serialization changed — upgrade safety broken. \
-                 If intentional, regenerate with AGROPUSH_REGEN_GOLDEN=1",
+                 If intentional, regenerate with GRAYFIX_REGEN_GOLDEN=1",
                 $variant
             );
         }

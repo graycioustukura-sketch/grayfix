@@ -1,6 +1,6 @@
 extern crate std;
 
-use agropush_escrow::{EscrowContract, EscrowContractClient, TradeStatus};
+use grayfix_escrow::{EscrowContract, EscrowContractClient, TradeStatus};
 use soroban_sdk::{
     Address, Env, IntoVal, TryIntoVal, Val, symbol_short,
     testutils::{Address as _, Events as _},

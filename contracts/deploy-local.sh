@@ -6,7 +6,7 @@ set -euo pipefail
 #
 # Convenience wrapper so the local deployment workflow can be run directly
 # from `contracts/` without needing to know the script lives under the
-# repository-wide `scripts/` directory. Builds the agropush_escrow wasm artifact
+# repository-wide `scripts/` directory. Builds the grayfix_escrow wasm artifact
 # and deploys (or upgrades) it against a local Soroban sandbox/standalone
 # network.
 #

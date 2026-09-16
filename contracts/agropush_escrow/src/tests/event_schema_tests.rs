@@ -84,7 +84,7 @@ mod event_schema_tests {
     }
 
     // -----------------------------------------------------------------------
-    // #383-1  InitializedEvent  topics = ["agropush", "initialized"]
+    // #383-1  InitializedEvent  topics = ["grayfix", "initialized"]
     // -----------------------------------------------------------------------
     #[test]
     fn test_event_schema_initialized() {
@@ -96,7 +96,7 @@ mod event_schema_tests {
         assert_last_event_topics(
             &env,
             &[
-                Symbol::new(&env, "agropush").into_val(&env),
+                Symbol::new(&env, "grayfix").into_val(&env),
                 Symbol::new(&env, "initialized").into_val(&env),
             ],
         );

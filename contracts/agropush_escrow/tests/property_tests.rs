@@ -1,12 +1,12 @@
 /// Issue #382 — Make property tests reproducible and time-bounded.
 ///
 /// Seeds are printed on every run so a failing case can be replayed with:
-///   AGROPUSH_PROP_SEED=<seed> cargo test
+///   GRAYFIX_PROP_SEED=<seed> cargo test
 ///
-/// Iteration count is controlled by AGROPUSH_PROP_TESTS (default 64).
+/// Iteration count is controlled by GRAYFIX_PROP_TESTS (default 64).
 extern crate std;
 
-use agropush_escrow::{EscrowContract, EscrowContractClient};
+use grayfix_escrow::{EscrowContract, EscrowContractClient};
 use rand::rngs::StdRng;
 use rand::{Rng, SeedableRng};
 use soroban_sdk::{Address, Env, String as SStr, testutils::Address as _, token};
@@ -17,7 +17,7 @@ use std::env as stdenv;
 // ---------------------------------------------------------------------------
 
 fn get_seed() -> u64 {
-    stdenv::var("AGROPUSH_PROP_SEED")
+    stdenv::var("GRAYFIX_PROP_SEED")
         .ok()
         .and_then(|v| v.parse().ok())
         .unwrap_or_else(|| {
@@ -31,7 +31,7 @@ fn get_seed() -> u64 {
 }
 
 fn get_iterations() -> usize {
-    stdenv::var("AGROPUSH_PROP_TESTS")
+    stdenv::var("GRAYFIX_PROP_TESTS")
         .ok()
         .and_then(|v| v.parse().ok())
         .unwrap_or(64)
@@ -119,7 +119,7 @@ fn test_prop_fund_conservation_seeded() {
     let seed = get_seed();
     let iters = get_iterations();
     std::eprintln!(
-        "[#382] fund_conservation seed={seed} iters={iters}  replay: AGROPUSH_PROP_SEED={seed} AGROPUSH_PROP_TESTS={iters} cargo test test_prop_fund_conservation_seeded"
+        "[#382] fund_conservation seed={seed} iters={iters}  replay: GRAYFIX_PROP_SEED={seed} GRAYFIX_PROP_TESTS={iters} cargo test test_prop_fund_conservation_seeded"
     );
 
     let mut rng = StdRng::seed_from_u64(seed);
@@ -139,7 +139,7 @@ fn test_prop_fund_conservation_seeded() {
             amount,
             "[#382] fund_conservation FAILED  seed={seed} case={case} \
              fee_bps={fee_bps} amount={amount} buyer_loss_bps={buyer_loss_bps} \
-             seller_gets_bps={seller_gets_bps}  replay: AGROPUSH_PROP_SEED={seed}"
+             seller_gets_bps={seller_gets_bps}  replay: GRAYFIX_PROP_SEED={seed}"
         );
     }
 }
@@ -169,7 +169,7 @@ fn test_prop_non_negativity_seeded() {
         assert!(
             s >= 0 && b >= 0 && f >= 0,
             "[#382] non_negativity FAILED  seed={seed} case={case} \
-             s={s} b={b} f={f}  replay: AGROPUSH_PROP_SEED={seed}"
+             s={s} b={b} f={f}  replay: GRAYFIX_PROP_SEED={seed}"
         );
     }
 }
@@ -204,7 +204,7 @@ fn test_prop_seller_monotonicity_seeded() {
             s_hi >= s_lo,
             "[#382] seller_monotonicity FAILED  seed={seed} case={case} \
              sgb_lo={sgb_lo} s_lo={s_lo} sgb_hi={sgb_hi} s_hi={s_hi}  \
-             replay: AGROPUSH_PROP_SEED={seed}"
+             replay: GRAYFIX_PROP_SEED={seed}"
         );
     }
 }
@@ -264,7 +264,7 @@ fn test_prop_invalid_lifecycle_transitions_seeded() {
         assert!(
             result.is_err(),
             "[#382] invalid_lifecycle FAILED: double-deposit did not panic  \
-             seed={seed} case={case}  replay: AGROPUSH_PROP_SEED={seed}"
+             seed={seed} case={case}  replay: GRAYFIX_PROP_SEED={seed}"
         );
     }
 }

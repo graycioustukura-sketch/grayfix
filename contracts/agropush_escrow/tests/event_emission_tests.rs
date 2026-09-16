@@ -6,7 +6,7 @@
 /// sequencing across the full contract lifecycle.
 extern crate std;
 
-use agropush_escrow::{EscrowContract, EscrowContractClient};
+use grayfix_escrow::{EscrowContract, EscrowContractClient};
 use soroban_sdk::{
     symbol_short,
     testutils::{Address as _, Events as _},
@@ -556,7 +556,7 @@ fn test_event_initialized_payload() {
         .address();
     client.initialize(&admin, &usdc_id, &treasury, &100_u32, &usdc_id);
 
-    // The InitializedEvent uses multi-topic ["agropush", "initialized"], so we check
+    // The InitializedEvent uses multi-topic ["grayfix", "initialized"], so we check
     // that the last event was our initialize call and has the right field count.
     let all = env.events().all();
     let events = all.events();

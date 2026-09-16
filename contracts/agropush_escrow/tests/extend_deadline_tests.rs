@@ -9,7 +9,7 @@
 /// - The trade's expires_at field is updated and a DeadlineExtendedEvent is emitted.
 extern crate std;
 
-use agropush_escrow::{EscrowContract, EscrowContractClient};
+use grayfix_escrow::{EscrowContract, EscrowContractClient};
 use soroban_sdk::{
     Address, Env, IntoVal, contract, contractimpl, contracttype,
     testutils::{Address as _, Events, Ledger, MockAuth, MockAuthInvoke},

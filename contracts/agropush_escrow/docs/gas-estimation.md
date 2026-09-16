@@ -1,10 +1,10 @@
-# AgroPush Escrow Gas Estimation
+# Grayfix Escrow Gas Estimation
 
 This document records the assumptions used by the contract gas and footprint regression tests.
 
 ## Scope
 
-The gas suite measures the AgroPush escrow hot paths that are most likely to affect user-facing transaction cost:
+The gas suite measures the Grayfix escrow hot paths that are most likely to affect user-facing transaction cost:
 
 - `create_trade`
 - `deposit`
@@ -36,7 +36,7 @@ The combined lifecycle baseline is the sum of the four individual baselines abov
 
 Only re-baseline when a deliberate contract change increases cost for a documented reason. When re-baselining:
 
-1. Run `cargo test` from `contracts/agropush_escrow/`.
+1. Run `cargo test` from `contracts/grayfix_escrow/`.
 2. Capture measured CPU and memory values locally.
 3. Round up to a stable threshold with conservative headroom.
 4. Commit threshold changes together with the contract change that caused them.
