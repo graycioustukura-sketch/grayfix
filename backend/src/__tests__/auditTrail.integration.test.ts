@@ -17,8 +17,8 @@ const STRANGER = "GCSTRANGER00000000000000000000000000000000000000000000000";
 const TRADE_ID = "trade-001";
 
 const JWT_SECRET = "test-secret-at-least-32-characters-long";
-const JWT_ISSUER = "agropush";
-const JWT_AUDIENCE = "agropush-api";
+const JWT_ISSUER = "grayfix";
+const JWT_AUDIENCE = "grayfix-api";
 
 function makeToken(walletAddress: string) {
     const now = Math.floor(Date.now() / 1000);
@@ -277,8 +277,8 @@ describe("Audit Trail API", () => {
     },
     process.env.JWT_SECRET || "test-secret-at-least-32-characters-long",
     {
-      issuer: process.env.JWT_ISSUER || "agropush",
-      audience: process.env.JWT_AUDIENCE || "agropush-api",
+      issuer: process.env.JWT_ISSUER || "grayfix",
+      audience: process.env.JWT_AUDIENCE || "grayfix-api",
     }
   );
 

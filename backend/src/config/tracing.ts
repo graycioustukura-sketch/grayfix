@@ -11,7 +11,7 @@ import { env } from './env';
  * - Service resource attributes for identification
  */
 
-const service_name = 'agropush-backend';
+const service_name = 'grayfix-backend';
 const service_version = process.env.npm_package_version || '1.0.0';
 
 // Initialize the OpenTelemetry SDK lazily (dynamic require avoids module-load side effects)

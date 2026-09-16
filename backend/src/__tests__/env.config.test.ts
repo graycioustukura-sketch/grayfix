@@ -11,8 +11,8 @@ type EnvInput = Record<string, string | undefined>;
 const VALID_BASE: EnvInput = {
   NODE_ENV: 'test',
   JWT_SECRET: 'a-valid-secret-that-is-at-least-32-chars-long',
-  DATABASE_URL: 'postgresql://user:pass@localhost:5432/agropush',
-  AGROPUSH_ESCROW_CONTRACT_ID: 'CESCROW000000000000000000000000000000000000000000000000000',
+  DATABASE_URL: 'postgresql://user:pass@localhost:5432/grayfix',
+  GRAYFIX_ESCROW_CONTRACT_ID: 'CESCROW000000000000000000000000000000000000000000000000000',
   USDC_CONTRACT_ID: 'CUSDC0000000000000000000000000000000000000000000000000000000',
 };
 
@@ -74,15 +74,15 @@ describe('env config — valid inputs', () => {
     expect(result.success).toBe(true);
   });
 
-  it('maps CONTRACT_ID to AGROPUSH_ESCROW_CONTRACT_ID', () => {
-    const { AGROPUSH_ESCROW_CONTRACT_ID: _, ...withoutEscrow } = VALID_BASE;
+  it('maps CONTRACT_ID to GRAYFIX_ESCROW_CONTRACT_ID', () => {
+    const { GRAYFIX_ESCROW_CONTRACT_ID: _, ...withoutEscrow } = VALID_BASE;
     const result = parseEnv({
       ...withoutEscrow,
       CONTRACT_ID: 'legacy-contract-id-value-here-1234567890',
     });
     expect(result.success).toBe(true);
     if (result.success) {
-      expect(result.data.AGROPUSH_ESCROW_CONTRACT_ID).toBe('legacy-contract-id-value-here-1234567890');
+      expect(result.data.GRAYFIX_ESCROW_CONTRACT_ID).toBe('legacy-contract-id-value-here-1234567890');
     }
   });
 
@@ -106,8 +106,8 @@ describe('env config — missing required fields', () => {
     expect(result.success).toBe(false);
   });
 
-  it('fails when AGROPUSH_ESCROW_CONTRACT_ID is absent', () => {
-    const { AGROPUSH_ESCROW_CONTRACT_ID: _, ...rest } = VALID_BASE;
+  it('fails when GRAYFIX_ESCROW_CONTRACT_ID is absent', () => {
+    const { GRAYFIX_ESCROW_CONTRACT_ID: _, ...rest } = VALID_BASE;
     const result = parseEnv(rest);
     expect(result.success).toBe(false);
   });
@@ -135,8 +135,8 @@ describe('env config — invalid formats', () => {
     expect(result.success).toBe(false);
   });
 
-  it('fails when AGROPUSH_ESCROW_CONTRACT_ID is an empty string', () => {
-    const result = parseEnv({ ...VALID_BASE, AGROPUSH_ESCROW_CONTRACT_ID: '' });
+  it('fails when GRAYFIX_ESCROW_CONTRACT_ID is an empty string', () => {
+    const result = parseEnv({ ...VALID_BASE, GRAYFIX_ESCROW_CONTRACT_ID: '' });
     expect(result.success).toBe(false);
   });
 
@@ -157,8 +157,8 @@ describe('env config — optional fields absent or malformed', () => {
   it('accepts config with all optional fields absent', () => {
     const minimal: EnvInput = {
       JWT_SECRET: 'a-valid-secret-that-is-at-least-32-chars-long',
-      DATABASE_URL: 'postgresql://localhost:5432/agropush',
-      AGROPUSH_ESCROW_CONTRACT_ID: 'CESCROW',
+      DATABASE_URL: 'postgresql://localhost:5432/grayfix',
+      GRAYFIX_ESCROW_CONTRACT_ID: 'CESCROW',
       USDC_CONTRACT_ID: 'CUSDC',
     };
     const result = parseEnv(minimal);

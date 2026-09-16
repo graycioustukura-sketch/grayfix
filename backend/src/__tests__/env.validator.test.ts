@@ -16,7 +16,7 @@ describe('EnvValidator', () => {
     it('returns valid when all critical vars are present', () => {
       process.env.DATABASE_URL = 'postgresql://localhost:5432/test';
       process.env.JWT_SECRET = 'a-32-char-secret-for-testing-purposes!';
-      process.env.AGROPUSH_ESCROW_CONTRACT_ID = 'C1234567890';
+      process.env.GRAYFIX_ESCROW_CONTRACT_ID = 'C1234567890';
       process.env.USDC_CONTRACT_ID = 'C0987654321';
       process.env.STELLAR_NETWORK = 'testnet';
       process.env.TRADE_NOTES_ENCRYPTION_KEY = 'test-trade-notes-encryption-key-base64-32chr';
@@ -30,7 +30,7 @@ describe('EnvValidator', () => {
     it('reports missing critical vars', () => {
       delete process.env.DATABASE_URL;
       delete process.env.JWT_SECRET;
-      delete process.env.AGROPUSH_ESCROW_CONTRACT_ID;
+      delete process.env.GRAYFIX_ESCROW_CONTRACT_ID;
       delete process.env.USDC_CONTRACT_ID;
       delete process.env.TRADE_NOTES_ENCRYPTION_KEY;
 
@@ -38,7 +38,7 @@ describe('EnvValidator', () => {
       expect(result.valid).toBe(false);
       expect(result.missing).toContain('DATABASE_URL');
       expect(result.missing).toContain('JWT_SECRET');
-      expect(result.missing).toContain('AGROPUSH_ESCROW_CONTRACT_ID');
+      expect(result.missing).toContain('GRAYFIX_ESCROW_CONTRACT_ID');
       expect(result.missing).toContain('USDC_CONTRACT_ID');
       expect(result.missing).toContain('TRADE_NOTES_ENCRYPTION_KEY');
     });
@@ -81,7 +81,7 @@ describe('EnvValidator', () => {
     it('does not throw when all critical vars are present', () => {
       process.env.DATABASE_URL = 'postgresql://localhost:5432/test';
       process.env.JWT_SECRET = 'a-32-char-secret-for-testing-purposes!';
-      process.env.AGROPUSH_ESCROW_CONTRACT_ID = 'C1234567890';
+      process.env.GRAYFIX_ESCROW_CONTRACT_ID = 'C1234567890';
       process.env.USDC_CONTRACT_ID = 'C0987654321';
       process.env.STELLAR_NETWORK = 'testnet';
       process.env.TRADE_NOTES_ENCRYPTION_KEY = 'test-trade-notes-encryption-key-base64-32chr';

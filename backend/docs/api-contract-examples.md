@@ -1,7 +1,7 @@
-# AgroPush API Contract Examples
+# Grayfix API Contract Examples
 
 This document provides working code snippets in JavaScript/TypeScript demonstrating
-the AgroPush backend API: authentication, trade lifecycle, dispute management, and
+the Grayfix backend API: authentication, trade lifecycle, dispute management, and
 evidence upload. All examples use `fetch` (Node 18+) and require no external SDK.
 
 ## Table of Contents
@@ -20,12 +20,12 @@ evidence upload. All examples use `fetch` (Node 18+) and require no external SDK
 
 ## Authentication
 
-AgroPush uses a challenge/response flow with Stellar key pairs.
+Grayfix uses a challenge/response flow with Stellar key pairs.
 
 ### Step 1: Request Challenge
 
 ```typescript
-const BASE_URL = 'https://api.agropush.com';
+const BASE_URL = 'https://api.grayfix.com';
 
 async function requestChallenge(walletAddress: string) {
   const res = await fetch(`${BASE_URL}/auth/challenge`, {
@@ -34,7 +34,7 @@ async function requestChallenge(walletAddress: string) {
     body: JSON.stringify({ walletAddress }),
   });
   const { challenge } = await res.json();
-  return challenge; // e.g. "agropush:login:1742794421:7ced1c65"
+  return challenge; // e.g. "grayfix:login:1742794421:7ced1c65"
 }
 ```
 
@@ -307,7 +307,7 @@ async function getAuditTrail(
 All errors follow a consistent JSON structure:
 
 ```typescript
-interface AgroPushError {
+interface GrayfixError {
   error: {
     code: string;
     message: string;

@@ -124,7 +124,7 @@ async function simulateRpcTransaction(
 }
 
 function getEscrowContractId(): string {
-  return env.AGROPUSH_ESCROW_CONTRACT_ID;
+  return env.GRAYFIX_ESCROW_CONTRACT_ID;
 }
 
 /**

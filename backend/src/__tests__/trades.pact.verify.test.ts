@@ -27,8 +27,8 @@ function createTestApp(): express.Application {
   app.use(express.json());
 
   process.env.JWT_SECRET = JWT_SECRET;
-  process.env.JWT_ISSUER = 'agropush';
-  process.env.JWT_AUDIENCE = 'agropush-api';
+  process.env.JWT_ISSUER = 'grayfix';
+  process.env.JWT_AUDIENCE = 'grayfix-api';
 
   const tradeRouter = createTradeRouter();
   app.use('/trades', tradeRouter);
@@ -52,8 +52,8 @@ describe('Pact Provider Verification - Trades API', () => {
       {
         walletAddress: buyerAddress,
         jti: 'pact-verify-buyer-jti',
-        iss: 'agropush',
-        aud: 'agropush-api',
+        iss: 'grayfix',
+        aud: 'grayfix-api',
         nbf: now - 1,
         iat: now,
         exp: now + 3600,
@@ -159,10 +159,10 @@ describe('Pact Provider Verification - Trades API', () => {
     const port = process.env.PACT_PROVIDER_PORT || '3001';
 
     const output = await new Verifier({
-      provider: 'AgroPushBackend',
+      provider: 'GrayfixBackend',
       providerBaseUrl: `http://localhost:${port}`,
       pactUrls: [
-        path.resolve(pactDir, 'AgroPushFrontend-AgroPushBackend.json'),
+        path.resolve(pactDir, 'GrayfixFrontend-GrayfixBackend.json'),
       ],
       stateHandlers: {
         'a buyer is authenticated': async () => Promise.resolve(),

@@ -21,8 +21,8 @@ process.env.JWT_SECRET =
 process.env.DATABASE_URL =
   process.env.DATABASE_URL ||
   "postgresql://test:test@localhost:5432/test";
-process.env.AGROPUSH_ESCROW_CONTRACT_ID =
-  process.env.AGROPUSH_ESCROW_CONTRACT_ID || "CONTRACT_ID";
+process.env.GRAYFIX_ESCROW_CONTRACT_ID =
+  process.env.GRAYFIX_ESCROW_CONTRACT_ID || "CONTRACT_ID";
 process.env.USDC_CONTRACT_ID =
   process.env.USDC_CONTRACT_ID || "USDC_CONTRACT_ID";
 

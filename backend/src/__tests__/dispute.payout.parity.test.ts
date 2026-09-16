@@ -1,7 +1,7 @@
 /**
  * Dispute resolution payout parity tests.
  *
- * The contract (contracts/agropush_escrow/src/lib.rs) computes payout amounts
+ * The contract (contracts/grayfix_escrow/src/lib.rs) computes payout amounts
  * for resolve_dispute() using integer arithmetic with loss-sharing:
  *
  *   loss_bps         = 10_000 − seller_gets_bps

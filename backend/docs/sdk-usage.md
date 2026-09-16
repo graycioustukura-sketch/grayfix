@@ -1,11 +1,11 @@
-# AgroPush SDK Usage Guide
+# Grayfix SDK Usage Guide
 
-This guide shows how to build a typed TypeScript client wrapper for the AgroPush
+This guide shows how to build a typed TypeScript client wrapper for the Grayfix
 API that can be reused across frontend, mobile, and backend projects.
 
 ## Installation
 
-The AgroPush API requires no SDK — use standard `fetch` or any HTTP client. The
+The Grayfix API requires no SDK — use standard `fetch` or any HTTP client. The
 following examples use `axios` for convenience, but you can substitute `fetch`
 directly.
 
@@ -14,15 +14,15 @@ directly.
 ### Base Client
 
 ```typescript
-// agropush-client.ts
+// grayfix-client.ts
 import axios, { type AxiosInstance, type AxiosRequestConfig } from 'axios';
 
-export interface AgroPushClientConfig {
+export interface GrayfixClientConfig {
   baseUrl: string;
   getToken: () => string | null;
 }
 
-export function createAgroPushClient(config: AgroPushClientConfig): AxiosInstance {
+export function createGrayfixClient(config: GrayfixClientConfig): AxiosInstance {
   const client = axios.create({
     baseURL: config.baseUrl,
     timeout: 15_000,
@@ -54,7 +54,7 @@ export function createAgroPushClient(config: AgroPushClientConfig): AxiosInstanc
 ### Types
 
 ```typescript
-// agropush-types.ts
+// grayfix-types.ts
 export type TradeStatus =
   | 'PENDING_SIGNATURE'
   | 'PENDING_DEPOSIT'
@@ -98,9 +98,9 @@ export interface ApiError {
 ### Trade Operations
 
 ```typescript
-// agropush-trades.ts
+// grayfix-trades.ts
 import type { AxiosInstance } from 'axios';
-import type { Trade, PaginatedResponse, TradeStatus } from './agropush-types';
+import type { Trade, PaginatedResponse, TradeStatus } from './grayfix-types';
 
 export class TradeService {
   constructor(private client: AxiosInstance) {}
@@ -178,7 +178,7 @@ export class TradeService {
 ### Auth Service
 
 ```typescript
-// agropush-auth.ts
+// grayfix-auth.ts
 import type { AxiosInstance } from 'axios';
 
 export class AuthService {
@@ -211,7 +211,7 @@ export class AuthService {
 ### Stellar Proxy Service
 
 ```typescript
-// agropush-stellar.ts
+// grayfix-stellar.ts
 import type { AxiosInstance } from 'axios';
 
 export class StellarService {
@@ -238,13 +238,13 @@ export class StellarService {
 
 ```typescript
 // index.ts
-import { createAgroPushClient } from './agropush-client';
-import { TradeService } from './agropush-trades';
-import { AuthService } from './agropush-auth';
-import { StellarService } from './agropush-stellar';
+import { createGrayfixClient } from './grayfix-client';
+import { TradeService } from './grayfix-trades';
+import { AuthService } from './grayfix-auth';
+import { StellarService } from './grayfix-stellar';
 
-export function createAgroPushSDK(config: { baseUrl: string; getToken: () => string | null }) {
-  const client = createAgroPushClient(config);
+export function createGrayfixSDK(config: { baseUrl: string; getToken: () => string | null }) {
+  const client = createGrayfixClient(config);
 
   return {
     trades: new TradeService(client),
@@ -254,18 +254,18 @@ export function createAgroPushSDK(config: { baseUrl: string; getToken: () => str
 }
 
 // Usage
-const agropush = createAgroPushSDK({
-  baseUrl: 'https://api.agropush.com',
-  getToken: () => localStorage.getItem('agropush_jwt'),
+const grayfix = createGrayfixSDK({
+  baseUrl: 'https://api.grayfix.com',
+  getToken: () => localStorage.getItem('grayfix_jwt'),
 });
 
 // Authenticate
-const { challenge } = await agropush.auth.challenge('G...');
+const { challenge } = await grayfix.auth.challenge('G...');
 // (sign challenge with Stellar wallet, then:)
-const { token } = await agropush.auth.verify('G...', signedChallenge);
+const { token } = await grayfix.auth.verify('G...', signedChallenge);
 
 // Create a trade
-const trade = await agropush.trades.create({
+const trade = await grayfix.trades.create({
   sellerAddress: 'GXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
   amountUsdc: '1000.50',
   buyerLossBps: 5000,
@@ -275,23 +275,23 @@ const trade = await agropush.trades.create({
 console.log('Trade created:', trade.id);
 
 // List funded trades
-const { data: fundedTrades } = await agropush.trades.list({
+const { data: fundedTrades } = await grayfix.trades.list({
   status: 'FUNDED',
   page: 1,
   limit: 20,
 });
 
 // Get Stellar fees
-const { feeStats } = await agropush.stellar.getFees();
+const { feeStats } = await grayfix.stellar.getFees();
 ```
 
 ## React Native / Expo Usage
 
 ```tsx
-import { createAgroPushSDK } from './agropush-sdk';
+import { createGrayfixSDK } from './grayfix-sdk';
 import * as SecureStore from 'expo-secure-store';
 
-const agropush = createAgroPushSDK({
+const grayfix = createGrayfixSDK({
   baseUrl: process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:4000',
   getToken: () => {
     // Retrieve from SecureStore synchronously in effect
@@ -303,9 +303,9 @@ async function TradeListScreen() {
   const [trades, setTrades] = useState([]);
 
   useEffect(() => {
-    const token = await SecureStore.getItemAsync('agropush_jwt');
+    const token = await SecureStore.getItemAsync('grayfix_jwt');
     if (token) {
-      const client = createAgroPushClient({ baseUrl, getToken: () => token });
+      const client = createGrayfixClient({ baseUrl, getToken: () => token });
       const { data } = await new TradeService(client).list();
       setTrades(data);
     }
@@ -318,16 +318,16 @@ async function TradeListScreen() {
 ## Node.js / Backend Usage
 
 ```typescript
-import { createAgroPushSDK } from './agropush-sdk';
+import { createGrayfixSDK } from './grayfix-sdk';
 
-const agropush = createAgroPushSDK({
-  baseUrl: process.env.AGROPUSH_API_URL ?? 'http://localhost:4000',
-  getToken: () => process.env.AGROPUSH_API_TOKEN ?? null,
+const grayfix = createGrayfixSDK({
+  baseUrl: process.env.GRAYFIX_API_URL ?? 'http://localhost:4000',
+  getToken: () => process.env.GRAYFIX_API_TOKEN ?? null,
 });
 
 // Use in a worker or cron job
 async function dailyReconciliation() {
-  const { data } = await agropush.trades.list({ status: 'COMPLETED', limit: 100 });
+  const { data } = await grayfix.trades.list({ status: 'COMPLETED', limit: 100 });
   console.log(`Reconciled ${data.length} completed trades`);
 }
 ```

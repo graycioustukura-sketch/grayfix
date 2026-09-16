@@ -85,15 +85,15 @@ describe("Helmet security headers", () => {
 
 describe("CORS allowlist", () => {
   it("allows a request from a whitelisted origin", async () => {
-    const app = await buildApp("https://app.agropush.com");
+    const app = await buildApp("https://app.grayfix.com");
     const res = await request(app)
       .get("/health")
-      .set("Origin", "https://app.agropush.com");
-    expect(res.headers["access-control-allow-origin"]).toBe("https://app.agropush.com");
+      .set("Origin", "https://app.grayfix.com");
+    expect(res.headers["access-control-allow-origin"]).toBe("https://app.grayfix.com");
   });
 
   it("blocks a request from a non-whitelisted origin", async () => {
-    const app = await buildApp("https://app.agropush.com");
+    const app = await buildApp("https://app.grayfix.com");
     const res = await request(app)
       .options("/health")
       .set("Origin", "https://evil.example.com")
@@ -104,21 +104,21 @@ describe("CORS allowlist", () => {
   });
 
   it("allows multiple whitelisted origins", async () => {
-    const app = await buildApp("https://app.agropush.com,https://staging.agropush.com");
+    const app = await buildApp("https://app.grayfix.com,https://staging.grayfix.com");
 
     const res1 = await request(app)
       .get("/health")
-      .set("Origin", "https://app.agropush.com");
-    expect(res1.headers["access-control-allow-origin"]).toBe("https://app.agropush.com");
+      .set("Origin", "https://app.grayfix.com");
+    expect(res1.headers["access-control-allow-origin"]).toBe("https://app.grayfix.com");
 
     const res2 = await request(app)
       .get("/health")
-      .set("Origin", "https://staging.agropush.com");
-    expect(res2.headers["access-control-allow-origin"]).toBe("https://staging.agropush.com");
+      .set("Origin", "https://staging.grayfix.com");
+    expect(res2.headers["access-control-allow-origin"]).toBe("https://staging.grayfix.com");
   });
 
   it("permits server-to-server calls with no Origin header", async () => {
-    const app = await buildApp("https://app.agropush.com");
+    const app = await buildApp("https://app.grayfix.com");
     const res = await request(app).get("/health"); // no Origin
     expect(res.status).toBe(200);
   });

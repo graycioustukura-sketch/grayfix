@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "AgroPush Backend API",
+    "title": "Grayfix Backend API",
     "version": "1.0.0",
-    "description": "OpenAPI coverage for the live AgroPush backend routes under `backend/src/routes`.\n\nAuthentication flow:\n1. Call `POST /auth/challenge` with a Stellar public key.\n2. Sign the returned challenge with the wallet.\n3. Exchange the signature at `POST /auth/verify` for a bearer token.\n4. Send `Authorization: Bearer <token>` to protected endpoints.\n\nJWT semantics enforced by middleware:\n- `iss` must match `JWT_ISSUER` (default `agropush`)\n- `aud` must match `JWT_AUDIENCE` (default `agropush-api`)\n- `jti` is required and checked against the revocation denylist\n- `nbf` must be present and not be in the future\n\nError code references in operation descriptions map to backend `ErrorCode` values in\n`backend/src/errors/errorCodes.ts`. Some route handlers still emit legacy `{ error }`\npayloads while centralized validation/runtime failures return `{ code, message, details }`."
+    "description": "OpenAPI coverage for the live Grayfix backend routes under `backend/src/routes`.\n\nAuthentication flow:\n1. Call `POST /auth/challenge` with a Stellar public key.\n2. Sign the returned challenge with the wallet.\n3. Exchange the signature at `POST /auth/verify` for a bearer token.\n4. Send `Authorization: Bearer <token>` to protected endpoints.\n\nJWT semantics enforced by middleware:\n- `iss` must match `JWT_ISSUER` (default `grayfix`)\n- `aud` must match `JWT_AUDIENCE` (default `grayfix-api`)\n- `jti` is required and checked against the revocation denylist\n- `nbf` must be present and not be in the future\n\nError code references in operation descriptions map to backend `ErrorCode` values in\n`backend/src/errors/errorCodes.ts`. Some route handlers still emit legacy `{ error }`\npayloads while centralized validation/runtime failures return `{ code, message, details }`."
   },
   "servers": [
     {
@@ -340,7 +340,7 @@
           "challenge"
         ],
         "example": {
-          "challenge": "agropush:login:1742794421:7ced1c65a9a44a7d"
+          "challenge": "grayfix:login:1742794421:7ced1c65a9a44a7d"
         }
       },
       "AuthVerifyRequest": {
@@ -661,7 +661,7 @@
         },
         "additionalProperties": false,
         "example": {
-          "displayName": "AgroPush Trader",
+          "displayName": "Grayfix Trader",
           "avatarUrl": "https://cdn.example.com/avatar.png"
         }
       },

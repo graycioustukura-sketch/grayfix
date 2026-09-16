@@ -1,5 +1,5 @@
 /**
- * Demo smoke test: drives the full AgroPush trade lifecycle
+ * Demo smoke test: drives the full Grayfix trade lifecycle
  * (create -> deposit -> confirm delivery -> release funds) through the
  * real API, real Postgres, and real challenge/signature auth crypto.
  *
@@ -91,7 +91,7 @@ async function transitionStatus(adminToken: string, tradeId: string, status: str
 }
 
 async function main(): Promise<void> {
-  console.log(`AgroPush demo smoke test against ${BASE_URL}\n`);
+  console.log(`Grayfix demo smoke test against ${BASE_URL}\n`);
 
   const buyer = Keypair.random();
   const seller = Keypair.random();

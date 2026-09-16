@@ -25,7 +25,7 @@ jest.mock("@stellar/stellar-sdk", () => {
 
 process.env.JWT_SECRET = process.env.JWT_SECRET || "test-secret-at-least-32-characters-long";
 process.env.DATABASE_URL = process.env.DATABASE_URL || "postgresql://test:test@localhost:5432/test";
-process.env.AGROPUSH_ESCROW_CONTRACT_ID = process.env.AGROPUSH_ESCROW_CONTRACT_ID || "CONTRACT_ID";
+process.env.GRAYFIX_ESCROW_CONTRACT_ID = process.env.GRAYFIX_ESCROW_CONTRACT_ID || "CONTRACT_ID";
 process.env.USDC_CONTRACT_ID = process.env.USDC_CONTRACT_ID || "USDC_CONTRACT_ID";
 
 import {
@@ -38,7 +38,7 @@ import {
 } from "../services/contract.service";
 
 // ============================================================================
-// Contract ABI Definitions (from contracts/agropush_escrow/src/lib.rs)
+// Contract ABI Definitions (from contracts/grayfix_escrow/src/lib.rs)
 // ============================================================================
 
 /**

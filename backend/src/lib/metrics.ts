@@ -1,6 +1,6 @@
 import { Counter, Histogram, metrics } from "@opentelemetry/api";
 
-const METER_NAME = "agropush-backend";
+const METER_NAME = "grayfix-backend";
 
 export type StellarTransactionOutcome =
   | "success"

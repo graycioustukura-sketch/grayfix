@@ -6,7 +6,7 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
   // Connection pooling is configured via the DATABASE_URL connection string
-  // Example with PgBouncer: postgresql://user:password@localhost:5432/agropush?pgbouncer=true
+  // Example with PgBouncer: postgresql://user:password@localhost:5432/grayfix?pgbouncer=true
   // For production, ensure the connection pool size is appropriate for your workload:
   // - connection_limit: typically 20-100 connections
   // - pool_mode: use 'transaction' or 'session' mode based on your needs
@@ -42,7 +42,7 @@ enum ChainEventSyncStatus {
   DEAD_LETTER
 }
 
-/// User model representing a participant in the AgroPush platform
+/// User model representing a participant in the Grayfix platform
 /// - walletAddress: Stellar wallet address (stored as lowercase for consistency)
 /// - displayName: User's display name
 /// - createdAt: Timestamp of account creation
@@ -72,7 +72,7 @@ model User {
   @@index([walletAddress])
 }
 
-/// Trade model representing a transaction on the AgroPush platform
+/// Trade model representing a transaction on the Grayfix platform
 /// - tradeId: Unique identifier for the trade (from blockchain)
 /// - buyerAddress: Wallet address of the buyer (stored as lowercase)
 /// - sellerAddress: Wallet address of the seller (stored as lowercase)

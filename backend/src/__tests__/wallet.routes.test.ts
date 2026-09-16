@@ -30,8 +30,8 @@ describe("Wallet Routes", () => {
       },
       secret,
       {
-        issuer: process.env.JWT_ISSUER || "agropush",
-        audience: process.env.JWT_AUDIENCE || "agropush-api",
+        issuer: process.env.JWT_ISSUER || "grayfix",
+        audience: process.env.JWT_AUDIENCE || "grayfix-api",
       }
     );
   });
@@ -148,8 +148,8 @@ describe("Wallet Routes", () => {
         { jti: "no-wallet-jti", nbf: Math.floor(Date.now() / 1000) - 5 },
         secret,
         {
-          issuer: process.env.JWT_ISSUER || "agropush",
-          audience: process.env.JWT_AUDIENCE || "agropush-api",
+          issuer: process.env.JWT_ISSUER || "grayfix",
+          audience: process.env.JWT_AUDIENCE || "grayfix-api",
         }
       );
 

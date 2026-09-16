@@ -1,5 +1,5 @@
 /**
- * Staging seed script for AgroPush backend.
+ * Staging seed script for Grayfix backend.
  *
  * Seeds all domain models with representative data covering all enum values.
  * Idempotent: deletes all records in FK-safe order before inserting.

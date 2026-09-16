@@ -58,8 +58,8 @@ describe('AuthService challenge/verify flow', () => {
     jest.restoreAllMocks();
 
     process.env.JWT_SECRET = 'jwt-secret';
-    process.env.JWT_ISSUER = 'agropush';
-    process.env.JWT_AUDIENCE = 'agropush-api';
+    process.env.JWT_ISSUER = 'grayfix';
+    process.env.JWT_AUDIENCE = 'grayfix-api';
     process.env.JWT_EXPIRES_IN = '86400';
 
     mockIsValidEd25519PublicKey.mockReturnValue(true);
@@ -124,8 +124,8 @@ describe('AuthService challenge/verify flow', () => {
         sub: walletAddress.toLowerCase(),
         walletAddress: walletAddress.toLowerCase(),
         jti: '123e4567-e89b-12d3-a456-426614174000',
-        iss: 'agropush',
-        aud: 'agropush-api',
+        iss: 'grayfix',
+        aud: 'grayfix-api',
         iat: issuedAt,
         nbf: issuedAt,
         exp: issuedAt + 86_400,

@@ -21,7 +21,7 @@ class MetricsService {
 
   private constructor(meterProvider: MeterProvider) {
     this.meterProvider = meterProvider;
-    const meter = meterProvider.getMeter("agropush-backend");
+    const meter = meterProvider.getMeter("grayfix-backend");
 
     // Trade metrics
     this.tradeCounter = meter.createCounter("trades_created_total", {

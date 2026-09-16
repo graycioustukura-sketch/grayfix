@@ -103,7 +103,7 @@ async function bootstrap() {
   }
 
   const server = app.listen(port, async () => {
-    appLogger.info({ port }, "AgroPush backend listening");
+    appLogger.info({ port }, "Grayfix backend listening");
 
     try {
       await eventListenerService.start();

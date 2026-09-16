@@ -1,12 +1,12 @@
-# 🌾 AgroPush Backend Service
+# 🌾 Grayfix Backend Service
 
-The official Node.js/TypeScript backend for **AgroPush**, a decentralized escrow protocol designed to secure agricultural trade across different regions.
+The official Node.js/TypeScript backend for **Grayfix**, a decentralized escrow protocol designed to secure agricultural trade across different regions.
 
-AgroPush eliminates the "Trust Gap" between buyers and sellers using Soroban Smart Contracts on the Stellar network, ensuring fair trade even when parties are hundreds of miles apart.
+Grayfix eliminates the "Trust Gap" between buyers and sellers using Soroban Smart Contracts on the Stellar network, ensuring fair trade even when parties are hundreds of miles apart.
 
-## About AgroPush
+## About Grayfix
 
-**AgroPush** provides a programmable safety net for regional commodity trading:
+**Grayfix** provides a programmable safety net for regional commodity trading:
 
 - **Smart Escrow**: Secure funds holding using cNGN/stablecoins on the Stellar network
 - **Dynamic Loss Sharing**: Negotiable risk-sharing ratios (e.g., 50/50, 70/30) for handling transit accidents
@@ -16,7 +16,7 @@ AgroPush eliminates the "Trust Gap" between buyers and sellers using Soroban Sma
 
 ## Backend Responsibilities
 
-This service provides the API and infrastructure integration layer for the AgroPush escrow protocol.
+This service provides the API and infrastructure integration layer for the Grayfix escrow protocol.
 It handles trade orchestration, Supabase metadata, IPFS/Pinata uploads, Stellar payment bridging, and OpenTelemetry tracing.
 
 ## Features
@@ -111,4 +111,4 @@ Startup readiness (`GET /health/startup`) fails with `503` if **database**, **Re
 
 ## Repository Scope
 
-This backend service lives inside the `backend/` folder of the AgroPush monorepo and provides the API, database, and infrastructure integration for the project.
+This backend service lives inside the `backend/` folder of the Grayfix monorepo and provides the API, database, and infrastructure integration for the project.

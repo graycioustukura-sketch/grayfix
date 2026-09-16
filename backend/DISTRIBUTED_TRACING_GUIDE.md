@@ -1,6 +1,6 @@
 # Distributed Tracing Guide
 
-The AgroPush backend uses [OpenTelemetry](https://opentelemetry.io/) for distributed
+The Grayfix backend uses [OpenTelemetry](https://opentelemetry.io/) for distributed
 tracing. This guide documents what is instrumented, how to add coverage to a new
 flow, and how to test it.
 

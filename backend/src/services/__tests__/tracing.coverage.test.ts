@@ -115,8 +115,8 @@ describe('Distributed tracing coverage (#892)', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     process.env.JWT_SECRET = 'test-secret';
-    process.env.JWT_ISSUER = 'agropush';
-    process.env.JWT_AUDIENCE = 'agropush-api';
+    process.env.JWT_ISSUER = 'grayfix';
+    process.env.JWT_AUDIENCE = 'grayfix-api';
   });
 
   describe('auth flow', () => {

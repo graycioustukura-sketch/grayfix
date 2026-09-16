@@ -1,7 +1,7 @@
 export const TOKEN_CONFIG = {
   symbol: "cNGN",
   decimals: 7,
-  name: "AgroPush Stablecoin",
+  name: "Grayfix Stablecoin",
 };
 
 /** BigInt decimals constant for fixed-point arithmetic. */

@@ -47,7 +47,7 @@ export class EnvValidator {
       validator: (value) => value.length >= 32,
     },
     {
-      name: 'AGROPUSH_ESCROW_CONTRACT_ID',
+      name: 'GRAYFIX_ESCROW_CONTRACT_ID',
       category: EnvVarCategory.CRITICAL,
       description: 'Stellar escrow contract ID',
     },

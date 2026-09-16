@@ -81,8 +81,8 @@ describe("Trade Notes Routes", () => {
   beforeAll(() => {
     process.env.JWT_SECRET =
       process.env.JWT_SECRET || "test-secret-at-least-32-characters-long!";
-    process.env.JWT_ISSUER = process.env.JWT_ISSUER || "agropush";
-    process.env.JWT_AUDIENCE = process.env.JWT_AUDIENCE || "agropush-api";
+    process.env.JWT_ISSUER = process.env.JWT_ISSUER || "grayfix";
+    process.env.JWT_AUDIENCE = process.env.JWT_AUDIENCE || "grayfix-api";
     const secret = process.env.JWT_SECRET!;
     const now = Math.floor(Date.now() / 1000);
 

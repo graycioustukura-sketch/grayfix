@@ -33,8 +33,8 @@ describe('AuthService', () => {
     keypair = Keypair.random();
     realWallet = keypair.publicKey();
     process.env.JWT_SECRET = 'test-secret';
-    process.env.JWT_ISSUER = 'agropush';
-    process.env.JWT_AUDIENCE = 'agropush-api';
+    process.env.JWT_ISSUER = 'grayfix';
+    process.env.JWT_AUDIENCE = 'grayfix-api';
   });
 
   beforeEach(() => {
@@ -169,8 +169,8 @@ describe('AuthService', () => {
         sub: realWallet.toLowerCase(),
         walletAddress: realWallet.toLowerCase(),
         jti: 'test-jti',
-        iss: 'agropush',
-        aud: 'agropush-api',
+        iss: 'grayfix',
+        aud: 'grayfix-api',
       };
       const token = jwt.sign(payload, 'test-secret');
       const redisMock = getRedisMock();
@@ -191,7 +191,7 @@ describe('AuthService', () => {
     });
 
     it('should throw auth error for revoked token', async () => {
-      const payload = { jti: 'revoked-jti', sub: 'user', walletAddress: 'addr', iss: 'agropush', aud: 'agropush-api' };
+      const payload = { jti: 'revoked-jti', sub: 'user', walletAddress: 'addr', iss: 'grayfix', aud: 'grayfix-api' };
       const token = jwt.sign(payload, 'test-secret');
       const redisMock = getRedisMock();
       redisMock.exists.mockResolvedValue(1);
@@ -203,7 +203,7 @@ describe('AuthService', () => {
     });
 
     it('should throw auth error if jti is missing', async () => {
-      const payload = { sub: 'user', walletAddress: 'addr', iss: 'agropush', aud: 'agropush-api' };
+      const payload = { sub: 'user', walletAddress: 'addr', iss: 'grayfix', aud: 'grayfix-api' };
       const token = jwt.sign(payload, 'test-secret');
       const redisMock = getRedisMock();
       redisMock.exists.mockResolvedValue(0);
@@ -219,8 +219,8 @@ describe('AuthService', () => {
         sub: realWallet.toLowerCase(),
         walletAddress: realWallet.toLowerCase(),
         jti: 'bad-alg-jti',
-        iss: 'agropush',
-        aud: 'agropush-api',
+        iss: 'grayfix',
+        aud: 'grayfix-api',
       };
       const token = jwt.sign(payload, 'test-secret', { algorithm: 'HS384' });
       const redisMock = getRedisMock();
@@ -237,7 +237,7 @@ describe('AuthService', () => {
         sub: realWallet.toLowerCase(),
         walletAddress: realWallet.toLowerCase(),
         jti: 'wrong-audience-jti',
-        iss: 'agropush',
+        iss: 'grayfix',
         aud: 'other-api',
       };
       const token = jwt.sign(payload, 'test-secret');
@@ -259,8 +259,8 @@ describe('AuthService', () => {
         walletAddress: realWallet.toLowerCase(), 
         jti: oldJti,
         exp: Math.floor(Date.now() / 1000) + 3600,
-        iss: 'agropush',
-        aud: 'agropush-api',
+        iss: 'grayfix',
+        aud: 'grayfix-api',
       };
       const oldToken = jwt.sign(payload, 'test-secret');
       
@@ -282,8 +282,8 @@ describe('AuthService', () => {
         walletAddress: realWallet.toLowerCase(), 
         jti: oldJti,
         exp: exp,
-        iss: 'agropush',
-        aud: 'agropush-api',
+        iss: 'grayfix',
+        aud: 'grayfix-api',
       };
       const oldToken = jwt.sign(payload, 'test-secret');
       
@@ -302,8 +302,8 @@ describe('AuthService', () => {
         walletAddress: realWallet.toLowerCase(), 
         jti: oldJti,
         exp: exp,
-        iss: 'agropush',
-        aud: 'agropush-api',
+        iss: 'grayfix',
+        aud: 'grayfix-api',
       };
       const oldToken = jwt.sign(payload, 'test-secret');
       
@@ -317,7 +317,7 @@ describe('AuthService', () => {
     });
 
     it('should throw auth error if token is revoked', async () => {
-      const payload = { jti: 'revoked-jti', sub: 'user', walletAddress: 'addr', iss: 'agropush', aud: 'agropush-api' };
+      const payload = { jti: 'revoked-jti', sub: 'user', walletAddress: 'addr', iss: 'grayfix', aud: 'grayfix-api' };
       const token = jwt.sign(payload, 'test-secret');
       const redisMock = getRedisMock();
       redisMock.exists.mockResolvedValue(1);
@@ -332,8 +332,8 @@ describe('AuthService', () => {
         {
           sub: realWallet.toLowerCase(),
           exp: Math.floor(Date.now() / 1000) + 3600,
-          iss: 'agropush',
-          aud: 'agropush-api',
+          iss: 'grayfix',
+          aud: 'grayfix-api',
         },
         'test-secret'
       );
@@ -373,8 +373,8 @@ describe('AuthService', () => {
           sub: realWallet.toLowerCase(),
           walletAddress: realWallet.toLowerCase(),
           jti: 'stale-issued-jti',
-          iss: 'agropush',
-          aud: 'agropush-api',
+          iss: 'grayfix',
+          aud: 'grayfix-api',
           iat: now - (8 * 24 * 3600),
           exp: now + 60,
         },

@@ -40,8 +40,8 @@ describe("Dispute Category Routes", () => {
 
   beforeAll(() => {
     process.env.JWT_SECRET = process.env.JWT_SECRET || "test-secret-at-least-32-characters-long";
-    process.env.JWT_ISSUER = process.env.JWT_ISSUER || "agropush";
-    process.env.JWT_AUDIENCE = process.env.JWT_AUDIENCE || "agropush-api";
+    process.env.JWT_ISSUER = process.env.JWT_ISSUER || "grayfix";
+    process.env.JWT_AUDIENCE = process.env.JWT_AUDIENCE || "grayfix-api";
     process.env.ADMIN_STELLAR_PUBKEYS = adminAddress;
     adminToken = buildToken(adminAddress, "dispute-category-admin-jti");
     userToken = buildToken(userAddress, "dispute-category-user-jti");

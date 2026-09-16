@@ -90,7 +90,7 @@ function extractRuleRegexes(tomlContent: string): Map<string, string> {
     },
     {
       ruleId: 'database-url-with-password',
-      sample: 'DATABASE_URL=postgresql://admin:s3cr3tpassword@db.example.com:5432/agropush',
+      sample: 'DATABASE_URL=postgresql://admin:s3cr3tpassword@db.example.com:5432/grayfix',
     },
     {
       ruleId: 'redis-url-with-password',
@@ -116,28 +116,28 @@ describe('Custom rule patterns — false positives (should NOT detect)', () => {
 
   const shouldNotDetect: Array<{ ruleId: string; sample: string; reason: string }> = [
     {
-      ruleId: 'agropush-jwt-secret',
+      ruleId: 'grayfix-jwt-secret',
       sample: 'JWT_SECRET=your-super-secret-jwt-key-must-be-at-least-32-chars-change-in-production!',
       reason: 'placeholder prefix "your-" should be excluded',
     },
     {
-      ruleId: 'agropush-jwt-secret',
+      ruleId: 'grayfix-jwt-secret',
       sample: 'JWT_SECRET=change-me-staging-jwt-secret-minimum-32-chars',
       reason: 'placeholder prefix "change-" should be excluded',
     },
     {
-      ruleId: 'agropush-jwt-secret',
+      ruleId: 'grayfix-jwt-secret',
       sample: 'JWT_SECRET=test-secret-at-least-32-characters-long',
       reason: 'placeholder prefix "test-" should be excluded',
     },
     {
       ruleId: 'database-url-with-password',
-      sample: 'DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5432/agropush',
+      sample: 'DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5432/grayfix',
       reason: 'variable substitution ${...} should not trigger',
     },
     {
       ruleId: 'database-url-with-password',
-      sample: 'DATABASE_URL=postgresql://postgres:$POSTGRES_PASSWORD@localhost:5432/agropush',
+      sample: 'DATABASE_URL=postgresql://postgres:$POSTGRES_PASSWORD@localhost:5432/grayfix',
       reason: 'shell variable $VAR should not trigger',
     },
     {

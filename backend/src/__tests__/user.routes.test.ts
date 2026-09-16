@@ -1,8 +1,8 @@
 process.env.JWT_SECRET = "a".repeat(32);
-process.env.JWT_ISSUER = "agropush";
-process.env.JWT_AUDIENCE = "agropush-api";
+process.env.JWT_ISSUER = "grayfix";
+process.env.JWT_AUDIENCE = "grayfix-api";
 process.env.DATABASE_URL = "postgres://dummy";
-process.env.AGROPUSH_ESCROW_CONTRACT_ID = "C123";
+process.env.GRAYFIX_ESCROW_CONTRACT_ID = "C123";
 process.env.USDC_CONTRACT_ID = "C456";
 
 import request from "supertest";

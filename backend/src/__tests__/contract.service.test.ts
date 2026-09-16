@@ -28,7 +28,7 @@ describe("ContractService network resilience", () => {
       server,
       service: new ContractService(
         "https://rpc.example.com",
-        process.env.AGROPUSH_ESCROW_CONTRACT_ID!,
+        process.env.GRAYFIX_ESCROW_CONTRACT_ID!,
         process.env.USDC_CONTRACT_ID!,
         Networks.TESTNET,
       ),
@@ -148,7 +148,7 @@ describe("ContractService XDR builders", () => {
       server,
       service: new ContractService(
         "https://rpc.example.com",
-        process.env.AGROPUSH_ESCROW_CONTRACT_ID!,
+        process.env.GRAYFIX_ESCROW_CONTRACT_ID!,
         process.env.USDC_CONTRACT_ID!,
         Networks.TESTNET,
       ),
@@ -442,7 +442,7 @@ describe("ContractService XDR builders", () => {
 
       const service = new ContractService(
         "https://rpc.example.com",
-        process.env.AGROPUSH_ESCROW_CONTRACT_ID!,
+        process.env.GRAYFIX_ESCROW_CONTRACT_ID!,
         "", // Empty USDC contract ID
         Networks.TESTNET,
       );
@@ -819,7 +819,7 @@ describe("ContractService XDR builders", () => {
 
       const service = new ContractService(
         "https://invalid-rpc-url.example.com",
-        process.env.AGROPUSH_ESCROW_CONTRACT_ID!,
+        process.env.GRAYFIX_ESCROW_CONTRACT_ID!,
         process.env.USDC_CONTRACT_ID!,
         Networks.TESTNET,
       );
@@ -846,7 +846,7 @@ describe("ContractService XDR builders", () => {
 
       const service = new ContractService(
         "https://rpc.example.com",
-        process.env.AGROPUSH_ESCROW_CONTRACT_ID!,
+        process.env.GRAYFIX_ESCROW_CONTRACT_ID!,
         process.env.USDC_CONTRACT_ID!,
         Networks.TESTNET,
       );
@@ -873,7 +873,7 @@ describe("ContractService XDR builders", () => {
 
       const service = new ContractService(
         "https://rpc.example.com",
-        process.env.AGROPUSH_ESCROW_CONTRACT_ID!,
+        process.env.GRAYFIX_ESCROW_CONTRACT_ID!,
         process.env.USDC_CONTRACT_ID!,
         Networks.TESTNET,
       );
@@ -917,7 +917,7 @@ describe("ContractService XDR builders", () => {
 
       const service = new ContractService(
         "https://rpc.example.com",
-        process.env.AGROPUSH_ESCROW_CONTRACT_ID!,
+        process.env.GRAYFIX_ESCROW_CONTRACT_ID!,
         process.env.USDC_CONTRACT_ID!,
         Networks.TESTNET,
       );

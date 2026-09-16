@@ -27,7 +27,7 @@ const DEFAULT_RPC_URL = 'https://soroban-testnet.stellar.org';
 export function getEventListenerConfig(): EventListenerConfig {
   return {
     rpcUrl: env.STELLAR_RPC_URL || DEFAULT_RPC_URL,
-    contractId: env.AGROPUSH_ESCROW_CONTRACT_ID,
+    contractId: env.GRAYFIX_ESCROW_CONTRACT_ID,
     pollIntervalMs: env.EVENT_POLL_INTERVAL_MS,
     backoffInitialMs: env.BACKOFF_INITIAL_MS,
     backoffMaxMs: env.BACKOFF_MAX_MS,

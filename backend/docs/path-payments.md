@@ -2,7 +2,7 @@
 
 Path payments let one account send a payment in asset A while the recipient
 receives a different asset B, using Stellar's built-in DEX to route the
-conversion atomically in a single transaction. This is useful for AgroPush
+conversion atomically in a single transaction. This is useful for Grayfix
 whenever a buyer or seller wants to settle in a currency other than the
 trade's escrow asset (e.g. paying in XLM while the seller receives cNGN/USDC).
 

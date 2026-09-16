@@ -3,8 +3,8 @@ import { z } from 'zod';
 function normalizeEnvInput(raw: Record<string, string | undefined>): Record<string, string | undefined> {
   const normalized = { ...raw };
 
-  if (!normalized.AGROPUSH_ESCROW_CONTRACT_ID && normalized.CONTRACT_ID) {
-    normalized.AGROPUSH_ESCROW_CONTRACT_ID = normalized.CONTRACT_ID;
+  if (!normalized.GRAYFIX_ESCROW_CONTRACT_ID && normalized.CONTRACT_ID) {
+    normalized.GRAYFIX_ESCROW_CONTRACT_ID = normalized.CONTRACT_ID;
   }
 
   if (!normalized.STELLAR_RPC_URL && normalized.SOROBAN_RPC_URL) {
@@ -23,8 +23,8 @@ export const envSchema = z.object({
   PORT: z.coerce.number().default(4000),
   JWT_SECRET: z.string().min(32),
   JWT_EXPIRES_IN: z.string().default('86400'),
-  JWT_ISSUER: z.string().default('agropush'),
-  JWT_AUDIENCE: z.string().default('agropush-api'),
+  JWT_ISSUER: z.string().default('grayfix'),
+  JWT_AUDIENCE: z.string().default('grayfix-api'),
   REDIS_URL: z.string().default('redis://localhost:6379'),
   CORS_ORIGINS: z.string().default(''),
   DATABASE_URL: z.string(),
@@ -40,9 +40,9 @@ export const envSchema = z.object({
   STELLAR_NETWORK_PASSPHRASE: z.string().optional(),
   STELLAR_RPC_URL: z.string().optional(),
   SOROBAN_RPC_URL: z.string().optional(),
-  /** @deprecated Use AGROPUSH_ESCROW_CONTRACT_ID */
+  /** @deprecated Use GRAYFIX_ESCROW_CONTRACT_ID */
   CONTRACT_ID: z.string().min(1).optional(),
-  AGROPUSH_ESCROW_CONTRACT_ID: z.string().min(1),
+  GRAYFIX_ESCROW_CONTRACT_ID: z.string().min(1),
   USDC_CONTRACT_ID: z.string().min(1),
 
   // Access control
@@ -145,7 +145,7 @@ function buildProcessEnv(): Record<string, string | undefined> {
   if (processEnv.NODE_ENV === 'test') {
     processEnv.JWT_SECRET ||= 'test-jwt-secret-value-with-minimum-length-32';
     processEnv.DATABASE_URL ||= 'postgresql://localhost:5432/test';
-    processEnv.AGROPUSH_ESCROW_CONTRACT_ID ||= 'test-escrow-contract';
+    processEnv.GRAYFIX_ESCROW_CONTRACT_ID ||= 'test-escrow-contract';
     processEnv.USDC_CONTRACT_ID ||= 'test-usdc-contract';
     processEnv.PINATA_API_KEY ||= 'test-pinata-api-key';
     processEnv.PINATA_SECRET ||= 'test-pinata-secret';

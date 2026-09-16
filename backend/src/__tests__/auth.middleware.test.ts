@@ -16,8 +16,8 @@ jest.mock("../services/auth.service", () => {
 });
 
 const JWT_SECRET = "a-very-long-secret-that-is-at-least-32-chars-long";
-const JWT_ISSUER = "agropush";
-const JWT_AUDIENCE = "agropush-api";
+const JWT_ISSUER = "grayfix";
+const JWT_AUDIENCE = "grayfix-api";
 
 const mockedIsTokenRevoked = AuthService.isTokenRevoked as jest.Mock;
 

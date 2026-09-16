@@ -2,9 +2,9 @@
 process.env.JWT_SECRET =
   process.env.JWT_SECRET ?? "0".repeat(32);
 process.env.DATABASE_URL =
-  process.env.DATABASE_URL ?? "postgresql://localhost:5432/agropush_test";
-process.env.AGROPUSH_ESCROW_CONTRACT_ID =
-  process.env.AGROPUSH_ESCROW_CONTRACT_ID ??
+  process.env.DATABASE_URL ?? "postgresql://localhost:5432/grayfix_test";
+process.env.GRAYFIX_ESCROW_CONTRACT_ID =
+  process.env.GRAYFIX_ESCROW_CONTRACT_ID ??
   "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC";
 process.env.USDC_CONTRACT_ID =
   process.env.USDC_CONTRACT_ID ??

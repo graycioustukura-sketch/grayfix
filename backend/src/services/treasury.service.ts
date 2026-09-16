@@ -16,7 +16,7 @@ export class TreasuryService {
     asset: string;
     contractId: string;
   }> {
-    const contractId = env.AGROPUSH_ESCROW_CONTRACT_ID;
+    const contractId = env.GRAYFIX_ESCROW_CONTRACT_ID;
     const balance = await this.stellarService.getAccountBalance(
       contractId,
       TOKEN_CONFIG.symbol,
@@ -52,7 +52,7 @@ export class TreasuryService {
     asset: string;
   } {
     return {
-      contractId: env.AGROPUSH_ESCROW_CONTRACT_ID,
+      contractId: env.GRAYFIX_ESCROW_CONTRACT_ID,
       network: process.env.STELLAR_NETWORK ?? env.STELLAR_NETWORK,
       asset: TOKEN_CONFIG.symbol,
     };
