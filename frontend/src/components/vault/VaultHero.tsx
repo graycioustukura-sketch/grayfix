@@ -18,7 +18,7 @@ export function VaultHero({
   return (
     <header className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10">
       <div>
-        <p className="text-xs font-semibold tracking-widest text-gold uppercase mb-2">
+        <p className="text-xs font-semibold tracking-widest text-accent-primary uppercase mb-2">
           Vault System Active
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-text-primary">
@@ -30,8 +30,8 @@ export function VaultHero({
       </div>
 
       <div className="flex items-center gap-4 bg-card border border-border-default rounded-2xl px-6 py-4">
-        <div className="w-14 h-14 rounded-xl bg-gold-muted flex items-center justify-center">
-          <Shield className="w-7 h-7 text-gold" />
+        <div className="w-14 h-14 rounded-xl bg-accent-primary-muted flex items-center justify-center">
+          <Shield className="w-7 h-7 text-accent-primary" />
         </div>
         <div>
           <p className="text-xs font-medium tracking-widest text-text-secondary uppercase">

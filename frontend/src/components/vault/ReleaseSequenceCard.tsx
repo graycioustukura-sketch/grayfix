@@ -24,7 +24,7 @@ export function ReleaseSequenceCard({
       case "completed":
         return <Check className="w-7 h-7 text-emerald" />;
       case "in-progress":
-        return <Clock className="w-7 h-7 text-gold" />;
+        return <Clock className="w-7 h-7 text-accent-primary" />;
       case "pending":
         return <Flag className="w-7 h-7 text-text-muted" />;
     }
@@ -35,7 +35,7 @@ export function ReleaseSequenceCard({
       case "completed":
         return "bg-emerald-muted border-emerald";
       case "in-progress":
-        return "bg-gold-muted border-gold animate-pulse";
+        return "bg-accent-primary-muted border-accent-primary animate-pulse";
       case "pending":
         return "bg-bg-elevated border-border-default";
     }
@@ -46,7 +46,7 @@ export function ReleaseSequenceCard({
       case "completed":
         return "text-emerald";
       case "in-progress":
-        return "text-gold";
+        return "text-accent-primary";
       case "pending":
         return "text-text-muted";
     }
@@ -56,7 +56,7 @@ export function ReleaseSequenceCard({
     <BentoCard
       title="Release Sequence"
       icon={<SettingsIcon className="w-5 h-5" />}
-      glowVariant="gold"
+      glowVariant="accent-primary"
       className="h-full"
     >
       <div className="flex items-center justify-end mb-6">

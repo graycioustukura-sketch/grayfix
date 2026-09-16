@@ -186,10 +186,10 @@ describe('ContractManifestCard Component', () => {
         expect(screen.getByText('Delayed / Crypto-Backed')).toBeInTheDocument();
     });
 
-    it('applies gold glow variant', () => {
+    it('applies accent-primary glow variant', () => {
         const { container } = render(<ContractManifestCard {...defaultProps} />);
         const card = container.querySelector('[data-testid="bento-card"]');
-        expect(card).toHaveAttribute('data-glow', 'gold');
+        expect(card).toHaveAttribute('data-glow', 'accent-primary');
     });
 
     it('applies correct styling classes to the card', () => {

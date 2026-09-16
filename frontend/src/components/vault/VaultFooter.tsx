@@ -53,7 +53,7 @@ export function VaultFooter({ version, links, socialLinks }: VaultFooterProps) {
           </div>
         </div>
         <div>
-          <p className="text-xs text-gold uppercase tracking-widest mb-3">
+          <p className="text-xs text-accent-primary uppercase tracking-widest mb-3">
             Connect With Us
           </p>
           <div className="flex items-center gap-3">

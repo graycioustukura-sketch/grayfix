@@ -106,7 +106,7 @@ describe('AuditLogCard Component', () => {
 
     it('applies correct background color for multi-sig entry', () => {
         const { container } = render(<AuditLogCard {...defaultProps} />);
-        const multiSigBg = container.querySelector('.bg-gold-muted');
+        const multiSigBg = container.querySelector('.bg-accent-primary-muted');
         expect(multiSigBg).toBeInTheDocument();
     });
 

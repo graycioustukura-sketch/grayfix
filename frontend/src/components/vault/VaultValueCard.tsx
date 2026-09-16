@@ -69,7 +69,7 @@ export function VaultValueCard({
 
         <button
           onClick={() => setShowDisclaimer(true)}
-          className="mt-auto w-full flex items-center justify-center gap-2 bg-gold hover:bg-gold-hover text-text-inverse font-semibold py-3 px-6 rounded-xl transition-colors"
+          className="mt-auto w-full flex items-center justify-center gap-2 bg-accent-primary hover:bg-accent-primary-hover text-text-inverse font-semibold py-3 px-6 rounded-xl transition-colors"
         >
           <Key className="w-5 h-5" />
           Release Funds

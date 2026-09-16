@@ -26,7 +26,7 @@ const logIcons: Record<LogType, ReactNode> = {
 
 const logBgColors: Record<LogType, string> = {
   biometric: "bg-emerald-muted",
-  "multi-sig": "bg-gold-muted",
+  "multi-sig": "bg-accent-primary-muted",
   ledger: "bg-bg-elevated",
 };
 
@@ -54,7 +54,7 @@ export function AuditLogCard({
       <div className="space-y-4">
         {entries.length > 0 ? (
           entries.map((entry, index) => (
-            <div key={index} className="flex items-start gap-3 bg-[#03110B4D] p-4 rounded-lg h-18">
+            <div key={index} className="flex items-start gap-3 bg-[#0A0C104D] p-4 rounded-lg h-18">
               <div
                 className={`w-10 h-10 rounded-full ${logBgColors[entry.type]} flex items-center justify-center shrink-0 mb-12`}
               >

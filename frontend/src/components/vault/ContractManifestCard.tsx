@@ -36,11 +36,11 @@ export function ContractManifestCard({
     <BentoCard
       title="Contract Manifest"
       icon={<FileText className="w-5 h-5" />}
-      glowVariant="gold"
+      glowVariant="accent-primary"
       className="h-106.5"
     >
       <div className="flex items-center justify-end -mt-8 mb-6">
-        <span className="text-xs font-mono text-gold bg-gold-muted px-3 py-1 rounded-full">
+        <span className="text-xs font-mono text-accent-primary bg-accent-primary-muted px-3 py-1 rounded-full">
           {contractId}
         </span>
       </div>
@@ -92,7 +92,7 @@ export function ContractManifestCard({
       <div className="flex gap-3 mt-15">
         <button
           onClick={onExportPdf}
-          className="flex-1 flex items-center justify-center gap-2 bg-[#1E2D2666] hover:bg-bg-input text-text-primary font-medium py-2.5 px-4 rounded-xl transition-colors "
+          className="flex-1 flex items-center justify-center gap-2 bg-[#1D212B66] hover:bg-bg-input text-text-primary font-medium py-2.5 px-4 rounded-xl transition-colors "
         >
            <Image
               src={Download}
@@ -104,7 +104,7 @@ export function ContractManifestCard({
         </button>
         <button
           onClick={onViewClauses}
-          className="flex-1 flex items-center justify-center gap-2 bg-[#1E2D2666] hover:bg-bg-input text-text-primary font-medium py-2.5 px-4 rounded-xl transition-colors"
+          className="flex-1 flex items-center justify-center gap-2 bg-[#1D212B66] hover:bg-bg-input text-text-primary font-medium py-2.5 px-4 rounded-xl transition-colors"
         >
           <Eye className="w-4 h-4" />
           View Clauses

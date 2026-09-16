@@ -59,7 +59,7 @@ export function PaymentOverviewCard({
     <BentoCard
       title="Vault Escrow Summary"
       icon={<CreditCard className="w-5 h-5" />}
-      glowVariant="gold"
+      glowVariant="accent-primary"
       className="h-full"
     >
       <div className="flex items-center justify-end -mt-8 mb-5">
@@ -70,7 +70,7 @@ export function PaymentOverviewCard({
               onClick={() => setCurrency(c)}
               className={`text-xs font-semibold px-3 py-1 rounded-full transition-colors ${
                 currency === c
-                  ? "bg-gold text-text-inverse"
+                  ? "bg-accent-primary text-text-inverse"
                   : "text-text-secondary hover:text-text-primary"
               }`}
             >
@@ -95,7 +95,7 @@ export function PaymentOverviewCard({
         ))}
       </div>
 
-      <div className="bg-gold-muted/20 border-l-[3px] border-gold text-gold font-bold px-4 py-2 mt-4 rounded-r-md flex items-center justify-between">
+      <div className="bg-accent-primary-muted/20 border-l-[3px] border-accent-primary text-accent-primary font-bold px-4 py-2 mt-4 rounded-r-md flex items-center justify-between">
         <span className="text-sm">Locked in cNGN</span>
         <span className="text-sm">{lockedDisplay}</span>
       </div>
