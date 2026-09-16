@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: agropush-ingress
+  name: grayfix-ingress
   namespace: default
   annotations:
     kubernetes.io/ingress.class: nginx
@@ -10,12 +10,12 @@ metadata:
 spec:
   tls:
     - hosts:
-        - "agropushvault.com"
-        - "www.agropushvault.com"
-        - "api.agropushvault.com"
-      secretName: agropushvault-tls
+        - "grayfixvault.com"
+        - "www.grayfixvault.com"
+        - "api.grayfixvault.com"
+      secretName: grayfixvault-tls
   rules:
-    - host: "agropushvault.com"
+    - host: "grayfixvault.com"
       http:
         paths:
           - path: /
@@ -25,7 +25,7 @@ spec:
                 name: frontend-service
                 port:
                   number: 80
-    - host: "www.agropushvault.com"
+    - host: "www.grayfixvault.com"
       http:
         paths:
           - path: /
@@ -35,7 +35,7 @@ spec:
                 name: frontend-service
                 port:
                   number: 80
-    - host: "api.agropushvault.com"
+    - host: "api.grayfixvault.com"
       http:
         paths:
           - path: /

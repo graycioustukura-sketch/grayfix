@@ -1,10 +1,10 @@
 terraform {
   backend "s3" {
-    bucket         = "agropush-terraform-state-dev"
+    bucket         = "grayfix-terraform-state-dev"
     key            = "infra/terraform/dev/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
-    dynamodb_table = "agropush-terraform-locks-dev"
+    dynamodb_table = "grayfix-terraform-locks-dev"
   }
 }
 
@@ -15,7 +15,7 @@ provider "aws" {
 module "vpc" {
   source = "../../modules/vpc"
 
-  project_name         = "agropush"
+  project_name         = "grayfix"
   environment           = "dev"
   region               = var.region
   vpc_cidr             = "10.0.0.0/16"
@@ -28,7 +28,7 @@ module "vpc" {
 module "rds" {
   source = "../../modules/rds"
 
-  project_name          = "agropush"
+  project_name          = "grayfix"
   environment            = "dev"
   vpc_id                = module.vpc.vpc_id
   subnet_ids            = module.vpc.private_subnet_ids
@@ -36,7 +36,7 @@ module "rds" {
   engine                = "aurora-postgresql"
   engine_version        = "15.4"
   instance_class        = "db.t3.medium"
-  database_name         = "agropush_dev"
+  database_name         = "grayfix_dev"
   master_username       = var.db_master_username
   master_password       = var.db_master_password
   port                  = 5432
@@ -50,7 +50,7 @@ module "rds" {
 module "redis" {
   source = "../../modules/redis"
 
-  project_name              = "agropush"
+  project_name              = "grayfix"
   environment                = "dev"
   vpc_id                    = module.vpc.vpc_id
   subnet_ids                = module.vpc.private_subnet_ids
@@ -73,7 +73,7 @@ module "redis" {
 module "eks" {
   source = "../../modules/eks"
 
-  project_name             = "agropush"
+  project_name             = "grayfix"
   environment              = "dev"
   region                   = var.region
   vpc_id                   = module.vpc.vpc_id

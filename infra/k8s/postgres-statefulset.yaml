@@ -39,15 +39,15 @@ spec:
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: POSTGRES_USER
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: POSTGRES_PASSWORD
             - name: POSTGRES_DB
-              value: agropush
+              value: grayfix
           resources:
             requests:
               cpu: 100m

@@ -17,18 +17,18 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: kingfrankhood/agropush-frontend:latest
+          image: kingfrankhood/grayfix-frontend:latest
           ports:
             - containerPort: 3000
               name: http
           envFrom:
             - configMapRef:
-                name: agropush-config
+                name: grayfix-config
           env:
             - name: PINATA_JWT
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: PINATA_JWT
           resources:
             requests:

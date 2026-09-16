@@ -8,8 +8,8 @@
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
-  name: agropush-backup-verification-alerts
-  namespace: agropush
+  name: grayfix-backup-verification-alerts
+  namespace: grayfix
   labels:
     release: kube-prometheus-stack
 spec:
@@ -18,7 +18,7 @@ spec:
       rules:
         - alert: BackupVerificationFailed
           expr: |
-            kube_job_status_failed{job_name=~"db-backup-verify-daily-.*", namespace="agropush"} > 0
+            kube_job_status_failed{job_name=~"db-backup-verify-daily-.*", namespace="grayfix"} > 0
           for: 5m
           labels:
             severity: critical
@@ -32,7 +32,7 @@ spec:
 
         - alert: BackupVerificationNotRunRecently
           expr: |
-            (time() - max(kube_job_status_completion_time{job_name=~"db-backup-verify-daily-.*", namespace="agropush"})) > 86400 * 2
+            (time() - max(kube_job_status_completion_time{job_name=~"db-backup-verify-daily-.*", namespace="grayfix"})) > 86400 * 2
           for: 10m
           labels:
             severity: critical

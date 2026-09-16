@@ -17,57 +17,57 @@ spec:
     spec:
       containers:
         - name: backend
-          image: kingfrankhood/agropush-backend:latest
+          image: kingfrankhood/grayfix-backend:latest
           ports:
             - containerPort: 4000
               name: http
           envFrom:
             - configMapRef:
-                name: agropush-config
+                name: grayfix-config
           env:
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: POSTGRES_USER
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: POSTGRES_PASSWORD
             - name: DATABASE_URL
-              value: "postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@postgres-service:5432/agropush"
+              value: "postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@postgres-service:5432/grayfix"
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: REDIS_PASSWORD
             - name: REDIS_URL
               value: "redis://:$(REDIS_PASSWORD)@redis-service:6379/0"
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: JWT_SECRET
             - name: PINATA_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: PINATA_API_KEY
             - name: PINATA_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: PINATA_SECRET
             - name: PINATA_JWT
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: PINATA_JWT
             - name: IPFS_URL_SIGNING_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: agropush-secrets
+                  name: grayfix-secrets
                   key: IPFS_URL_SIGNING_SECRET
           resources:
             requests:

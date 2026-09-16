@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: agropush-config
+  name: grayfix-config
   namespace: default
 data:
   NODE_ENV: "production"
@@ -11,4 +11,4 @@ data:
   STELLAR_RPC_URL: "https://soroban-testnet.stellar.org"
   IPFS_GATEWAY_URL: "https://gateway.pinata.cloud/ipfs"
   BACKEND_URL: "http://backend-service:4000"
-  NEXT_PUBLIC_API_URL: "https://api.agropushvault.com"
+  NEXT_PUBLIC_API_URL: "https://api.grayfixvault.com"

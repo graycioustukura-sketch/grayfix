@@ -161,7 +161,7 @@ resource "aws_eks_node_group" "this" {
 
   taint {
     key    = "dedicated"
-    value  = "agropush"
+    value  = "grayfix"
     effect = "NO_SCHEDULE"
   }
 
