@@ -46,7 +46,7 @@
 
 ## Known Limitations
 
-- Color contrast could not be fully verified by axe-core in jsdom (no computed styles). Manual verification recommended for gold-on-dark color scheme.
+- Color contrast could not be fully verified by axe-core in jsdom (no computed styles). Manual verification recommended for the accent-on-dark color scheme (updated since this audit — see `frontend/design-tokens.json`).
 - Screen reader testing (VoiceOver/NVDA) on Trade Dashboard and Create Trade flows requires a browser environment and should be performed manually.
 
 ## Test Location
