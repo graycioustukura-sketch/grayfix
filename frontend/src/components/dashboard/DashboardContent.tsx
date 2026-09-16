@@ -60,7 +60,7 @@ export function DashboardContent() {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] p-6 text-center space-y-6">
         <div className="w-16 h-16 rounded-full bg-bg-elevated border border-border-default flex items-center justify-center mb-4">
-          <AlertCircle className="w-8 h-8 text-gold" />
+          <AlertCircle className="w-8 h-8 text-accent-primary" />
         </div>
         <h1 className="text-2xl font-bold text-text-primary">{t("dashboard.connectWallet.title")}</h1>
         <p className="text-text-secondary max-w-md">
@@ -130,7 +130,7 @@ export function DashboardContent() {
         <div className="flex gap-3">
           <Link
             href="/trades/create"
-            className="px-5 py-2.5 bg-gold text-text-inverse font-semibold rounded-lg hover:bg-gold-hover transition-colors shadow-glow-gold"
+            className="px-5 py-2.5 bg-accent-primary text-text-inverse font-semibold rounded-lg hover:bg-accent-primary-hover transition-colors shadow-glow-accent"
           >
             {t("dashboard.createTrade")}
           </Link>
@@ -142,7 +142,7 @@ export function DashboardContent() {
         <BentoCard 
           title={t("dashboard.stats.totalVolume")} 
           icon={<CreditCard className="w-5 h-5" />}
-          glowVariant="gold"
+          glowVariant="accent-primary"
         >
           <div className="text-3xl font-bold text-text-primary mt-2">
             {stats?.totalVolume ? `${stats.totalVolume.toLocaleString()} USDC` : "0 USDC"}
@@ -194,7 +194,7 @@ export function DashboardContent() {
       <div className="space-y-4">
         <div className="flex justify-between items-end">
           <h2 className="text-xl font-semibold text-text-primary">{t("dashboard.recentTrades")}</h2>
-          <Link href="/trades" className="text-sm text-gold hover:underline underline-offset-4">
+          <Link href="/trades" className="text-sm text-accent-primary hover:underline underline-offset-4">
             {t("dashboard.recentTrades.viewAll")}
           </Link>
         </div>
@@ -237,7 +237,7 @@ export function DashboardContent() {
                         ${idx === recentTrades.length - 1 ? 'border-b-0' : ''}
                       `}
                     >
-                      <td className="px-6 py-4 font-mono text-gold">
+                      <td className="px-6 py-4 font-mono text-accent-primary">
                         <Link href={`/trades/${trade.tradeId}`} className="hover:underline">
                           {trade.tradeId.substring(0, 8)}...
                         </Link>

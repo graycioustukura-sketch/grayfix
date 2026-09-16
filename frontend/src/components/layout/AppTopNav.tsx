@@ -35,7 +35,7 @@ export function AppTopNav() {
       </button>
 
       {/* Logo */}
-      <Link href="/" className="text-gold font-bold text-lg tracking-tight flex-shrink-0">
+      <Link href="/" className="text-accent-primary font-bold text-lg tracking-tight flex-shrink-0">
         Grayfix
       </Link>
 

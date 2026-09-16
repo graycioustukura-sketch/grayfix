@@ -128,7 +128,7 @@ export function SideNavBar({
     >
       <div className="h-16 px-4 border-b border-border-default flex items-center justify-between">
         <Link href="/dashboard" className="flex items-center gap-3">
-          <span className="w-8 h-8 rounded-lg bg-gold-muted border border-gold/30 flex items-center justify-center text-gold">
+          <span className="w-8 h-8 rounded-lg bg-accent-primary-muted border border-accent-primary/30 flex items-center justify-center text-accent-primary">
             <svg
               className="w-4 h-4"
               viewBox="0 0 16 16"

@@ -15,12 +15,12 @@ describe("TimelineItem", () => {
     expect(screen.getByText(/Jun 15, 2024/)).toBeInTheDocument();
   });
 
-  it("uses active title styling and gold pulse marker", () => {
+  it("uses active title styling and accent-primary pulse marker", () => {
     const { container } = render(<TimelineItem {...base} status="active" />);
     const title = screen.getByText("Funds Deposited");
     expect(title.className).toMatch(/font-semibold/);
     expect(title.className).toMatch(/text-text-primary/);
-    expect(container.querySelector(".bg-gold.animate-pulse")).toBeInTheDocument();
+    expect(container.querySelector(".bg-accent-primary.animate-pulse")).toBeInTheDocument();
   });
 
   it("renders completed emerald dot", () => {

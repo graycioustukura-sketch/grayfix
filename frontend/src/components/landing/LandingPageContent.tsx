@@ -76,11 +76,11 @@ export function LandingPageContent() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 flex items-center justify-center"
         >
-          <div className="h-[480px] w-[480px] rounded-full bg-gold opacity-[0.04] blur-3xl" />
+          <div className="h-[480px] w-[480px] rounded-full bg-accent-primary opacity-[0.04] blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-4xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold-muted px-4 py-1.5 text-sm font-medium text-gold">
+          <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary-muted px-4 py-1.5 text-sm font-medium text-accent-primary">
             {t("landing.eyebrow")}
           </span>
 
@@ -95,14 +95,14 @@ export function LandingPageContent() {
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/trades/create"
-              className="inline-flex items-center gap-2 rounded-lg bg-gradient-gold-cta px-6 py-3 text-base font-semibold text-text-inverse shadow-glow-gold transition-shadow hover:shadow-glow-gold/60 focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2"
+              className="inline-flex items-center gap-2 rounded-lg bg-gradient-accent-cta px-6 py-3 text-base font-semibold text-text-inverse shadow-glow-accent transition-shadow hover:shadow-glow-accent/60 focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-2"
             >
               {t("landing.startTrade")}
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/dashboard"
-              className="inline-flex items-center gap-2 rounded-lg border border-border-default px-6 py-3 text-base font-semibold text-text-primary transition-colors hover:border-border-hover hover:bg-bg-card focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2"
+              className="inline-flex items-center gap-2 rounded-lg border border-border-default px-6 py-3 text-base font-semibold text-text-primary transition-colors hover:border-border-hover hover:bg-bg-card focus-visible:outline-2 focus-visible:outline-accent-primary focus-visible:outline-offset-2"
             >
               {t("landing.openDashboard")}
             </Link>
@@ -148,8 +148,8 @@ export function LandingPageContent() {
                   <span className="text-xs font-bold tracking-widest text-text-muted">
                     {item.step}
                   </span>
-                  <div className="mt-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gold-muted">
-                    <Icon className="h-5 w-5 text-gold" />
+                  <div className="mt-3 flex h-10 w-10 items-center justify-center rounded-lg bg-accent-primary-muted">
+                    <Icon className="h-5 w-5 text-accent-primary" />
                   </div>
                   <h3 className="mt-4 text-xl font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-text-secondary">
@@ -180,8 +180,8 @@ export function LandingPageContent() {
                   key={feature.title}
                   className="flex gap-4 rounded-xl border border-border-default bg-bg-elevated p-6 transition-colors hover:border-border-hover"
                 >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gold-muted">
-                    <Icon className="h-5 w-5 text-gold" />
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-accent-primary-muted">
+                    <Icon className="h-5 w-5 text-accent-primary" />
                   </div>
                   <div>
                     <h3 className="text-base font-semibold">{feature.title}</h3>
@@ -198,7 +198,7 @@ export function LandingPageContent() {
 
       {/* ── Bottom CTA ───────────────────────────────────────────────────── */}
       <section className="px-6 py-20 lg:px-10">
-        <div className="mx-auto max-w-2xl rounded-2xl border border-gold/20 bg-gradient-card-glow p-10 text-center shadow-glow-gold">
+        <div className="mx-auto max-w-2xl rounded-2xl border border-accent-primary/20 bg-gradient-card-glow p-10 text-center shadow-glow-accent">
           <h2 className="text-2xl font-bold md:text-3xl">
             {t("landing.cta.title")}
           </h2>

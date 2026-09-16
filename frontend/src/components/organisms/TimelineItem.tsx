@@ -38,7 +38,7 @@ function StatusMarker({ status }: { status: TimelineItemStatus }) {
 
   if (status === "active") {
     return (
-      <div className="h-3 w-3 shrink-0 rounded-full bg-gold animate-pulse" />
+      <div className="h-3 w-3 shrink-0 rounded-full bg-accent-primary animate-pulse" />
     );
   }
 

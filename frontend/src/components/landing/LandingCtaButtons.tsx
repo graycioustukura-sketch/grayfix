@@ -11,7 +11,7 @@ export function LandingCtaButtons() {
       <Link
         href="/vault"
         onClick={() => trackEvent("landing_cta_clicked", { target: "vault" })}
-        className="px-8 py-3 bg-gold text-text-inverse font-semibold rounded-lg hover:bg-gold-hover transition-colors"
+        className="px-8 py-3 bg-accent-primary text-text-inverse font-semibold rounded-lg hover:bg-accent-primary-hover transition-colors"
       >
         Go to Vault
       </Link>
