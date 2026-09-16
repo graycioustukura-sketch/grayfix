@@ -157,7 +157,7 @@ export default function Step3Review() {
         </div>
         <button
           onClick={() => router.push(`/trades/${tradeId}`)}
-          className="h-12 w-full flex items-center justify-center rounded-full bg-gradient-gold-cta text-text-inverse font-semibold"
+          className="h-12 w-full flex items-center justify-center rounded-full bg-gradient-accent-cta text-text-inverse font-semibold"
         >
           View Trade Details
         </button>
@@ -174,8 +174,8 @@ export default function Step3Review() {
   if (!isAuthenticated) {
     return (
       <div className="flex flex-col items-center gap-6 py-6 text-center">
-        <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center">
-          <svg className="w-8 h-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="w-16 h-16 rounded-full bg-accent-primary/10 flex items-center justify-center">
+          <svg className="w-8 h-8 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
           </svg>
         </div>
@@ -190,7 +190,7 @@ export default function Step3Review() {
         <button
           onClick={() => isWalletConnected ? authenticate() : connectWallet()}
           disabled={loading}
-          className="h-12 w-full flex items-center justify-center rounded-full bg-gradient-gold-cta text-text-inverse font-semibold disabled:opacity-50"
+          className="h-12 w-full flex items-center justify-center rounded-full bg-gradient-accent-cta text-text-inverse font-semibold disabled:opacity-50"
         >
           {isWalletConnected ? "Sign In" : "Connect Wallet"}
         </button>
@@ -218,7 +218,7 @@ export default function Step3Review() {
         {data.notes && <ReviewRow label="Notes" value={data.notes} />}
       </div>
 
-      <div className="rounded-lg bg-gold-muted border border-gold/20 px-4 py-3 text-sm text-gold">
+      <div className="rounded-lg bg-accent-primary-muted border border-accent-primary/20 px-4 py-3 text-sm text-accent-primary">
         By submitting, you authorize a Stellar transaction to create an escrow trade,
         locking {amountUsdc} cNGN in the Grayfix escrow contract.
       </div>
@@ -246,7 +246,7 @@ export default function Step3Review() {
         <button
           disabled={loading || !isFormValid}
           onClick={() => setShowDisclaimer(true)}
-          className="flex-1 h-12 rounded-full bg-gradient-gold-cta text-text-inverse font-semibold disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="flex-1 h-12 rounded-full bg-gradient-accent-cta text-text-inverse font-semibold disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {loading ? (
             <>

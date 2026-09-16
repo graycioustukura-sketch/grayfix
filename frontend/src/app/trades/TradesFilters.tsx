@@ -329,7 +329,7 @@ export function TradesFilters({ initialStatus, initialPage }: TradesFiltersProps
                         i % 2 === 0 ? "bg-surface-0" : "bg-surface-1"
                       }`}
                     >
-                      <td className="px-4 py-3 text-gold font-mono">
+                      <td className="px-4 py-3 text-accent-primary font-mono">
                         <Link
                           href={`/trades/${trade.tradeId}`}
                           className="hover:underline underline-offset-4"

@@ -29,7 +29,7 @@ const SAMPLE_ICONS = [
 export default function IconDevPage() {
   return (
     <div className="min-h-screen bg-primary p-10">
-      <h1 className="text-2xl font-bold text-gold mb-2">Icon Component</h1>
+      <h1 className="text-2xl font-bold text-accent-primary mb-2">Icon Component</h1>
       <p className="text-text-secondary text-sm mb-8">
         Sizes: xs=12px · sm=16px · md=20px · lg=24px
       </p>
@@ -42,7 +42,7 @@ export default function IconDevPage() {
         <div className="flex items-end gap-6">
           {(["xs", "sm", "md", "lg"] as const).map((s) => (
             <div key={s} className="flex flex-col items-center gap-2">
-              <Icon name="shield" size={s} className="text-gold" />
+              <Icon name="shield" size={s} className="text-accent-primary" />
               <span className="text-xs text-text-muted">{s}</span>
             </div>
           ))}
@@ -106,7 +106,7 @@ export default function IconDevPage() {
             className="text-status-warning"
           />
           <Icon name="circle-x" size="md" className="text-status-danger" />
-          <Icon name="lock" size="md" className="text-gold" />
+          <Icon name="lock" size="md" className="text-accent-primary" />
           <Icon name="user" size="md" />
           {/* ↑ no className → falls back to text-text-secondary */}
         </div>
@@ -176,7 +176,7 @@ export default function IconDevPage() {
         </h2>
         <button
           disabled
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-gold-cta text-text-inverse text-sm font-bold opacity-60 cursor-not-allowed"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-accent-cta text-text-inverse text-sm font-bold opacity-60 cursor-not-allowed"
         >
           <Spinner size="sm" />
           Confirming…

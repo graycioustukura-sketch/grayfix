@@ -447,7 +447,7 @@ export default function MediatorPanelClient({ disputeId }: Props) {
                 {videoLoadState === "loading" && (
                   <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-10">
                     <div className="flex flex-col items-center gap-2">
-                      <div className="animate-spin w-8 h-8 border-2 border-gold border-t-transparent rounded-full" />
+                      <div className="animate-spin w-8 h-8 border-2 border-accent-primary border-t-transparent rounded-full" />
                       <span className="text-gray-300 text-xs">
                         Loading via gateway {activeGatewayIndex + 1}/
                         {PINATA_GATEWAYS.length}…
@@ -485,7 +485,7 @@ export default function MediatorPanelClient({ disputeId }: Props) {
                 videoLoadState !== "terminal-failure" && (
                   <button
                     onClick={switchGateway}
-                    className="text-xs text-gold hover:underline underline-offset-2"
+                    className="text-xs text-accent-primary hover:underline underline-offset-2"
                   >
                     Switch gateway
                   </button>
@@ -549,7 +549,7 @@ export default function MediatorPanelClient({ disputeId }: Props) {
               <button
                 onClick={() => void connectWallet()}
                 disabled={isLoading}
-                className="w-full rounded-md bg-gold text-text-inverse py-2.5 text-sm font-medium hover:bg-gold-hover transition-colors disabled:opacity-50"
+                className="w-full rounded-md bg-accent-primary text-text-inverse py-2.5 text-sm font-medium hover:bg-accent-primary-hover transition-colors disabled:opacity-50"
               >
                 {isLoading ? "Connecting..." : "Connect Freighter"}
               </button>
@@ -688,7 +688,7 @@ export default function MediatorPanelClient({ disputeId }: Props) {
                 <span className="text-sm font-medium text-text-secondary">
                   Buyer Receives:
                 </span>
-                <span className="text-sm font-semibold text-gold">
+                <span className="text-sm font-semibold text-accent-primary">
                   {(getBuyerSplit(modal.sellerGetsBps) / 100).toFixed(2)}%
                 </span>
               </div>

@@ -130,7 +130,7 @@ export default function Step1Details() {
       {/* Total preview */}
       <div className="flex items-center justify-between rounded-lg bg-bg-elevated px-4 py-3 border border-border-default">
         <span className="text-sm text-text-secondary">Estimated Total</span>
-        <span className="text-gold font-semibold">
+        <span className="text-accent-primary font-semibold">
           {totalNGN !== "—" ? `${data.currency} ${totalNGN}` : "—"}
         </span>
       </div>
@@ -152,7 +152,7 @@ export default function Step1Details() {
       <button
         disabled={!valid}
         onClick={handleContinue}
-        className="mt-2 h-12 rounded-full bg-gradient-gold-cta text-text-inverse font-semibold transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+        className="mt-2 h-12 rounded-full bg-gradient-accent-cta text-text-inverse font-semibold transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
       >
         Continue to Negotiation
       </button>

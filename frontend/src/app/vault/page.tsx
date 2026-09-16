@@ -196,7 +196,7 @@ export default function VaultPage() {
           </div>
           <Link
             href="/vault/manage"
-            className="flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-text-inverse hover:bg-gold-hover transition-colors"
+            className="flex items-center gap-2 rounded-lg bg-accent-primary px-4 py-2 text-sm font-semibold text-text-inverse hover:bg-accent-primary-hover transition-colors"
           >
             <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
               <rect x="1" y="3" width="14" height="11" rx="1.5" />
@@ -232,7 +232,7 @@ export default function VaultPage() {
                 <button
                   onClick={() => (isWalletConnected ? authenticate() : connectWallet())}
                   disabled={authLoading}
-                  className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-gold-hover disabled:cursor-not-allowed disabled:opacity-60"
+                  className="rounded-lg bg-accent-primary px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-accent-primary-hover disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {authLoading
                     ? "Loading..."
@@ -274,7 +274,7 @@ export default function VaultPage() {
             <p className="text-text-muted text-sm">No trades yet. Create a trade to get started.</p>
             <Link
               href="/trades/create"
-              className="mt-4 inline-flex rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-text-inverse hover:bg-gold-hover transition-colors"
+              className="mt-4 inline-flex rounded-lg bg-accent-primary px-4 py-2 text-sm font-semibold text-text-inverse hover:bg-accent-primary-hover transition-colors"
             >
               Create Trade
             </Link>
@@ -291,7 +291,7 @@ export default function VaultPage() {
                 <button
                   onClick={() => setIsManifestOpen(true)}
                   disabled={manifestSubmitting}
-                  className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-gold-hover"
+                  className="rounded-lg bg-accent-primary px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-accent-primary-hover"
                 >
                   {manifestSubmitting ? "Submitting..." : "Log Driver Details"}
                 </button>
@@ -395,7 +395,7 @@ export default function VaultPage() {
               </div>
 
               <div className="md:col-span-2 lg:col-span-3 rounded-2xl border border-border-default bg-card p-5">
-                <p className="text-xs uppercase tracking-[0.22em] text-gold">Partner network</p>
+                <p className="text-xs uppercase tracking-[0.22em] text-accent-primary">Partner network</p>
                 <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
                   {PARTNERS.map((partner) => (
                     <div

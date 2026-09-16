@@ -181,7 +181,7 @@ export default function TradeDetailPage() {
       {/* Loading state */}
       {loading && (
         <div className="flex items-center justify-center py-12">
-          <svg className="animate-spin w-8 h-8 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg className="animate-spin w-8 h-8 text-accent-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="12" cy="12" r="10" strokeOpacity="0.25" />
             <path d="M12 2a10 10 0 0 1 10 10" />
           </svg>
@@ -288,7 +288,7 @@ export default function TradeDetailPage() {
                     onClick={handleDeposit}
                     disabled={actionLoading}
                     data-testid="action-deposit"
-                    className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-gold-hover disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="rounded-lg bg-accent-primary px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-accent-primary-hover disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {actionLoading ? "Processing…" : "Deposit Funds"}
                   </button>
@@ -299,7 +299,7 @@ export default function TradeDetailPage() {
                     onClick={handleConfirmDelivery}
                     disabled={actionLoading}
                     data-testid="action-confirm-delivery"
-                    className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-gold-hover disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="rounded-lg bg-accent-primary px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-accent-primary-hover disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {actionLoading ? "Processing…" : "Confirm Delivery"}
                   </button>
@@ -310,7 +310,7 @@ export default function TradeDetailPage() {
                     onClick={handleReleaseFunds}
                     disabled={actionLoading}
                     data-testid="action-release-funds"
-                    className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-gold-hover disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="rounded-lg bg-accent-primary px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-accent-primary-hover disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {actionLoading ? "Processing…" : "Release Funds"}
                   </button>
@@ -330,7 +330,7 @@ export default function TradeDetailPage() {
                 {role === "mediator" && status === "DISPUTED" && (
                   <p className="text-sm text-text-secondary">
                     Mediation controls are available in the{" "}
-                    <Link href="/mediator/disputes" className="underline text-gold hover:text-gold-hover">
+                    <Link href="/mediator/disputes" className="underline text-accent-primary hover:text-accent-primary-hover">
                       Mediator Panel
                     </Link>
                     .

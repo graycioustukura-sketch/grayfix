@@ -90,7 +90,7 @@ function getEventIcon(type: string) {
     case "dispute_lost":
       return <AlertCircle className="w-4 h-4 text-status-danger" />;
     case "volume_milestone":
-      return <DollarSign className="w-4 h-4 text-gold" />;
+      return <DollarSign className="w-4 h-4 text-accent-primary" />;
     default:
       return <TrendingUp className="w-4 h-4 text-text-secondary" />;
   }
@@ -170,7 +170,7 @@ export default function ReputationPage() {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] p-6 text-center space-y-6">
         <div className="w-16 h-16 rounded-full bg-bg-elevated border border-border-default flex items-center justify-center">
-          <AlertCircle className="w-8 h-8 text-gold" />
+          <AlertCircle className="w-8 h-8 text-accent-primary" />
         </div>
         <h1 className="text-2xl font-bold text-text-primary">{t("reputation.connectWallet")}</h1>
         <p className="text-text-secondary max-w-md">
@@ -220,7 +220,7 @@ export default function ReputationPage() {
     {
       label: t("reputation.totalTrades"),
       value: data.stats.totalTrades.toString(),
-      icon: <TrendingUp className="w-5 h-5 text-gold" />,
+      icon: <TrendingUp className="w-5 h-5 text-accent-primary" />,
     },
     {
       label: t("reputation.completed"),
@@ -272,7 +272,7 @@ export default function ReputationPage() {
           ))}
           <div className="bg-bg-elevated rounded-lg border border-border-default p-6">
             <div className="flex items-center gap-2 mb-3">
-              <DollarSign className="w-5 h-5 text-gold" />
+              <DollarSign className="w-5 h-5 text-accent-primary" />
               <h3 className="text-sm font-medium text-text-secondary">{t("trust.stats.totalVolume")}</h3>
             </div>
             <p className="text-2xl font-bold text-text-primary">

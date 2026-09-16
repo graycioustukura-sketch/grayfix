@@ -58,7 +58,7 @@ export default function Step2Negotiation() {
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <span className="text-sm text-text-secondary">Loss Ratio (Buyer / Seller)</span>
-          <span className="text-gold font-semibold text-sm">
+          <span className="text-accent-primary font-semibold text-sm">
             {data.buyerRatio}% / {data.sellerRatio}%
           </span>
         </div>
@@ -70,7 +70,7 @@ export default function Step2Negotiation() {
           step={5}
           value={data.buyerRatio}
           onChange={(e) => handleBuyerRatio(parseInt(e.target.value))}
-          className="w-full accent-gold"
+          className="w-full accent-accent-primary"
         />
 
         <div className="grid grid-cols-2 gap-3">
@@ -140,7 +140,7 @@ export default function Step2Negotiation() {
         </button>
         <button
           onClick={handleReview}
-          className="flex-1 h-12 rounded-full bg-gradient-gold-cta text-text-inverse font-semibold disabled:opacity-40 disabled:cursor-not-allowed"
+          className="flex-1 h-12 rounded-full bg-gradient-accent-cta text-text-inverse font-semibold disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Review Trade
         </button>

@@ -146,7 +146,7 @@ export default function MediatorDisputesPage() {
             onClick={() => handleFilter(filter.value)}
             className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
               activeFilter === filter.value
-                ? "bg-gold text-text-inverse"
+                ? "bg-accent-primary text-text-inverse"
                 : "bg-bg-elevated text-text-secondary hover:bg-bg-hover"
             }`}
           >

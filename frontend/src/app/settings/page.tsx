@@ -78,8 +78,8 @@ function Toggle({
         role="switch"
         aria-checked={checked}
         onClick={() => onChange(!checked)}
-        className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold ${
-          checked ? "bg-gold" : "bg-bg-elevated"
+        className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary ${
+          checked ? "bg-accent-primary" : "bg-bg-elevated"
         }`}
       >
         <span
@@ -273,7 +273,7 @@ export default function SettingsPage() {
                 aria-pressed={walletProvider === provider}
                 className={`rounded-lg border px-4 py-3 text-left transition-colors ${
                   walletProvider === provider
-                    ? "border-gold bg-gold-muted text-text-primary"
+                    ? "border-accent-primary bg-accent-primary-muted text-text-primary"
                     : "border-border-default bg-bg-elevated text-text-secondary hover:border-border-focus"
                 }`}
               >
@@ -299,7 +299,7 @@ export default function SettingsPage() {
                   isAuthenticated
                     ? "bg-emerald-muted text-emerald"
                     : isWalletConnected
-                      ? "bg-gold-muted text-gold"
+                      ? "bg-accent-primary-muted text-accent-primary"
                       : "bg-bg-elevated text-text-muted border border-border-default"
                 }`}
               >
@@ -360,7 +360,7 @@ export default function SettingsPage() {
                 <button
                   type="button"
                   onClick={() => void connectWallet()}
-                  className="text-xs font-semibold text-gold hover:underline"
+                  className="text-xs font-semibold text-accent-primary hover:underline"
                 >
                   Choose a different Freighter account
                 </button>
@@ -408,7 +408,7 @@ export default function SettingsPage() {
                   );
                 }}
                 disabled={isLoading}
-                className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-text-inverse hover:bg-gold-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                className="rounded-lg bg-accent-primary px-4 py-2 text-sm font-semibold text-text-inverse hover:bg-accent-primary-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {isLoading
                   ? t("settings.wallet.connecting")
@@ -422,7 +422,7 @@ export default function SettingsPage() {
                 type="button"
                 onClick={authenticate}
                 disabled={isLoading}
-                className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-text-inverse hover:bg-gold-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                className="rounded-lg bg-accent-primary px-4 py-2 text-sm font-semibold text-text-inverse hover:bg-accent-primary-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {isLoading ? t("settings.wallet.signing") : t("settings.wallet.signIn")}
               </button>
@@ -541,7 +541,7 @@ export default function SettingsPage() {
             <button
               type="button"
               onClick={handleSavePreferences}
-              className="rounded-lg bg-gold px-5 py-2 text-sm font-semibold text-text-inverse hover:bg-gold-hover transition-colors"
+              className="rounded-lg bg-accent-primary px-5 py-2 text-sm font-semibold text-text-inverse hover:bg-accent-primary-hover transition-colors"
             >
               {t("settings.preferences.save")}
             </button>
@@ -623,7 +623,7 @@ export default function SettingsPage() {
                 key={item.label}
                 className="flex items-start gap-3 rounded-xl border border-border-default bg-bg-elevated px-4 py-3"
               >
-                <span className="mt-0.5 shrink-0 text-gold">{item.icon}</span>
+                <span className="mt-0.5 shrink-0 text-accent-primary">{item.icon}</span>
                 <div>
                   <p className="text-sm font-medium text-text-primary">
                     {item.label}

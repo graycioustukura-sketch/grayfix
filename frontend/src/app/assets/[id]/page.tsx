@@ -100,7 +100,7 @@ function LoadingState() {
   return (
     <div className="min-h-screen bg-primary flex items-center justify-center">
       <div className="text-center">
-        <div className="animate-spin w-8 h-8 border-2 border-gold border-t-transparent rounded-full mx-auto mb-4" />
+        <div className="animate-spin w-8 h-8 border-2 border-accent-primary border-t-transparent rounded-full mx-auto mb-4" />
         <p className="text-text-secondary">Loading trade details...</p>
       </div>
     </div>
@@ -121,7 +121,7 @@ function ErrorState({ message, onRetry }: { message: string; onRetry?: () => voi
         {onRetry && (
           <button
             onClick={onRetry}
-            className="px-4 py-2 bg-gold text-text-inverse rounded-lg font-medium hover:bg-gold-hover"
+            className="px-4 py-2 bg-accent-primary text-text-inverse rounded-lg font-medium hover:bg-accent-primary-hover"
           >
             Try Again
           </button>
@@ -140,8 +140,8 @@ function AuthRequired({ onConnect, onAuthenticate, isConnected, isLoading }: {
   return (
     <div className="min-h-screen bg-primary flex items-center justify-center">
       <div className="text-center max-w-md px-6">
-        <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="w-16 h-16 rounded-full bg-accent-primary/10 flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
           </svg>
         </div>
@@ -154,7 +154,7 @@ function AuthRequired({ onConnect, onAuthenticate, isConnected, isLoading }: {
         <button
           onClick={isConnected ? onAuthenticate : onConnect}
           disabled={isLoading}
-          className="px-4 py-2 bg-gold text-text-inverse rounded-lg font-medium hover:bg-gold-hover disabled:opacity-50"
+          className="px-4 py-2 bg-accent-primary text-text-inverse rounded-lg font-medium hover:bg-accent-primary-hover disabled:opacity-50"
         >
           {isLoading ? "Loading..." : isConnected ? "Sign In" : "Connect Wallet"}
         </button>

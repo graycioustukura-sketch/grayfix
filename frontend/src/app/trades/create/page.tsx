@@ -21,7 +21,7 @@ function StepIndicator() {
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors ${
                 step === index
-                  ? "bg-gold text-text-inverse"
+                  ? "bg-accent-primary text-text-inverse"
                   : step > index
                   ? "bg-emerald text-text-inverse"
                   : "bg-bg-elevated text-text-muted border border-border-default"

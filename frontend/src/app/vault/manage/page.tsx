@@ -43,7 +43,7 @@ const STATUS_STYLES: Record<string, { pill: string; dot: string }> = {
     pill: "text-status-danger bg-status-danger/15",
     dot: "bg-status-danger",
   },
-  locked: { pill: "text-status-locked bg-gold-muted", dot: "bg-gold" },
+  locked: { pill: "text-status-locked bg-accent-primary-muted", dot: "bg-accent-primary" },
 };
 
 function statusStyle(status: string) {
@@ -86,7 +86,7 @@ function StatCard({
         {label}
       </p>
       <p
-        className={`text-2xl font-bold ${accent ? "text-gold" : "text-text-primary"}`}
+        className={`text-2xl font-bold ${accent ? "text-accent-primary" : "text-text-primary"}`}
       >
         {value}
       </p>
@@ -104,14 +104,14 @@ function ActionBtn({
   disabled,
 }: {
   label: string;
-  variant?: "gold" | "danger" | "ghost";
+  variant?: "accent-primary" | "danger" | "ghost";
   onClick: () => void;
   disabled?: boolean;
 }) {
   const base =
     "px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed";
   const styles = {
-    gold: "bg-gold text-text-inverse hover:bg-gold-hover",
+    accent-primary: "bg-accent-primary text-text-inverse hover:bg-accent-primary-hover",
     danger:
       "border border-status-danger/40 text-status-danger hover:bg-status-danger/10",
     ghost:
@@ -240,7 +240,7 @@ function ConfirmModal({
             className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${
               modal.type === "dispute"
                 ? "bg-status-danger text-white hover:bg-status-danger/80"
-                : "bg-gold text-text-inverse hover:bg-gold-hover"
+                : "bg-accent-primary text-text-inverse hover:bg-accent-primary-hover"
             }`}
           >
             {busy ? "Processing…" : "Confirm"}
@@ -266,9 +266,9 @@ function AuthGate({
 }) {
   return (
     <div className="flex flex-col items-center justify-center py-24 gap-5">
-      <div className="w-16 h-16 rounded-2xl bg-gold-muted border border-gold/30 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-2xl bg-accent-primary-muted border border-accent-primary/30 flex items-center justify-center">
         <svg
-          className="w-8 h-8 text-gold"
+          className="w-8 h-8 text-accent-primary"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -290,7 +290,7 @@ function AuthGate({
         type="button"
         onClick={isWalletConnected ? authenticate : connectWallet}
         disabled={isLoading}
-        className="rounded-lg bg-gold px-6 py-2.5 text-sm font-semibold text-text-inverse hover:bg-gold-hover transition-colors disabled:opacity-60"
+        className="rounded-lg bg-accent-primary px-6 py-2.5 text-sm font-semibold text-text-inverse hover:bg-accent-primary-hover transition-colors disabled:opacity-60"
       >
         {isLoading
           ? "Loading…"
@@ -597,7 +597,7 @@ export default function VaultManagePage() {
                         onClick={() => setActiveTab(tab)}
                         className={`px-3 py-1 rounded-md text-xs font-medium transition-colors capitalize ${
                           activeTab === tab
-                            ? "bg-gold text-text-inverse"
+                            ? "bg-accent-primary text-text-inverse"
                             : "text-text-secondary hover:text-text-primary"
                         }`}
                       >
@@ -649,7 +649,7 @@ export default function VaultManagePage() {
                     </p>
                     <Link
                       href="/trades/create"
-                      className="inline-block mt-4 px-4 py-2 rounded-lg bg-gold text-text-inverse text-sm font-semibold hover:bg-gold-hover transition-colors"
+                      className="inline-block mt-4 px-4 py-2 rounded-lg bg-accent-primary text-text-inverse text-sm font-semibold hover:bg-accent-primary-hover transition-colors"
                     >
                       Create Trade
                     </Link>
@@ -684,7 +684,7 @@ export default function VaultManagePage() {
                           <div className="min-w-0">
                             <Link
                               href={`/trades/${trade.tradeId}`}
-                              className="text-sm font-mono text-gold hover:underline underline-offset-4 truncate block"
+                              className="text-sm font-mono text-accent-primary hover:underline underline-offset-4 truncate block"
                             >
                               {trade.tradeId.slice(0, 10)}…
                             </Link>
@@ -719,7 +719,7 @@ export default function VaultManagePage() {
                             {canDeposit && (
                               <ActionBtn
                                 label="Deposit"
-                                variant="gold"
+                                variant="accent-primary"
                                 onClick={() => openModal("deposit", trade)}
                                 disabled={parseFloat(walletBalance?.balance ?? "0") === 0}
                               />
@@ -727,7 +727,7 @@ export default function VaultManagePage() {
                             {canRelease && (
                               <ActionBtn
                                 label="Release"
-                                variant="gold"
+                                variant="accent-primary"
                                 onClick={() => openModal("release", trade)}
                               />
                             )}
@@ -754,7 +754,7 @@ export default function VaultManagePage() {
                 <div className="flex justify-end">
                   <Link
                     href="/trades"
-                    className="text-xs text-text-secondary hover:text-gold transition-colors flex items-center gap-1"
+                    className="text-xs text-text-secondary hover:text-accent-primary transition-colors flex items-center gap-1"
                   >
                     View all trades
                     <svg

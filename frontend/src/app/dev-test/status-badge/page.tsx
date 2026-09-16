@@ -15,7 +15,7 @@ const ALL_STATUSES: TradeStatus[] = [
 export default function StatusBadgeDevPage() {
   return (
     <div className="min-h-screen bg-primary p-10">
-      <h1 className="text-2xl font-bold text-gold mb-2">StatusBadge</h1>
+      <h1 className="text-2xl font-bold text-accent-primary mb-2">StatusBadge</h1>
       <p className="text-text-secondary text-sm mb-10">
         All 6 trade statuses · sizes sm &amp; md · icon on/off
       </p>

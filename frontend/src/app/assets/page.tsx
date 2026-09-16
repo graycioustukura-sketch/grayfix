@@ -97,14 +97,14 @@ function AssetsSidebar({
     <aside className="w-56 shrink-0 bg-surface-1 border-r border-border-default flex flex-col min-h-full">
       <div className="px-4 py-5 border-b border-border-default">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gold-muted border border-gold/30 flex items-center justify-center text-gold shrink-0">
+          <div className="w-8 h-8 rounded-lg bg-accent-primary-muted border border-accent-primary/30 flex items-center justify-center text-accent-primary shrink-0">
             <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM9 9h5v5H9z" />
             </svg>
           </div>
           <div className="min-w-0">
             <p className="text-xs font-semibold text-text-primary truncate">Asset Manager</p>
-            <p className="text-[10px] uppercase tracking-widest text-gold truncate">Portfolio View</p>
+            <p className="text-[10px] uppercase tracking-widest text-accent-primary truncate">Portfolio View</p>
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ function AssetsSidebar({
                   aria-current={isActive ? "page" : undefined}
                   className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-all border-l-2 ${
                     isActive
-                      ? "border-l-gold bg-surface-2 text-gold font-medium"
+                      ? "border-l-accent-primary bg-surface-2 text-accent-primary font-medium"
                       : "border-transparent text-text-secondary hover:text-text-primary hover:bg-white/5"
                   }`}
                 >
@@ -168,13 +168,13 @@ interface SummaryCardProps {
   value: string;
   sub?: string;
   icon: React.ReactNode;
-  accent?: "gold" | "emerald" | "danger" | "warning";
+  accent?: "accent-primary" | "emerald" | "danger" | "warning";
   loading?: boolean;
 }
 
-function SummaryCard({ label, value, sub, icon, accent = "gold", loading }: SummaryCardProps) {
+function SummaryCard({ label, value, sub, icon, accent = "accent-primary", loading }: SummaryCardProps) {
   const accentMap = {
-    gold:    "text-gold bg-gold-muted border-gold/20",
+    accent-primary:    "text-accent-primary bg-accent-primary-muted border-accent-primary/20",
     emerald: "text-emerald bg-emerald-muted border-emerald/20",
     danger:  "text-status-danger bg-status-danger/10 border-status-danger/20",
     warning: "text-status-warning bg-status-warning/10 border-status-warning/20",
@@ -319,7 +319,7 @@ function AssetTable({
               placeholder="Search by ID or address…"
               value={search}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => onSearchChange(e.target.value)}
-              className="w-full pl-8 pr-3 py-1.5 text-xs bg-surface-2 border border-border-default rounded-lg text-text-primary placeholder:text-text-muted focus:outline-none focus:border-gold/50 transition-colors"
+              className="w-full pl-8 pr-3 py-1.5 text-xs bg-surface-2 border border-border-default rounded-lg text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-primary/50 transition-colors"
               aria-label="Search assets"
             />
           </div>
@@ -333,7 +333,7 @@ function AssetTable({
                 onClick={() => onStatusFilterChange(f.value)}
                 className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${
                   statusFilter === f.value
-                    ? "bg-gold text-text-inverse"
+                    ? "bg-accent-primary text-text-inverse"
                     : "bg-surface-2 text-text-secondary hover:text-text-primary"
                 }`}
                 aria-pressed={statusFilter === f.value}
@@ -357,7 +357,7 @@ function AssetTable({
 
         <Link
           href="/trades/create"
-          className="shrink-0 text-xs font-semibold text-gold hover:text-gold-hover transition-colors flex items-center gap-1"
+          className="shrink-0 text-xs font-semibold text-accent-primary hover:text-accent-primary-hover transition-colors flex items-center gap-1"
         >
           <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           New Asset
@@ -403,7 +403,7 @@ function AssetTable({
                 <div className="min-w-0">
                   <Link
                     href={`/assets/${trade.tradeId}`}
-                    className="text-sm font-mono text-gold hover:underline underline-offset-4 truncate block"
+                    className="text-sm font-mono text-accent-primary hover:underline underline-offset-4 truncate block"
                   >
                     {trade.tradeId.slice(0, 14)}…
                   </Link>
@@ -429,7 +429,7 @@ function AssetTable({
 
                 <Link
                   href={`/assets/${trade.tradeId}`}
-                  className="text-xs font-semibold text-text-secondary hover:text-gold transition-colors whitespace-nowrap"
+                  className="text-xs font-semibold text-text-secondary hover:text-accent-primary transition-colors whitespace-nowrap"
                   aria-label={`View asset ${trade.tradeId}`}
                 >
                   View →
@@ -595,9 +595,9 @@ export default function AssetsPage() {
 
             {/* Auth banner */}
             {!isAuthenticated && !authLoading && (
-              <div className="rounded-2xl border border-gold/20 bg-gold-muted px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div className="rounded-2xl border border-accent-primary/20 bg-accent-primary-muted px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
-                  <p className="text-sm font-semibold text-gold">Connect your wallet</p>
+                  <p className="text-sm font-semibold text-accent-primary">Connect your wallet</p>
                   <p className="text-xs text-text-secondary mt-0.5">
                     Link your Freighter wallet to view live asset positions and balances.
                   </p>
@@ -628,7 +628,7 @@ export default function AssetsPage() {
                 value={loading ? "—" : `${totalVolume.toLocaleString()} cNGN`}
                 sub="All-time escrow value"
                 icon={<TrendingUp className="w-5 h-5" />}
-                accent="gold"
+                accent="accent-primary"
                 loading={loading && !stats}
               />
               <SummaryCard
