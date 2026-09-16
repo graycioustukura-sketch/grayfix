@@ -29,14 +29,14 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "AgroPush — Secure Agricultural Escrow",
+  title: "Grayfix — Secure Agricultural Escrow",
   description: "Blockchain-powered agricultural trade settlement",
   manifest: "/manifest.json",
   themeColor: "#1a3a1a",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "AgroPush",
+    title: "Grayfix",
   },
   other: {
     "mobile-web-app-capable": "yes",

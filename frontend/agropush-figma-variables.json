@@ -1,5 +1,5 @@
 {
-  "agropush-colors": {
+  "grayfix-colors": {
     "bg": {
       "primary": {
         "$value": "#0B1A14",
@@ -116,7 +116,7 @@
       }
     }
   },
-  "agropush-spacing": {
+  "grayfix-spacing": {
     "0": {
       "$value": "0px",
       "$type": "dimension"
@@ -170,7 +170,7 @@
       "$type": "dimension"
     }
   },
-  "agropush-radius": {
+  "grayfix-radius": {
     "none": {
       "$value": "0px",
       "$type": "dimension"
@@ -200,7 +200,7 @@
       "$type": "dimension"
     }
   },
-  "agropush-typography": {
+  "grayfix-typography": {
     "fontSize": {
       "xs": {
         "$value": "12px",
@@ -276,7 +276,7 @@
       }
     }
   },
-  "agropush-shadows": {
+  "grayfix-shadows": {
     "card": {
       "$value": {
         "color": "#0000004D",

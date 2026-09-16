@@ -5,8 +5,8 @@ const { like, eachLike, term, datetime } = MatchersV3;
 
 describe('Trades API Pact Consumer Tests', () => {
   const provider = new PactV3({
-    consumer: 'AgroPushFrontend',
-    provider: 'AgroPushBackend',
+    consumer: 'GrayfixFrontend',
+    provider: 'GrayfixBackend',
     dir: './tests/pact/pacts',
   });
 

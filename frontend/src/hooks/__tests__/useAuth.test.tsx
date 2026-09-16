@@ -99,8 +99,8 @@ const JWT_TOKEN =
       sub: WALLET_ADDRESS.toLowerCase(),
       walletAddress: WALLET_ADDRESS.toLowerCase(),
       jti: "test-jti-001",
-      iss: "agropush",
-      aud: "agropush-api",
+      iss: "grayfix",
+      aud: "grayfix-api",
       iat: Math.floor(Date.now() / 1000) - 60,
       nbf: Math.floor(Date.now() / 1000) - 60,
       exp: Math.floor(Date.now() / 1000) + 86400,
@@ -294,7 +294,7 @@ describe("authenticate — challenge-verify flow", () => {
       await result.current.authenticate();
     });
 
-    expect(sessionStorage.getItem("agropush_jwt")).toBe(JWT_TOKEN);
+    expect(sessionStorage.getItem("grayfix_jwt")).toBe(JWT_TOKEN);
   });
 
   it("sets error state when wallet is not connected", async () => {
@@ -411,7 +411,7 @@ describe("logout", () => {
 
     expect(result.current.isAuthenticated).toBe(false);
     expect(result.current.token).toBeNull();
-    expect(sessionStorage.getItem("agropush_jwt")).toBeNull();
+    expect(sessionStorage.getItem("grayfix_jwt")).toBeNull();
   });
 
   it("calls the logout API with the current token", async () => {
@@ -456,7 +456,7 @@ describe("logout", () => {
     // Token must be cleared client-side even if server returns an error
     expect(result.current.token).toBeNull();
     expect(result.current.isAuthenticated).toBe(false);
-    expect(sessionStorage.getItem("agropush_jwt")).toBeNull();
+    expect(sessionStorage.getItem("grayfix_jwt")).toBeNull();
   });
 });
 
@@ -466,7 +466,7 @@ describe("logout", () => {
 
 describe("Session restoration", () => {
   it("restores authentication from a valid stored JWT on mount", async () => {
-    sessionStorage.setItem("agropush_jwt", JWT_TOKEN);
+    sessionStorage.setItem("grayfix_jwt", JWT_TOKEN);
     mockWalletConnected();
 
     const { result } = renderHook(() => useAuth(), { wrapper });
@@ -491,7 +491,7 @@ describe("Session restoration", () => {
       ).replace(/=/g, "") +
       ".mock-signature";
 
-    sessionStorage.setItem("agropush_jwt", expiredToken);
+    sessionStorage.setItem("grayfix_jwt", expiredToken);
     mockWalletConnected();
 
     const { result } = renderHook(() => useAuth(), { wrapper });
@@ -514,7 +514,7 @@ describe("JWT refresh before expiry", () => {
   it("refreshes the token shortly before it expires and updates storage", async () => {
     const nearExpiryToken = makeToken(65); // inside the 60s refresh buffer window
     const refreshedToken = makeToken(86400);
-    sessionStorage.setItem("agropush_jwt", nearExpiryToken);
+    sessionStorage.setItem("grayfix_jwt", nearExpiryToken);
     mockWalletConnected();
     mockedRefresh.mockResolvedValue({ token: refreshedToken });
 
@@ -529,12 +529,12 @@ describe("JWT refresh before expiry", () => {
     await waitFor(() => expect(result.current.token).toBe(refreshedToken));
     expect(mockedRefresh).toHaveBeenCalledWith(nearExpiryToken);
     expect(result.current.isAuthenticated).toBe(true);
-    expect(sessionStorage.getItem("agropush_jwt")).toBe(refreshedToken);
+    expect(sessionStorage.getItem("grayfix_jwt")).toBe(refreshedToken);
   });
 
   it("logs the user out when refresh fails", async () => {
     const nearExpiryToken = makeToken(65);
-    sessionStorage.setItem("agropush_jwt", nearExpiryToken);
+    sessionStorage.setItem("grayfix_jwt", nearExpiryToken);
     mockWalletConnected();
     mockedRefresh.mockRejectedValue(
       new ApiError(401, "Token refresh failed")
@@ -550,6 +550,6 @@ describe("JWT refresh before expiry", () => {
     await waitFor(() => expect(result.current.isAuthenticated).toBe(false));
     expect(result.current.token).toBeNull();
     expect(result.current.error).toBe("Token refresh failed");
-    expect(sessionStorage.getItem("agropush_jwt")).toBeNull();
+    expect(sessionStorage.getItem("grayfix_jwt")).toBeNull();
   });
 });

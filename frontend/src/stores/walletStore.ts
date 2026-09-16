@@ -56,7 +56,7 @@ export const useWalletStore = create<WalletState>()(
       },
     }),
     {
-      name: 'agropush_wallet_store',
+      name: 'grayfix_wallet_store',
       storage: createJSONStorage(() => (typeof window !== 'undefined' ? window.localStorage : (null as unknown as Storage))),
       partialize: (state) => ({
         publicKey: state.publicKey,

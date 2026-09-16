@@ -140,7 +140,7 @@ export function SideNavBar({
             </svg>
           </span>
           {!collapsed && (
-            <span className="text-text-primary text-lg font-semibold">AgroPush</span>
+            <span className="text-text-primary text-lg font-semibold">Grayfix</span>
           )}
         </Link>
         {onClose && (

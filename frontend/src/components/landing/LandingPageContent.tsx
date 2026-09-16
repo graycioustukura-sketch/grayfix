@@ -166,10 +166,10 @@ export function LandingPageContent() {
       <section className="bg-bg-card px-6 py-20 lg:px-10">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center text-2xl font-bold md:text-3xl">
-            {t("landing.whyAgroPush")}
+            {t("landing.whyGrayfix")}
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-base text-text-secondary">
-            {t("landing.whyAgroPushSubtitle")}
+            {t("landing.whyGrayfixSubtitle")}
           </p>
 
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -212,7 +212,7 @@ export function LandingPageContent() {
       {/* ── Footer ───────────────────────────────────────────────────────── */}
       <footer className="border-t border-border-default px-6 py-8 lg:px-10">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 text-sm text-text-muted sm:flex-row">
-          <span>&copy; {new Date().getFullYear()} AgroPush. {t("landing.footer.copyright")}</span>
+          <span>&copy; {new Date().getFullYear()} Grayfix. {t("landing.footer.copyright")}</span>
           <nav aria-label="Footer navigation" className="flex gap-6">
             <Link href="/trades" className="hover:text-text-secondary transition-colors">
               {t("landing.footer.trades")}

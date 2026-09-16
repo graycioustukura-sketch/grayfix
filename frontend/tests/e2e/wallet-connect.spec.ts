@@ -17,7 +17,7 @@ function testJwt(walletAddress: string) {
 async function seedAuthenticatedWallet(page: Page, address = BUYER_ADDRESS) {
   await page.addInitScript(
     ({ token, addr }) => {
-      window.sessionStorage.setItem('agropush_jwt', token);
+      window.sessionStorage.setItem('grayfix_jwt', token);
       const freighter = {
         isConnected: async () => ({ isConnected: true }),
         isAllowed: async () => ({ isAllowed: true }),
@@ -80,7 +80,7 @@ test.describe('Wallet Connection Flow', () => {
     }
 
     await page.waitForTimeout(1000);
-    const hasToken = await page.evaluate(() => window.sessionStorage.getItem('agropush_jwt'));
+    const hasToken = await page.evaluate(() => window.sessionStorage.getItem('grayfix_jwt'));
     expect(hasToken).toBeTruthy();
   });
 

@@ -90,7 +90,7 @@ test.describe("Login flow", () => {
 
     await expect(async () => {
       const storedToken = await page.evaluate(() =>
-        window.sessionStorage.getItem("agropush_jwt"),
+        window.sessionStorage.getItem("grayfix_jwt"),
       );
       expect(storedToken).toBeTruthy();
     }).toPass({ timeout: 10_000 });
@@ -102,7 +102,7 @@ test.describe("Login flow", () => {
     await mockFreighter(page, WALLET_ADDRESS);
 
     await page.addInitScript(
-      ({ token }) => window.sessionStorage.setItem("agropush_jwt", token),
+      ({ token }) => window.sessionStorage.setItem("grayfix_jwt", token),
       { token: buildJwt(WALLET_ADDRESS) },
     );
 
@@ -119,7 +119,7 @@ test.describe("Login flow", () => {
     await mockAuthApi(page, WALLET_ADDRESS);
 
     await page.addInitScript(
-      ({ token }) => window.sessionStorage.setItem("agropush_jwt", token),
+      ({ token }) => window.sessionStorage.setItem("grayfix_jwt", token),
       { token: buildJwt(WALLET_ADDRESS) },
     );
 
@@ -132,7 +132,7 @@ test.describe("Login flow", () => {
 
       await expect(async () => {
         const storedToken = await page.evaluate(() =>
-          window.sessionStorage.getItem("agropush_jwt"),
+          window.sessionStorage.getItem("grayfix_jwt"),
         );
         expect(storedToken).toBeNull();
       }).toPass({ timeout: 10_000 });

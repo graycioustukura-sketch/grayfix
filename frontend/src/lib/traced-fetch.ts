@@ -73,10 +73,10 @@ export class TracedHttpClient {
     if (providedId) return providedId;
     
     // Try to get from session storage for cross-request correlation
-    let correlationId = sessionStorage.getItem('agropush-correlation-id');
+    let correlationId = sessionStorage.getItem('grayfix-correlation-id');
     if (!correlationId) {
       correlationId = this.generateUUID();
-      sessionStorage.setItem('agropush-correlation-id', correlationId);
+      sessionStorage.setItem('grayfix-correlation-id', correlationId);
     }
     return correlationId;
   }
@@ -340,7 +340,7 @@ export function initializeHttpClient(baseURL: string = 'http://localhost:4000'):
   
   // Set user agent for better debugging
   tracedHttpClient.setDefaultHeaders({
-    'User-Agent': `AgroPush-Frontend/${navigator.userAgent}`,
+    'User-Agent': `Grayfix-Frontend/${navigator.userAgent}`,
     'X-Client-Version': '1.0.0',
     'X-Client-Platform': navigator.platform,
   });
@@ -358,12 +358,12 @@ export function createCorrelationId(): string {
  * Utility to set correlation ID for the current session
  */
 export function setSessionCorrelationId(correlationId: string): void {
-  sessionStorage.setItem('agropush-correlation-id', correlationId);
+  sessionStorage.setItem('grayfix-correlation-id', correlationId);
 }
 
 /**
  * Utility to get current session correlation ID
  */
 export function getSessionCorrelationId(): string | null {
-  return sessionStorage.getItem('agropush-correlation-id');
+  return sessionStorage.getItem('grayfix-correlation-id');
 }

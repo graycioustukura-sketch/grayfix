@@ -14,7 +14,7 @@ export const useLocaleStore = create<LocaleState>()(
       setLocale: (locale) => set({ locale }),
     }),
     {
-      name: "agropush-locale",
+      name: "grayfix-locale",
     },
   ),
 );

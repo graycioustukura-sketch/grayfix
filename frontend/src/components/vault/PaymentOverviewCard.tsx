@@ -24,7 +24,7 @@ const LINE_ITEMS: CostLineItem[] = [
         : `${total.toLocaleString()} cNGN`,
   },
   {
-    label: "AgroPush Platform Fee (1%)",
+    label: "Grayfix Platform Fee (1%)",
     getValue: (total, currency, rate) => {
       const fee = parseFloat((total * 0.01).toFixed(2));
       return currency === "NGN"

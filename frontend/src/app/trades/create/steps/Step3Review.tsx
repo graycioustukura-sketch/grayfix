@@ -220,7 +220,7 @@ export default function Step3Review() {
 
       <div className="rounded-lg bg-gold-muted border border-gold/20 px-4 py-3 text-sm text-gold">
         By submitting, you authorize a Stellar transaction to create an escrow trade,
-        locking {amountUsdc} cNGN in the AgroPush escrow contract.
+        locking {amountUsdc} cNGN in the Grayfix escrow contract.
       </div>
 
       {error && (

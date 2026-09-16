@@ -22,7 +22,7 @@ describe("UI Store", () => {
     useUIStore.getState().toggleSidebar();
     useUIStore.getState().setCurrency("NGN");
 
-    const stored = localStorage.getItem("agropush-ui-storage");
+    const stored = localStorage.getItem("grayfix-ui-storage");
     expect(stored).toBeTruthy();
     if (stored) {
       const parsed = JSON.parse(stored);

@@ -2,7 +2,7 @@
 @config "../../tailwind.config.ts";
 
 :root {
-  /* AgroPush is a single dark-themed product (see design-tokens.json) —
+  /* Grayfix is a single dark-themed product (see design-tokens.json) —
      surface-0 / text-primary, not the Next.js light/dark scaffold default.
      Pages/components that don't set their own background fall through to
      this, so it must match the theme or they render as unstyled white. */

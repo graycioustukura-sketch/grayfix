@@ -17,7 +17,7 @@ const en = {
   "landing.headline": "Agricultural trade you can trust",
   "landing.headlineHighlight": "trust",
   "landing.subheadline":
-    "AgroPush is a blockchain-powered escrow platform for agricultural commodities. Lock funds, track delivery, resolve disputes — all with verifiable on-chain evidence.",
+    "Grayfix is a blockchain-powered escrow platform for agricultural commodities. Lock funds, track delivery, resolve disputes — all with verifiable on-chain evidence.",
   "landing.startTrade": "Start a trade",
   "landing.openDashboard": "Open dashboard",
   "landing.stats.tradesSettled": "Trades settled",
@@ -36,8 +36,8 @@ const en = {
   "landing.steps.verifyComplete.title": "Verify & complete",
   "landing.steps.verifyComplete.description":
     "Seller delivers goods. Buyer confirms receipt on-chain. Funds release instantly from escrow to seller.",
-  "landing.whyAgroPush": "Why AgroPush",
-  "landing.whyAgroPushSubtitle":
+  "landing.whyGrayfix": "Why Grayfix",
+  "landing.whyGrayfixSubtitle":
     "Purpose-built for agricultural supply chains where trust, evidence, and fair resolution matter most.",
   "landing.features.nonCustodial.title": "Non-custodial escrow",
   "landing.features.nonCustodial.description":
@@ -67,7 +67,7 @@ const en = {
   "dashboard.createTrade": "Create Trade",
   "dashboard.connectWallet.title": "Connect Wallet",
   "dashboard.connectWallet.description":
-    "Please connect your wallet to access your personalized AgroPush dashboard, track your trades, and manage your assets.",
+    "Please connect your wallet to access your personalized Grayfix dashboard, track your trades, and manage your assets.",
   "dashboard.stats.totalVolume": "Total Volume",
   "dashboard.stats.totalVolumeDesc": "Total historical trade volume",
   "dashboard.stats.activeTrades": "Active Trades",
@@ -93,7 +93,7 @@ const en = {
   "settings.title": "Settings",
   "settings.subtitle": "Manage your wallet, notifications, and application preferences.",
   "settings.wallet.title": "Wallet & Identity",
-  "settings.wallet.description": "Your Stellar wallet is your identity on AgroPush.",
+  "settings.wallet.description": "Your Stellar wallet is your identity on Grayfix.",
   "settings.wallet.address": "Wallet address",
   "settings.wallet.authenticated": "Authenticated",
   "settings.wallet.connected": "Connected",
@@ -140,7 +140,7 @@ const en = {
   "settings.security.title": "Security",
   "settings.security.description": "Information about how your session and keys are protected.",
   "settings.security.nonCustodial": "Non-custodial",
-  "settings.security.nonCustodialDesc": "AgroPush never holds your private keys. All signing happens in Freighter.",
+  "settings.security.nonCustodialDesc": "Grayfix never holds your private keys. All signing happens in Freighter.",
   "settings.security.sessionToken": "Session token",
   "settings.security.sessionTokenActive": "Active \u2014 stored in sessionStorage, cleared on tab close.",
   "settings.security.sessionTokenInactive": "No active session.",
@@ -181,7 +181,7 @@ const en = {
   "trust.loading": "Loading trust score\u2026",
   "trust.error": "Failed to load trust score",
   "trust.noData": "No trust score data available",
-  "trust.noDataDescription": "Start trading to build your trust score on the AgroPush platform.",
+  "trust.noDataDescription": "Start trading to build your trust score on the Grayfix platform.",
   "trust.outOf": "out of 100",
   "trust.lastUpdated": "Last updated",
   "trust.accountAge": "Account age",
@@ -220,13 +220,13 @@ const en = {
 
   // Reputation (existing page, enhanced)
   "reputation.title": "Reputation",
-  "reputation.subtitle": "Your trading reputation and trust metrics on the AgroPush platform",
+  "reputation.subtitle": "Your trading reputation and trust metrics on the Grayfix platform",
   "reputation.connectWallet": "Connect Wallet",
-  "reputation.connectWalletDescription": "Please connect your wallet to view your trust score and trading reputation on the AgroPush platform.",
+  "reputation.connectWalletDescription": "Please connect your wallet to view your trust score and trading reputation on the Grayfix platform.",
   "reputation.failedToLoad": "Failed to Load Reputation",
   "reputation.tryAgain": "Try Again",
   "reputation.noData": "No Reputation Data",
-  "reputation.noDataDescription": "Your reputation will be calculated once you start trading on the AgroPush platform.",
+  "reputation.noDataDescription": "Your reputation will be calculated once you start trading on the Grayfix platform.",
   "reputation.trustScore": "Trust Score",
   "reputation.totalTrades": "Total Trades",
   "reputation.completed": "Completed",

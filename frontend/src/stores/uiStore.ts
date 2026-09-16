@@ -28,7 +28,7 @@ export const useUIStore = create<UIState>()(
       resetDefaults: () => set(defaultState),
     }),
     {
-      name: "agropush-ui-storage",
+      name: "grayfix-ui-storage",
     },
   ),
 );

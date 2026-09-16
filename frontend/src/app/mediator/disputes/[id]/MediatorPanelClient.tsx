@@ -28,7 +28,7 @@ type ConfirmationModalState = {
 type VideoLoadState = "loading" | "ready" | "terminal-failure";
 
 const DEFAULT_MEDIATOR_ADDRESSES = ["GEXAMPLEMEDIATORPUBLICKEY1"];
-const TOKEN_STORAGE_KEY = "agropush_jwt";
+const TOKEN_STORAGE_KEY = "grayfix_jwt";
 
 const PINATA_GATEWAYS = [
   process.env.NEXT_PUBLIC_PINATA_GATEWAY_URL?.trim(),

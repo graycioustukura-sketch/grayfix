@@ -243,7 +243,7 @@ export default function SettingsPage() {
   const walletRecovery = walletError?.toLowerCase().includes("reject")
     ? "The request was rejected in your wallet. Retry and approve the connection prompt."
     : walletError?.toLowerCase().includes("network")
-      ? "Check that your wallet and AgroPush are using the same Stellar network."
+      ? "Check that your wallet and Grayfix are using the same Stellar network."
       : walletError
         ? "Unlock your wallet, confirm the browser permission, then retry."
         : null;
@@ -403,7 +403,7 @@ export default function SettingsPage() {
                   }
                   window.open(
                     "https://albedo.link",
-                    "agropush-albedo",
+                    "grayfix-albedo",
                     "popup,width=520,height=720",
                   );
                 }}
@@ -641,7 +641,7 @@ export default function SettingsPage() {
         <SectionCard title={t("settings.about.title")}>
           <dl className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
             {[
-              { label: t("settings.about.platform"), value: "AgroPush" },
+              { label: t("settings.about.platform"), value: "Grayfix" },
               { label: t("settings.about.version"), value: "V4.8.2" },
               {
                 label: t("settings.about.network"),

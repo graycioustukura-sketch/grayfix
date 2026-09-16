@@ -15,7 +15,7 @@ const fr: Record<string, string> = {
   "landing.headline": "Commerce agricole en qui vous pouvez avoir confiance",
   "landing.headlineHighlight": "confiance",
   "landing.subheadline":
-    "AgroPush est une plateforme d\u2019escrow bas\u2019e sur la blockchain pour les produits agricoles. Bloquez les fonds, suivez la livraison, r\u00e9solvez les litiges \u2014 tout avec des preuves v\u00e9rifiables sur la cha\u00eene.",
+    "Grayfix est une plateforme d\u2019escrow bas\u2019e sur la blockchain pour les produits agricoles. Bloquez les fonds, suivez la livraison, r\u00e9solvez les litiges \u2014 tout avec des preuves v\u00e9rifiables sur la cha\u00eene.",
   "landing.startTrade": "Commencer un \u00e9change",
   "landing.openDashboard": "Ouvrir le tableau de bord",
   "landing.stats.tradesSettled": "\u00c9changes r\u00e9gl\u00e9s",
@@ -34,8 +34,8 @@ const fr: Record<string, string> = {
   "landing.steps.verifyComplete.title": "V\u00e9rifier et compl\u00e9ter",
   "landing.steps.verifyComplete.description":
     "Le vendeur livre les marchandises. L\u2019acheteur confirme la r\u00e9ception sur la cha\u00eene. Les fonds sont lib\u00e9r\u00e9s instantan\u00e9ment de l\u2019escrow au vendeur.",
-  "landing.whyAgroPush": "Pourquoi AgroPush",
-  "landing.whyAgroPushSubtitle":
+  "landing.whyGrayfix": "Pourquoi Grayfix",
+  "landing.whyGrayfixSubtitle":
     "Con\u00e7u pour les cha\u00eenes d\u2019approvisionnement agricoles o\u00f9 la confiance, les preuves et une r\u00e9solution \u00e9quitable sont essentielles.",
   "landing.features.nonCustodial.title": "Escrow non d\u00e9positaire",
   "landing.features.nonCustodial.description":
@@ -65,7 +65,7 @@ const fr: Record<string, string> = {
   "dashboard.createTrade": "Cr\u00e9er un \u00e9change",
   "dashboard.connectWallet.title": "Connecter le portefeuille",
   "dashboard.connectWallet.description":
-    "Veuillez connecter votre portefeuille pour acc\u00e9der \u00e0 votre tableau de bord AgroPush personnalis\u00e9, suivre vos \u00e9changes et g\u00e9rer vos actifs.",
+    "Veuillez connecter votre portefeuille pour acc\u00e9der \u00e0 votre tableau de bord Grayfix personnalis\u00e9, suivre vos \u00e9changes et g\u00e9rer vos actifs.",
   "dashboard.stats.totalVolume": "Volume total",
   "dashboard.stats.totalVolumeDesc": "Volume commercial historique total",
   "dashboard.stats.activeTrades": "\u00c9changes actifs",
@@ -91,7 +91,7 @@ const fr: Record<string, string> = {
   "settings.title": "Param\u00e8tres",
   "settings.subtitle": "G\u00e9rez votre portefeuille, vos notifications et vos pr\u00e9f\u00e9rences.",
   "settings.wallet.title": "Portefeuille et identit\u00e9",
-  "settings.wallet.description": "Votre portefeuille Stellar est votre identit\u00e9 sur AgroPush.",
+  "settings.wallet.description": "Votre portefeuille Stellar est votre identit\u00e9 sur Grayfix.",
   "settings.wallet.address": "Adresse du portefeuille",
   "settings.wallet.authenticated": "Authentifi\u00e9",
   "settings.wallet.connected": "Connect\u00e9",
@@ -138,7 +138,7 @@ const fr: Record<string, string> = {
   "settings.security.title": "S\u00e9curit\u00e9",
   "settings.security.description": "Informations sur la protection de votre session et de vos cl\u00e9s.",
   "settings.security.nonCustodial": "Non d\u00e9positaire",
-  "settings.security.nonCustodialDesc": "AgroPush ne d\u00e9tient jamais vos cl\u00e9s priv\u00e9es. Toute signature se fait dans Freighter.",
+  "settings.security.nonCustodialDesc": "Grayfix ne d\u00e9tient jamais vos cl\u00e9s priv\u00e9es. Toute signature se fait dans Freighter.",
   "settings.security.sessionToken": "Jeton de session",
   "settings.security.sessionTokenActive": "Actif \u2014 stock\u00e9 dans sessionStorage, effac\u00e9 \u00e0 la fermeture de l\u2019onglet.",
   "settings.security.sessionTokenInactive": "Aucune session active.",
@@ -179,7 +179,7 @@ const fr: Record<string, string> = {
   "trust.loading": "Chargement du score de confiance\u2026",
   "trust.error": "\u00c9chec du chargement du score de confiance",
   "trust.noData": "Aucune donn\u00e9e de score de confiance disponible",
-  "trust.noDataDescription": "Commencez \u00e0 \u00e9changer pour construire votre score de confiance sur la plateforme AgroPush.",
+  "trust.noDataDescription": "Commencez \u00e0 \u00e9changer pour construire votre score de confiance sur la plateforme Grayfix.",
   "trust.outOf": "sur 100",
   "trust.lastUpdated": "Derni\u00e8re mise \u00e0 jour",
   "trust.accountAge": "\u00c2ge du compte",
@@ -218,13 +218,13 @@ const fr: Record<string, string> = {
 
   // Reputation (existing page, enhanced)
   "reputation.title": "R\u00e9putation",
-  "reputation.subtitle": "Votre r\u00e9putation commerciale et m\u00e9triques de confiance sur la plateforme AgroPush",
+  "reputation.subtitle": "Votre r\u00e9putation commerciale et m\u00e9triques de confiance sur la plateforme Grayfix",
   "reputation.connectWallet": "Connecter le portefeuille",
-  "reputation.connectWalletDescription": "Veuillez connecter votre portefeuille pour voir votre score de confiance et votre r\u00e9putation commerciale sur la plateforme AgroPush.",
+  "reputation.connectWalletDescription": "Veuillez connecter votre portefeuille pour voir votre score de confiance et votre r\u00e9putation commerciale sur la plateforme Grayfix.",
   "reputation.failedToLoad": "\u00c9chec du chargement de la r\u00e9putation",
   "reputation.tryAgain": "R\u00e9essayer",
   "reputation.noData": "Aucune donn\u00e9e de r\u00e9putation",
-  "reputation.noDataDescription": "Votre r\u00e9putation sera calcul\u00e9e d\u00e8s que vous commencerez \u00e0 \u00e9changer sur la plateforme AgroPush.",
+  "reputation.noDataDescription": "Votre r\u00e9putation sera calcul\u00e9e d\u00e8s que vous commencerez \u00e0 \u00e9changer sur la plateforme Grayfix.",
   "reputation.trustScore": "Score de confiance",
   "reputation.totalTrades": "Total des \u00e9changes",
   "reputation.completed": "Compl\u00e9t\u00e9s",

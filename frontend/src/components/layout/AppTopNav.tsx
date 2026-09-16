@@ -36,7 +36,7 @@ export function AppTopNav() {
 
       {/* Logo */}
       <Link href="/" className="text-gold font-bold text-lg tracking-tight flex-shrink-0">
-        AgroPush
+        Grayfix
       </Link>
 
       {/* Right side */}

@@ -19,7 +19,7 @@ import {
 import { api, ApiError } from "@/lib/api";
 import { trackAuthEvent } from "@/lib/analytics";
 
-const TOKEN_STORAGE_KEY = "agropush_jwt";
+const TOKEN_STORAGE_KEY = "grayfix_jwt";
 
 interface AuthState {
   address: string | null;

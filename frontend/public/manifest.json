@@ -1,6 +1,6 @@
 {
-  "name": "AgroPush — Secure Agricultural Escrow",
-  "short_name": "AgroPush",
+  "name": "Grayfix — Secure Agricultural Escrow",
+  "short_name": "Grayfix",
   "description": "Blockchain-powered agricultural trade settlement with escrow-backed protection",
   "start_url": "/",
   "display": "standalone",

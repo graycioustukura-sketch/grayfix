@@ -27,7 +27,7 @@ export class ApiError extends Error {
   }
 }
 
-const TOKEN_STORAGE_KEY = "agropush_jwt";
+const TOKEN_STORAGE_KEY = "grayfix_jwt";
 export const DEFAULT_REQUEST_TIMEOUT_MS = 30_000;
 
 function getStoredToken(): string | null {

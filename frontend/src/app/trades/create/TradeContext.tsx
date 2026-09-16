@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 
-const STORAGE_KEY = "agropush-trade-draft";
+const STORAGE_KEY = "grayfix-trade-draft";
 
 export type TradeData = {
   // Step 1

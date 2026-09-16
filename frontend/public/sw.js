@@ -1,10 +1,10 @@
-const CACHE_NAME = "agropush-cache-v1";
+const CACHE_NAME = "grayfix-cache-v1";
 const STATIC_ASSETS = [
   "/",
   "/manifest.json",
 ];
 
-const API_CACHE_NAME = "agropush-api-cache-v1";
+const API_CACHE_NAME = "grayfix-api-cache-v1";
 const API_CACHE_TTL_MS = 5 * 60 * 1000;
 
 self.addEventListener("install", (event) => {
@@ -75,7 +75,7 @@ async function networkFirstWithCache(request: Request): Promise<Response> {
       cache.put(request, new Response(body, {
         headers: {
           ...Object.fromEntries(cloned.headers.entries()),
-          "x-agropush-cache-time": String(Date.now()),
+          "x-grayfix-cache-time": String(Date.now()),
         },
       }));
     }
@@ -83,7 +83,7 @@ async function networkFirstWithCache(request: Request): Promise<Response> {
   } catch {
     const cached = await caches.match(request);
     if (cached) {
-      const cacheTime = cached.headers.get("x-agropush-cache-time");
+      const cacheTime = cached.headers.get("x-grayfix-cache-time");
       if (cacheTime && Date.now() - parseInt(cacheTime) < API_CACHE_TTL_MS) {
         return cached;
       }

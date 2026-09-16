@@ -32,7 +32,7 @@ describe("API Client", () => {
     });
 
     it("should auto-inject auth token from storage", async () => {
-      sessionStorage.setItem("agropush_jwt", "test-token");
+      sessionStorage.setItem("grayfix_jwt", "test-token");
       global.fetch = jest.fn(() =>
         Promise.resolve({
           ok: true,
@@ -45,7 +45,7 @@ describe("API Client", () => {
     });
 
     it("should handle 401 and trigger disconnect", async () => {
-      sessionStorage.setItem("agropush_jwt", "test-token");
+      sessionStorage.setItem("grayfix_jwt", "test-token");
       global.fetch = jest.fn(() =>
         Promise.resolve({
           ok: false,
@@ -149,7 +149,7 @@ describe("API Client", () => {
     });
 
     it("should handle 401 refresh flow", async () => {
-      sessionStorage.setItem("agropush_jwt", "test-token");
+      sessionStorage.setItem("grayfix_jwt", "test-token");
       global.fetch = jest.fn(() =>
         Promise.resolve({
           ok: false,
@@ -165,7 +165,7 @@ describe("API Client", () => {
       if (!result.success) {
         expect(result.error.status).toBe(401);
       }
-      expect(sessionStorage.getItem("agropush_jwt")).toBeNull();
+      expect(sessionStorage.getItem("grayfix_jwt")).toBeNull();
       expect(reloadSpy).toHaveBeenCalled();
     });
 
