@@ -228,7 +228,7 @@ export function DisputeVerificationModal({
               {/* Step: Confirm Accept */}
               {step === "confirm-accept" && (
                 <div className="flex flex-col gap-5">
-                  <div className="bg-accent-primary-muted border border-[rgba(212,168,83,0.3)] rounded-xl p-4 text-sm text-text-primary">
+                  <div className="bg-accent-primary-muted border border-[rgba(124,111,239,0.3)] rounded-xl p-4 text-sm text-text-primary">
                     <p className="font-semibold mb-1 text-accent-primary">
                       Confirm Goods Acceptance
                     </p>

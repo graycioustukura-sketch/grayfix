@@ -55,7 +55,7 @@ export function RepScoreRing({
           cy={center}
           r={radius}
           fill="none"
-          stroke="rgba(139,168,154,0.2)"
+          stroke="rgba(154,163,178,0.2)"
           strokeWidth={strokeWidth}
         />
 
