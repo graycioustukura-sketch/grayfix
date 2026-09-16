@@ -3,46 +3,46 @@
     "colors": {
       "bg": {
         "primary": {
-          "value": "#0B1A14",
+          "value": "#0A0C10",
           "type": "color",
-          "description": "Dark forest — main app background"
+          "description": "Deep graphite — main app background"
         },
         "card": {
-          "value": "#122A1F",
+          "value": "#13161C",
           "type": "color",
           "description": "Card / panel surfaces"
         },
         "elevated": {
-          "value": "#1A3D2C",
+          "value": "#1D212B",
           "type": "color",
           "description": "Hover states, elevated panels"
         },
         "input": {
-          "value": "#0F2219",
+          "value": "#0E1117",
           "type": "color",
           "description": "Input field backgrounds"
         },
         "overlay": {
-          "value": "rgba(11, 26, 20, 0.85)",
+          "value": "rgba(10, 12, 16, 0.85)",
           "type": "color",
           "description": "Modal/dialog backdrop overlay"
         }
       },
       "accent": {
-        "gold": {
-          "value": "#D4A853",
+        "primary": {
+          "value": "#7C6FEF",
           "type": "color",
           "description": "Primary CTA, locked funds, highlights"
         },
-        "gold-hover": {
-          "value": "#E0BA6A",
+        "primary-hover": {
+          "value": "#9184F5",
           "type": "color",
-          "description": "Gold hover state"
+          "description": "Primary accent hover state"
         },
-        "gold-muted": {
-          "value": "rgba(212, 168, 83, 0.15)",
+        "primary-muted": {
+          "value": "rgba(124, 111, 239, 0.15)",
           "type": "color",
-          "description": "Gold tinted backgrounds"
+          "description": "Primary accent tinted backgrounds"
         },
         "emerald": {
           "value": "#34D399",
@@ -62,24 +62,24 @@
       },
       "text": {
         "primary": {
-          "value": "#F0F5F1",
+          "value": "#F5F6F8",
           "type": "color",
           "description": "Headings, prominent text"
         },
         "secondary": {
-          "value": "#8BA89A",
+          "value": "#9AA3B2",
           "type": "color",
           "description": "Body text, labels, descriptions"
         },
         "muted": {
-          "value": "#5A7A6A",
+          "value": "#626B7A",
           "type": "color",
           "description": "Placeholder text, disabled states"
         },
         "inverse": {
-          "value": "#0B1A14",
+          "value": "#0A0C10",
           "type": "color",
-          "description": "Text on gold/light buttons"
+          "description": "Text on accent/light buttons"
         }
       },
       "status": {
@@ -104,7 +104,7 @@
           "description": "Informational, tips"
         },
         "locked": {
-          "value": "#D4A853",
+          "value": "#7C6FEF",
           "type": "color",
           "description": "Funds locked in escrow"
         },
@@ -116,34 +116,34 @@
       },
       "border": {
         "default": {
-          "value": "rgba(139, 168, 154, 0.2)",
+          "value": "rgba(154, 163, 178, 0.2)",
           "type": "color",
           "description": "Default card/input borders"
         },
         "hover": {
-          "value": "rgba(139, 168, 154, 0.4)",
+          "value": "rgba(154, 163, 178, 0.4)",
           "type": "color",
           "description": "Hover state borders"
         },
         "focus": {
-          "value": "rgba(212, 168, 83, 0.6)",
+          "value": "rgba(124, 111, 239, 0.6)",
           "type": "color",
           "description": "Focused input borders"
         }
       },
       "gradient": {
         "hero": {
-          "value": "linear-gradient(135deg, #0B1A14 0%, #122A1F 50%, #1A3D2C 100%)",
+          "value": "linear-gradient(135deg, #0A0C10 0%, #13161C 50%, #1D212B 100%)",
           "type": "color",
           "description": "Hero section background gradient"
         },
-        "gold-cta": {
-          "value": "linear-gradient(135deg, #D4A853 0%, #E0BA6A 100%)",
+        "accent-cta": {
+          "value": "linear-gradient(135deg, #7C6FEF 0%, #9184F5 100%)",
           "type": "color",
           "description": "Primary CTA button gradient"
         },
         "card-glow": {
-          "value": "linear-gradient(135deg, rgba(52,211,153,0.05) 0%, rgba(212,168,83,0.05) 100%)",
+          "value": "linear-gradient(135deg, rgba(52,211,153,0.05) 0%, rgba(124,111,239,0.05) 100%)",
           "type": "color",
           "description": "Subtle card glow effect"
         }
@@ -228,10 +228,10 @@
         "type": "boxShadow",
         "description": "Hovered card shadow"
       },
-      "glow-gold": {
-        "value": "0 0 20px rgba(212, 168, 83, 0.2)",
+      "glow-accent": {
+        "value": "0 0 20px rgba(124, 111, 239, 0.2)",
         "type": "boxShadow",
-        "description": "Gold glow for CTAs"
+        "description": "Accent glow for CTAs"
       },
       "glow-emerald": {
         "value": "0 0 20px rgba(52, 211, 153, 0.15)",
