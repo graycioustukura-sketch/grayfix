@@ -2,36 +2,36 @@
   "grayfix-colors": {
     "bg": {
       "primary": {
-        "$value": "#0B1A14",
+        "$value": "#0A0C10",
         "$type": "color",
-        "$description": "Dark forest — main app background"
+        "$description": "Deep graphite — main app background"
       },
       "card": {
-        "$value": "#122A1F",
+        "$value": "#13161C",
         "$type": "color",
         "$description": "Card / panel surfaces"
       },
       "elevated": {
-        "$value": "#1A3D2C",
+        "$value": "#1D212B",
         "$type": "color",
         "$description": "Hover states, elevated panels"
       },
       "input": {
-        "$value": "#0F2219",
+        "$value": "#0E1117",
         "$type": "color",
         "$description": "Input field backgrounds"
       }
     },
     "accent": {
-      "gold": {
-        "$value": "#D4A853",
+      "primary": {
+        "$value": "#7C6FEF",
         "$type": "color",
         "$description": "Primary CTA, locked funds, highlights"
       },
-      "gold-hover": {
-        "$value": "#E0BA6A",
+      "primary-hover": {
+        "$value": "#9184F5",
         "$type": "color",
-        "$description": "Gold hover state"
+        "$description": "Primary accent hover state"
       },
       "emerald": {
         "$value": "#34D399",
@@ -46,24 +46,24 @@
     },
     "text": {
       "primary": {
-        "$value": "#F0F5F1",
+        "$value": "#F5F6F8",
         "$type": "color",
         "$description": "Headings, prominent text"
       },
       "secondary": {
-        "$value": "#8BA89A",
+        "$value": "#9AA3B2",
         "$type": "color",
         "$description": "Body text, labels"
       },
       "muted": {
-        "$value": "#5A7A6A",
+        "$value": "#626B7A",
         "$type": "color",
         "$description": "Placeholder, disabled"
       },
       "inverse": {
-        "$value": "#0B1A14",
+        "$value": "#0A0C10",
         "$type": "color",
-        "$description": "Text on gold buttons"
+        "$description": "Text on accent buttons"
       }
     },
     "status": {
@@ -88,7 +88,7 @@
         "$description": "Informational"
       },
       "locked": {
-        "$value": "#D4A853",
+        "$value": "#7C6FEF",
         "$type": "color",
         "$description": "Funds locked in escrow"
       },
@@ -100,17 +100,17 @@
     },
     "border": {
       "default": {
-        "$value": "#2A4A3A",
+        "$value": "#272A30",
         "$type": "color",
         "$description": "Default borders"
       },
       "hover": {
-        "$value": "#3A6A5A",
+        "$value": "#444851",
         "$type": "color",
         "$description": "Hover borders"
       },
       "focus": {
-        "$value": "#D4A853",
+        "$value": "#7C6FEF",
         "$type": "color",
         "$description": "Focus borders"
       }
@@ -297,9 +297,9 @@
       },
       "$type": "shadow"
     },
-    "glow-gold": {
+    "glow-accent": {
       "$value": {
-        "color": "#D4A85333",
+        "color": "#7C6FEF33",
         "offsetX": "0px",
         "offsetY": "0px",
         "blur": "20px",
