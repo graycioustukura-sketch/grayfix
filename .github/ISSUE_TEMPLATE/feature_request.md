@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest an idea, enhancement, or new feature for AgroPush
+about: Suggest an idea, enhancement, or new feature for Grayfix
 title: '[FEAT] '
 labels: enhancement
 assignees: ''

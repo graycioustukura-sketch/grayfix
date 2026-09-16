@@ -1,7 +1,7 @@
-# .gitleaks.toml — Gitleaks configuration for the AgroPush repository
+# .gitleaks.toml — Gitleaks configuration for the Grayfix repository
 # Docs: https://github.com/gitleaks/gitleaks
 
-title = "AgroPush Gitleaks Config"
+title = "Grayfix Gitleaks Config"
 
 [extend]
 # Extend the default built-in ruleset
@@ -53,8 +53,8 @@ regexes = [
 # ── Custom rules ──────────────────────────────────────────────────────────────
 
 [[rules]]
-id          = "agropush-jwt-secret"
-description = "AgroPush JWT_SECRET assigned a real value"
+id          = "grayfix-jwt-secret"
+description = "Grayfix JWT_SECRET assigned a real value"
 # Go's RE2 engine (used by gitleaks) does not support lookaheads, so
 # placeholder values are excluded via this rule's own allowlist below
 # instead of a `(?!...)` negative lookahead in the match regex itself.

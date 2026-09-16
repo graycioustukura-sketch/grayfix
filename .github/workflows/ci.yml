@@ -178,7 +178,7 @@ jobs:
       - name: Deployment safety checks
         if: steps.gate.outputs.run == 'true' && matrix.stack == 'contracts'
         run: ../../scripts/check-contract-deployment-safety.sh
-        working-directory: contracts/agropush_escrow
+        working-directory: contracts/grayfix_escrow
 
       - name: Cargo security audit
         if: steps.gate.outputs.run == 'true' && matrix.stack == 'contracts'
@@ -187,18 +187,18 @@ jobs:
 
       - name: Contracts test
         if: steps.gate.outputs.run == 'true' && matrix.stack == 'contracts'
-        working-directory: contracts/agropush_escrow
+        working-directory: contracts/grayfix_escrow
         run: cargo test --locked
 
       - name: Build WASM artifact
         if: steps.gate.outputs.run == 'true' && matrix.stack == 'contracts'
-        working-directory: contracts/agropush_escrow
+        working-directory: contracts/grayfix_escrow
         run: cargo build --target wasm32-unknown-unknown --features wasm --release
 
       - name: Verify WASM ABI hash
         if: steps.gate.outputs.run == 'true' && matrix.stack == 'contracts'
         run: |
-          WASM_FILE="contracts/agropush_escrow/target/wasm32-unknown-unknown/release/agropush_escrow.wasm"
+          WASM_FILE="contracts/grayfix_escrow/target/wasm32-unknown-unknown/release/grayfix_escrow.wasm"
           if [ -f "$WASM_FILE" ]; then
             WASM_HASH=$(sha256sum "$WASM_FILE" | cut -d' ' -f1)
             echo "WASM ABI hash: $WASM_HASH"
@@ -219,7 +219,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.stack }}-artifact
-          path: ${{ matrix.stack == 'frontend' && 'frontend/coverage/' || matrix.stack == 'backend' && 'backend/coverage/' || matrix.stack == 'mobile' && 'mobile/ci-artifacts/' || matrix.stack == 'contracts' && 'contracts/agropush_escrow/target/wasm32-unknown-unknown/release/agropush_escrow.wasm' }}
+          path: ${{ matrix.stack == 'frontend' && 'frontend/coverage/' || matrix.stack == 'backend' && 'backend/coverage/' || matrix.stack == 'mobile' && 'mobile/ci-artifacts/' || matrix.stack == 'contracts' && 'contracts/grayfix_escrow/target/wasm32-unknown-unknown/release/grayfix_escrow.wasm' }}
           retention-days: 7
 
   # Issue #998: container image vulnerability scanning. This repo does not
@@ -321,7 +321,7 @@ jobs:
       - name: Publish pact artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: agropush-pacts
+          name: grayfix-pacts
           path: frontend/tests/pact/pacts/*.json
           if-no-files-found: error
           retention-days: 14

@@ -1,6 +1,6 @@
-# Contributing to AgroPush
+# Contributing to Grayfix
 
-First off, thank you for considering contributing to AgroPush! It's contributions like yours that make AgroPush a secure, reliable, and performant financial escrow ecosystem.
+First off, thank you for considering contributing to Grayfix! It's contributions like yours that make Grayfix a secure, reliable, and performant financial escrow ecosystem.
 
 Please review the guidelines below before opening a pull request or submitting an issue.
 
@@ -30,8 +30,8 @@ This project follows the [Contributor Covenant Code of Conduct](./CODE_OF_CONDUC
 ### Repository Setup
 1. Fork the repository on GitHub and clone your fork:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/AgroPush.git
-   cd AgroPush
+   git clone https://github.com/YOUR-USERNAME/Grayfix.git
+   cd Grayfix
    ```
 2. Install root and workspace dependencies:
    ```bash
