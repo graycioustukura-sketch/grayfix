@@ -28,7 +28,7 @@ function ScreenFallback() {
 
 // Deep linking configuration
 const linking: LinkingOptions<RootStackParamList> = {
-  prefixes: ['agropushvault://', 'https://agropushvault.app'],
+  prefixes: ['grayfixvault://', 'https://grayfixvault.app'],
   config: {
     screens: {
       TradeDetail: 'trades/:id',

@@ -73,7 +73,7 @@ describe('Offline Service', () => {
 
   beforeEach(async () => {
     jest.clearAllMocks();
-    mockDb = await SQLite.openDatabaseAsync('agropush_offline.db');
+    mockDb = await SQLite.openDatabaseAsync('grayfix_offline.db');
   });
 
   describe('SecureStore operations', () => {

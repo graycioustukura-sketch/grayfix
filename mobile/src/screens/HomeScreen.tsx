@@ -24,14 +24,14 @@ export default function HomeScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>AgroPush Mobile</Text>
+        <Text style={styles.title}>Grayfix Mobile</Text>
         <Text style={styles.subtitle}>Trust as a Service for Agricultural Products</Text>
       </View>
 
       <View style={styles.content}>
         <Text style={styles.sectionTitle}>Getting Started</Text>
         <Text style={styles.text}>
-          This is your AgroPush mobile application. Connect your Stellar wallet to begin trading securely.
+          This is your Grayfix mobile application. Connect your Stellar wallet to begin trading securely.
         </Text>
       </View>
     </ScrollView>

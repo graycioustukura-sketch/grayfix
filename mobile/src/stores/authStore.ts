@@ -17,7 +17,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   isLoading: true,
 
   setToken: async (token: string) => {
-    await SecureStore.setItemAsync('agropush_token', token);
+    await SecureStore.setItemAsync('grayfix_token', token);
     set({ token });
   },
 
@@ -27,7 +27,7 @@ export const useAuthStore = create<AuthState>((set) => ({
 
   getToken: async () => {
     try {
-      const token = await SecureStore.getItemAsync('agropush_token');
+      const token = await SecureStore.getItemAsync('grayfix_token');
       set({ token });
       return token;
     } catch (error) {
@@ -37,7 +37,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   },
 
   clearAuth: async () => {
-    await SecureStore.deleteItemAsync('agropush_token');
+    await SecureStore.deleteItemAsync('grayfix_token');
     set({ token: null, walletAddress: null });
   },
 }));

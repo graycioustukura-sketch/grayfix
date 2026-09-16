@@ -2,10 +2,10 @@ import { ExpoConfig, getDefaultConfig } from 'expo/config';
 
 const config: ExpoConfig = {
   ...getDefaultConfig(__dirname),
-  name: 'AgroPush',
-  slug: 'agropush-mobile',
+  name: 'Grayfix',
+  slug: 'grayfix-mobile',
   version: '0.1.0',
-  scheme: 'agropush',
+  scheme: 'grayfix',
   orientation: 'portrait',
   icon: './assets/icon.png',
   userInterfaceStyle: 'light',
@@ -13,10 +13,10 @@ const config: ExpoConfig = {
   entryPoint: './src/index.tsx',
   ios: {
     supportsTabletMode: true,
-    bundleIdentifier: 'com.agropush.mobile',
+    bundleIdentifier: 'com.grayfix.mobile',
   },
   android: {
-    package: 'com.agropush.mobile',
+    package: 'com.grayfix.mobile',
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon.png',
       backgroundColor: '#ffffff',

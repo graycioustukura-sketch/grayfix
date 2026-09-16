@@ -57,7 +57,7 @@ export default function WalletConnectScreen({ navigation }: Props) {
     <View style={styles.container}>
       <View style={styles.hero}>
         <Text style={styles.logo}>🌾</Text>
-        <Text style={styles.title}>AgroPush</Text>
+        <Text style={styles.title}>Grayfix</Text>
         <Text style={styles.subtitle}>Trust as a Service{'\n'}for Agricultural Products</Text>
       </View>
 
