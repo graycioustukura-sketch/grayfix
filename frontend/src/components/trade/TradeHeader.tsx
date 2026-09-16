@@ -39,7 +39,7 @@ export function TradeHeader({ trade }: TradeHeaderProps) {
       {/* Title row */}
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gold leading-tight">
+          <h1 className="text-3xl font-bold text-accent-primary leading-tight">
             {trade.quantity} {trade.commodity}
           </h1>
           <div className="flex flex-wrap items-center gap-3 mt-3">
@@ -67,7 +67,7 @@ export function TradeHeader({ trade }: TradeHeaderProps) {
             </span>
 
             {/* Commodity category tag */}
-            <span className="px-2.5 py-0.5 rounded-md bg-gold-muted text-gold text-xs font-medium border border-gold/20">
+            <span className="px-2.5 py-0.5 rounded-md bg-accent-primary-muted text-accent-primary text-xs font-medium border border-accent-primary/20">
               {trade.category}
             </span>
           </div>
@@ -79,7 +79,7 @@ export function TradeHeader({ trade }: TradeHeaderProps) {
             <FileText className="w-4 h-4" />
             View Contract
           </button>
-          <button className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-gold-cta text-text-inverse text-sm font-semibold hover:shadow-glow-gold transition-all">
+          <button className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-accent-cta text-text-inverse text-sm font-semibold hover:shadow-glow-accent transition-all">
             <svg
               className="w-4 h-4"
               viewBox="0 0 16 16"

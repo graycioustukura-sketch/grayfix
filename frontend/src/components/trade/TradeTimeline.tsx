@@ -46,7 +46,7 @@ export function TradeTimeline({ events }: TradeTimelineProps) {
   return (
     <div className="bg-card rounded-xl border border-border-default p-6 shadow-card">
       <div className="flex items-center gap-2 mb-5">
-        <svg className="w-4 h-4 text-gold" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <svg className="w-4 h-4 text-accent-primary" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
           <path d="M2 4l6-2 6 2v7l-6 2-6-2V4z" />
           <path d="M8 2v12M2 4l6 2 6-2" />
         </svg>

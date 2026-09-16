@@ -108,7 +108,7 @@ export function ContractInfo({ trade }: ContractInfoProps) {
           className="h-28 flex items-end p-3"
           style={{
             background:
-              "linear-gradient(135deg, #122A1F 0%, #0B2417 40%, #0D3022 100%)",
+              "linear-gradient(135deg, #13161C 0%, #0C0E13 40%, #161A24 100%)",
           }}
         >
           {/* Decorative world outline */}
@@ -127,13 +127,13 @@ export function ContractInfo({ trade }: ContractInfoProps) {
 
           {/* Destination pin */}
           <div className="absolute top-3 right-4">
-            <div className="w-6 h-6 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+            <div className="w-6 h-6 rounded-full bg-accent-primary/20 border border-accent-primary/40 flex items-center justify-center">
+              <div className="w-2 h-2 rounded-full bg-accent-primary animate-pulse" />
             </div>
           </div>
 
           <div className="relative z-10">
-            <p className="text-xs font-semibold tracking-widest text-gold mb-0.5">
+            <p className="text-xs font-semibold tracking-widest text-accent-primary mb-0.5">
               DESTINATION
             </p>
             <p className="text-sm font-bold text-text-primary">

@@ -26,7 +26,7 @@ export function TransactionTimeline({
     <div className="bg-card rounded-xl border border-border-default p-6 shadow-card flex flex-col flex-1">
       <div className="flex items-center gap-2 mb-5">
         <svg
-          className="w-4 h-4 text-gold"
+          className="w-4 h-4 text-accent-primary"
           viewBox="0 0 16 16"
           fill="none"
           stroke="currentColor"

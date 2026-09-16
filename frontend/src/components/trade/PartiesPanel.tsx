@@ -63,7 +63,7 @@ function PartyCard({
                 key={i}
                 className={`w-3 h-3 ${
                   i < Math.round(party.trustScore / 20)
-                    ? "text-gold fill-gold"
+                    ? "text-accent-primary fill-accent-primary"
                     : "text-text-muted"
                 }`}
               />

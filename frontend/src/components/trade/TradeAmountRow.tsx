@@ -43,7 +43,7 @@ export function TradeAmountRow({
         <div className="flex items-end gap-2 flex-wrap">
           <p
             className={`font-mono text-3xl font-bold ${
-              highlighted ? "text-gold" : "text-text-primary"
+              highlighted ? "text-accent-primary" : "text-text-primary"
             }`}
           >
             {formatValue(amountUsdc)}

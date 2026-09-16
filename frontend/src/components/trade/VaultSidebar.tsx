@@ -13,7 +13,7 @@ export function VaultSidebar({ trade }: VaultSidebarProps) {
       <p className="text-xs font-semibold tracking-widest text-text-muted mb-1 uppercase">
         Vault Amount Locked
       </p>
-      <p className="text-4xl font-bold text-gold mb-4">
+      <p className="text-4xl font-bold text-accent-primary mb-4">
         {trade.vaultAmountLocked.toLocaleString()}{" "}
         <span className="text-xl font-semibold text-text-secondary">cNGN</span>
       </p>
@@ -85,7 +85,7 @@ export function VaultSidebar({ trade }: VaultSidebarProps) {
           <span className="text-xs text-text-secondary">Need Help?</span>
           <span className="text-xs text-text-muted">Dispute Resolution</span>
         </div>
-        <button className="text-xs font-semibold text-gold hover:text-gold-hover transition-colors">
+        <button className="text-xs font-semibold text-accent-primary hover:text-accent-primary-hover transition-colors">
           Open Ticket
         </button>
       </div>

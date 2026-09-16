@@ -144,7 +144,7 @@ export function DisputeVerificationModal({
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-overlay backdrop-blur-lg z-50 flex items-center justify-center p-4">
           <Dialog.Content
-            className="bg-[#122A1F] border border-border-default shadow-modal rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto flex flex-col"
+            className="bg-[#13161C] border border-border-default shadow-modal rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto flex flex-col"
             aria-describedby="dispute-modal-description"
           >
             {/* Header */}
@@ -191,8 +191,8 @@ export function DisputeVerificationModal({
                       disabled={!ipfsHash}
                       className="
                         flex-1 py-3 rounded-xl text-sm font-semibold
-                        bg-gold text-text-inverse
-                        hover:bg-gold-hover
+                        bg-accent-primary text-text-inverse
+                        hover:bg-accent-primary-hover
                         disabled:opacity-40 disabled:cursor-not-allowed
                         transition-colors duration-200 flex items-center justify-center gap-2
                       "
@@ -228,13 +228,13 @@ export function DisputeVerificationModal({
               {/* Step: Confirm Accept */}
               {step === "confirm-accept" && (
                 <div className="flex flex-col gap-5">
-                  <div className="bg-gold-muted border border-[rgba(212,168,83,0.3)] rounded-xl p-4 text-sm text-text-primary">
-                    <p className="font-semibold mb-1 text-gold">
+                  <div className="bg-accent-primary-muted border border-[rgba(212,168,83,0.3)] rounded-xl p-4 text-sm text-text-primary">
+                    <p className="font-semibold mb-1 text-accent-primary">
                       Confirm Goods Acceptance
                     </p>
                     <p className="text-text-secondary">
                       Signing this transaction will call{" "}
-                      <code className="font-mono text-gold">release()</code> on
+                      <code className="font-mono text-accent-primary">release()</code> on
                       the Grayfix escrow contract, releasing locked funds to the
                       seller. This action is <strong>irreversible</strong>.
                     </p>
@@ -248,7 +248,7 @@ export function DisputeVerificationModal({
                         href={`https://gateway.pinata.cloud/ipfs/${ipfsHash}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gold"
+                        className="text-accent-primary"
                       >
                         <ExternalLink className="w-3 h-3" />
                       </a>
@@ -264,7 +264,7 @@ export function DisputeVerificationModal({
                     <button
                       onClick={handleConfirmAccept}
                       disabled={isSubmitting}
-                      className="flex-1 py-3 rounded-xl text-sm font-semibold bg-gold text-text-inverse hover:bg-gold-hover disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                      className="flex-1 py-3 rounded-xl text-sm font-semibold bg-accent-primary text-text-inverse hover:bg-accent-primary-hover disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                     >
                       Sign &amp; Release Funds
                     </button>
@@ -297,7 +297,7 @@ export function DisputeVerificationModal({
                         href={`https://gateway.pinata.cloud/ipfs/${ipfsHash}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gold"
+                        className="text-accent-primary"
                       >
                         <ExternalLink className="w-3 h-3" />
                       </a>
@@ -324,7 +324,7 @@ export function DisputeVerificationModal({
               {/* Step: Signing */}
               {step === "signing" && (
                 <div className="flex flex-col items-center gap-4 py-8">
-                  <div className="w-10 h-10 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+                  <div className="w-10 h-10 border-2 border-accent-primary border-t-transparent rounded-full animate-spin" />
                   <p className="text-text-secondary text-sm text-center">
                     Waiting for Freighter wallet signature…
                   </p>
@@ -347,14 +347,14 @@ export function DisputeVerificationModal({
                       href={`https://stellar.expert/explorer/testnet/tx/${txHash}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-xs text-gold hover:text-gold-hover transition-colors"
+                      className="flex items-center gap-1 text-xs text-accent-primary hover:text-accent-primary-hover transition-colors"
                     >
                       View transaction <ExternalLink className="w-3 h-3" />
                     </a>
                   )}
                   <button
                     onClick={onClose}
-                    className="mt-2 px-6 py-2 rounded-xl bg-gold text-text-inverse text-sm font-semibold hover:bg-gold-hover transition-colors"
+                    className="mt-2 px-6 py-2 rounded-xl bg-accent-primary text-text-inverse text-sm font-semibold hover:bg-accent-primary-hover transition-colors"
                   >
                     Close
                   </button>
@@ -377,7 +377,7 @@ export function DisputeVerificationModal({
                       href={`https://stellar.expert/explorer/testnet/tx/${txHash}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-xs text-gold hover:text-gold-hover transition-colors"
+                      className="flex items-center gap-1 text-xs text-accent-primary hover:text-accent-primary-hover transition-colors"
                     >
                       View transaction <ExternalLink className="w-3 h-3" />
                     </a>

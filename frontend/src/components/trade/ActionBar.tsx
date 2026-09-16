@@ -57,7 +57,7 @@ export function ActionBar({
         <button
           onClick={onConfirmDelivery}
           disabled={confirmingDelivery}
-          className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-gold-cta text-text-inverse text-sm font-bold hover:shadow-glow-gold transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+          className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-accent-cta text-text-inverse text-sm font-bold hover:shadow-glow-accent transition-all disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {confirmingDelivery ? (
             <>

@@ -19,7 +19,7 @@ const ACTOR_LABELS: Record<TransactionEvent["actor"], string> = {
 const ACTOR_COLORS: Record<TransactionEvent["actor"], string> = {
   system: "text-status-info",
   buyer: "text-emerald",
-  seller: "text-gold",
+  seller: "text-accent-primary",
   driver: "text-teal",
 };
 
