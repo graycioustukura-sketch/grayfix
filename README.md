@@ -1,53 +1,109 @@
-# 🌾 AgroPush: Trust as a Service for Agricultural Products
+# Grayfix
 
-![Stellar](https://img.shields.io/badge/Network-Stellar-black?style=for-the-badge&logo=stellar)
-![Soroban](<https://img.shields.io/badge/Contracts-Soroban%20(Rust)-orange?style=for-the-badge>)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+**Escrow, without the trust fall.**
 
-**AgroPush** is a decentralized escrow protocol designed to secure agricultural trade across different regions. By leveraging **Soroban Smart Contracts**, AgroPush eliminates the "Trust Gap" between buyers and sellers, ensuring fair trade even when parties are hundreds of miles apart.
+![Stellar](https://img.shields.io/badge/Network-Stellar-000000?style=for-the-badge&logo=stellar&logoColor=white)
+![Soroban](https://img.shields.io/badge/Contracts-Soroban%20(Rust)-7C6FEF?style=for-the-badge)
+![CI](https://img.shields.io/github/actions/workflow/status/graycioustukura-sketch/grayfix/ci.yml?branch=main&style=for-the-badge&label=CI)
+![License](https://img.shields.io/badge/License-MIT-34D399?style=for-the-badge)
 
-This is the main repository containing the smart contracts and orchestration logic. Backend, frontend, and mobile applications are maintained in this monorepo for simpler development and unified deployment.
+Grayfix is a decentralized escrow protocol for trading physical goods between
+parties who've never met and don't fully trust each other. A Soroban smart
+contract on Stellar holds the buyer's funds in a neutral vault, releases them
+only when delivery is verified, and splits losses fairly when something goes
+wrong in transit — so neither side has to "send first" and hope.
+
+This monorepo holds the smart contracts, backend API, web frontend, and
+mobile app that make up the product.
 
 ---
 
-## 🚀 The Mission
+## Contents
 
-To provide a programmable safety net for regional commodity trading. AgroPush ensures that the risk of "sending first" is eliminated, replaced by a secure, neutral vault that only releases funds when delivery is verified.
+- [Why Grayfix](#why-grayfix)
+- [Features](#features)
+- [How a trade works](#how-a-trade-works)
+- [Tech stack](#tech-stack)
+- [Repo layout](#repo-layout)
+- [Getting started](#getting-started)
+- [Run the end-to-end demo](#run-the-end-to-end-demo)
+- [CI gates](#ci-gates)
+- [Observability](#observability)
+- [Architecture & decisions](#architecture--decisions)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
 
-## 🛠 Features
+## Why Grayfix
 
-- **Smart Escrow:** Secure funds holding using cNGN/stablecoins on the Stellar network.
-- **Dynamic Loss Sharing:** Negotiable risk-sharing ratios (e.g., 50/50, 70/30) hardcoded into every trade to handle transit accidents or theft.
-- **Proof-of-Delivery (PoD):** An optional video-based verification protocol involving the buyer and the driver to confirm the state of goods. Video evidence can be submitted and stored on IPFS for dispute resolution.
-- **Volatility Protection:** Utilizes Stellar Path Payments to allow users to pay in local currency (NGN) while locking value in cNGN.
-- **Automated Settlement:** A flat 1% platform fee is automatically deducted upon successful trade completion.
+Regional trade in physical goods has a structural trust problem: whoever
+moves first — sending payment or shipping product — is exposed if the other
+side doesn't follow through. Grayfix removes that exposure. Funds sit in a
+programmable, neutral vault instead of either party's pocket, and the
+contract only pays out once delivery is confirmed or a dispute is resolved.
 
-## 🏗 Technical Stack
+## Features
 
-- **Frontend:** [Next.js](https://nextjs.org/) (App Router)
-- **Smart Contracts:** [Soroban](https://soroban.stellar.org/) (Rust)
-- **Blockchain:** [Stellar Network](https://www.stellar.org/)
-- **Wallet Connection:** [Freighter](https://www.freighter.app/) / [Albedo](https://albedo.link/)
-- **Storage:** IPFS (via Pinata) for decentralized storage of video evidence.
-- **Database:** Supabase (Off-chain metadata, driver logs, and user profiles).
-- **Observability:** OpenTelemetry distributed tracing with correlation IDs for end-to-end request tracking.
+- **Smart escrow** — funds are held in cNGN/stablecoins on the Stellar
+  network for the life of a trade, controlled entirely by contract logic.
+- **Dynamic loss sharing** — buyer and seller agree on a risk-split ratio
+  (e.g. 50/50, 70/30) that's locked into the trade up front and used
+  automatically if goods are lost or damaged in transit.
+- **Proof-of-delivery** — an optional video verification step between buyer
+  and driver confirms the state of goods on arrival; evidence is stored on
+  IPFS so it's available for dispute review later.
+- **Volatility protection** — Stellar Path Payments let buyers pay in local
+  currency (NGN) while the trade's value is locked in cNGN.
+- **Automated settlement** — a flat 1% platform fee is deducted automatically
+  when a trade completes, no manual invoicing required.
 
-## 🧪 Local Environments (Folder-Based)
+## How a trade works
 
-- `frontend/` → Next.js app environment (UI + wallet + Supabase/Pinata client integration)
-- `backend/` → Node.js/TypeScript API environment (Supabase + Pinata + integration endpoints)
-- `mobile/` → React Native Expo environment (mobile wallet, notification, and trade UX)
-- `contracts/` → Rust/Soroban smart contract environment
+1. **Initiate** — the seller lists goods; the buyer starts a trade, and
+   funds are converted to cNGN via a Stellar Path Payment.
+2. **Lock** — the contract locks the funds and stores the agreed
+   `Loss_Ratio` for the trade.
+3. **Dispatch** — the seller records the driver's name, phone number, and
+   vehicle manifest.
+4. **Verify** — on success, the buyer confirms delivery with a video and
+   funds release to the seller. If something's wrong, the buyer submits
+   evidence of loss or damage and a mediator reviews the dispute.
+5. **Settle** — funds are distributed per the outcome: 100% to one party, or
+   split according to the `Loss_Ratio`.
 
-### Prerequisites
+## Tech stack
 
-AgroPush uses **pnpm** as the package manager. Install it globally:
+| Layer | Choice |
+|---|---|
+| Smart contracts | [Soroban](https://soroban.stellar.org/) (Rust) |
+| Blockchain | [Stellar Network](https://www.stellar.org/) |
+| Frontend | [Next.js](https://nextjs.org/) (App Router) |
+| Wallets | [Freighter](https://www.freighter.app/) / [Albedo](https://albedo.link/) |
+| Backend | Node.js / TypeScript |
+| Database | Supabase (off-chain metadata, driver logs, user profiles) |
+| File storage | IPFS via Pinata (delivery evidence video) |
+| Observability | OpenTelemetry distributed tracing with request correlation IDs |
+
+## Repo layout
+
+| Path | What it is |
+|---|---|
+| `contracts/` | Rust/Soroban smart contract (`grayfix_escrow`) |
+| `backend/` | Node.js/TypeScript API — Supabase, Pinata, chain integration |
+| `frontend/` | Next.js app — trade UI, wallet connection, Supabase/Pinata client |
+| `mobile/` | React Native (Expo) app — mobile wallet and trade flows |
+| `docs/` | Architecture, ADRs, runbooks, and operational guides |
+| `infra/` | Terraform and Kubernetes manifests |
+
+## Getting started
+
+Grayfix uses **pnpm** as its package manager:
 
 ```bash
 npm install -g pnpm
 ```
 
-### Frontend setup
+**Frontend**
 
 ```bash
 cd frontend
@@ -56,17 +112,17 @@ pnpm install
 pnpm run dev
 ```
 
-### Backend setup
+**Backend**
 
 ```bash
 cd backend
 cp .env.example .env
-cp .env.tracing.example .env.tracing  # for distributed tracing configuration
+cp .env.tracing.example .env.tracing   # distributed tracing config
 pnpm install
 pnpm run dev
 ```
 
-### Mobile setup
+**Mobile**
 
 ```bash
 cd mobile
@@ -75,36 +131,36 @@ pnpm install
 pnpm start
 ```
 
-### Backend API docs
+**Contracts**
 
-- Source of truth: `backend/src/docs/openapi.yaml`
-- Dev Swagger UI: `http://localhost:4000/api/docs`
-- JSON export: `http://localhost:4000/api/docs/openapi.json`
-- **API contract examples**: [`backend/docs/api-contract-examples.md`](./backend/docs/api-contract-examples.md) — JS/TypeScript snippets for authentication and all trade operations
-- **SDK usage guide**: [`backend/docs/sdk-usage.md`](./backend/docs/sdk-usage.md) — typed client wrapper for frontend, mobile, and Node.js
+```bash
+cd contracts/grayfix_escrow
+cargo build
+```
 
-The backend writes `backend/src/docs/openapi.json` from the YAML spec in non-production runs so reviewers can inspect either format.
+**Backend API docs**
 
-### Contracts setup
+- Source of truth: [`backend/src/docs/openapi.yaml`](./backend/src/docs/openapi.yaml)
+- Local Swagger UI: `http://localhost:4000/api/docs`
+- JSON export: `http://localhost:4000/api/docs/openapi.json` (written from the YAML spec in non-production runs)
+- [API contract examples](./backend/docs/api-contract-examples.md) — JS/TypeScript snippets for auth and every trade operation
+- [SDK usage guide](./backend/docs/sdk-usage.md) — typed client for frontend, mobile, and Node
 
-1. `cd contracts/agropush_escrow`
-2. `cargo build`
+## Run the end-to-end demo
 
-## 🎬 How to Run This Demo
-
-The fastest way to see the core AgroPush trade lifecycle working end-to-end —
-**create → deposit → confirm delivery → release funds** — through the real
-API, real business logic, and a real Postgres database, in a few minutes
-with no cloud accounts, deployed contract, or funded wallet required.
+See the full trade lifecycle — **create → deposit → confirm delivery →
+release funds** — running against the real API, real business logic, and a
+real Postgres database. No cloud accounts, deployed contract, or funded
+wallet required.
 
 `DEMO_MODE=true` stubs only the Soroban RPC calls (which need a deployed
-escrow contract and a funded testnet wallet neither this script nor a fresh
-clone has). Everything else — auth, validation, the trade state machine,
-Postgres — runs for real. Chain confirmation is simulated via the app's own
-admin trade-status endpoint, standing in for what the on-chain event indexer
-normally does once a wallet signs and submits each transaction.
+escrow contract and a funded testnet wallet). Everything else — auth,
+validation, the trade state machine, Postgres — runs for real. Chain
+confirmation is simulated via the app's own admin trade-status endpoint,
+standing in for what the on-chain event indexer does once a wallet signs and
+submits a transaction.
 
-1. **Start local Postgres + Redis** (no cloud accounts needed):
+1. **Start local Postgres + Redis:**
    ```bash
    docker compose --profile dev up -d
    ```
@@ -113,22 +169,21 @@ normally does once a wallet signs and submits each transaction.
    cd backend
    cp .env.example .env
    # The smoke test signs in as a demo "admin/mediator" using a well-known,
-   # funds-less local-only keypair — add its public key to the allowlist:
+   # funds-less local-only keypair — allowlist its public key:
    echo 'ADMIN_STELLAR_PUBKEYS=GBGZ4I3UFZRYBWLLGVDHG3AEII53ZZYIVN6TXY4IQHEIUGWBVEADQS5L' >> .env
    pnpm install
    npx prisma migrate deploy
    DEMO_MODE=true pnpm run dev
    ```
-3. **In another terminal, run the smoke test:**
+3. **Run the smoke test in another terminal:**
    ```bash
    cd backend
    pnpm demo:smoke
    ```
-   This drives a fresh trade through every stage of the lifecycle using
-   real challenge/signature auth (freshly generated Stellar keypairs) and
-   prints a pass/fail checklist — 12/12 on a clean setup.
-4. **Optional — see it in the UI:** with the backend running, start the
-   frontend:
+   Drives a fresh trade through every stage using real challenge/signature
+   auth (freshly generated Stellar keypairs) and prints a pass/fail
+   checklist — 12/12 on a clean setup.
+4. **Optional — see it in the browser** (with the backend running):
    ```bash
    cd frontend
    cp .env.example .env.local
@@ -137,119 +192,62 @@ normally does once a wallet signs and submits each transaction.
    pnpm run dev
    ```
    Open `http://localhost:3000/trades/create` with a
-   [Freighter](https://www.freighter.app/) wallet installed (any funded or
-   unfunded testnet keypair works — no real signing is submitted anywhere).
+   [Freighter](https://www.freighter.app/) wallet installed — any funded or
+   unfunded testnet keypair works, since no real signing is submitted.
    `NEXT_PUBLIC_DEMO_MODE=true` skips the one step that can't work without a
-   deployed contract — submitting the signed transaction to the live Stellar
-   RPC — and treats a successful sign as the terminal step, matching how the
-   backend already simulates chain confirmation via its admin endpoint. The
-   full lifecycle (create → deposit → confirm → release) is clickable
-   end-to-end in the browser this way; the smoke test remains the
-   fully-automated, no-browser proof.
+   deployed contract (submitting the signed transaction to live Stellar RPC)
+   and treats a successful sign as the terminal step, matching how the
+   backend simulates chain confirmation. The full lifecycle is clickable
+   end-to-end this way; the smoke test remains the automated, no-browser
+   proof.
 
-**What this demonstrates:** the real trade lifecycle state machine, auth,
-and Postgres persistence all work correctly end-to-end. **What's stubbed:**
-Soroban contract calls, Freighter wallet signing, and on-chain event
-indexing — see the [Roadmap](#-roadmap) for where those stand.
+**Demonstrates:** the real trade lifecycle state machine, auth, and Postgres
+persistence, end-to-end. **Stubbed:** Soroban contract calls, Freighter
+signing, and on-chain event indexing — see the [Roadmap](#roadmap) for where
+those stand.
 
-## 🔒 Required PR CI Gates
+## CI gates
 
-AgroPush enforces stack-level CI gates on pull requests through `.github/workflows/ci.yml`.
+Grayfix enforces stack-level required checks on every pull request via
+[`.github/workflows/ci.yml`](./.github/workflows/ci.yml), each running only
+when its stack has changed files:
 
-- **Frontend Required Gate**: `pnpm install --frozen-lockfile`, `pnpm run lint`, `pnpm run build`, `pnpm test` in `frontend/`
-- **Backend Required Gate**: `pnpm install --frozen-lockfile`, `pnpm run build`, `pnpm test` in `backend/`
-- **Mobile Required Gate**: `pnpm install --frozen-lockfile`, `pnpm run type-check`, `pnpm run lint` in `mobile/`
-- **Contracts Required Gate**: `cargo test` in `contracts/agropush_escrow/`
+| Gate | Runs |
+|---|---|
+| Frontend | `pnpm install --frozen-lockfile`, `lint`, `build`, `test` in `frontend/` |
+| Backend | `pnpm install --frozen-lockfile`, `build`, `test` in `backend/` |
+| Mobile | `pnpm install --frozen-lockfile`, `type-check`, `lint` in `mobile/` |
+| Contracts | `cargo test` in `contracts/grayfix_escrow/` |
 
-Path-aware execution is enabled to avoid unnecessary runtime. If a stack has no changed files, the gate reports a skip-note and passes.
+**Branch protection (`main`)** should require: `Frontend Required Gate`,
+`Backend Required Gate`, `Contracts Required Gate`.
 
-### Branch protection setup (GitHub)
+## Observability
 
-For the protected branch (`main`), set these required status checks:
+Grayfix ships with OpenTelemetry distributed tracing for end-to-end request
+visibility and faster incident triage:
 
-- `Frontend Required Gate`
-- `Backend Required Gate`
-- `Contracts Required Gate`
+- **Correlation IDs** spanning frontend → backend requests
+- **Full request lifecycle** tracking
+- **Automatic tracing** for external service calls (IPFS, Stellar)
+- **Jaeger, Zipkin, and Prometheus** integration
 
----
+Quick start: configure `backend/.env.tracing.example`, then run
+`docker run -p 16686:16686 jaegertracing/all-in-one` and view traces at
+`http://localhost:16686` (metrics at `http://localhost:9464/metrics`).
+Full setup: [DISTRIBUTED_TRACING_GUIDE.md](./backend/DISTRIBUTED_TRACING_GUIDE.md).
 
----
+- [Prometheus Metrics](./docs/PROMETHEUS_METRICS.md) — trade throughput, disputes, and latency at `/metrics`
+- [Visual Regression Testing](./docs/VISUAL_REGRESSION_TESTING.md) — Playwright UI checks across viewports
 
-## 🔄 How It Works (The AgroPush Flow)
+## Architecture & decisions
 
-1. **Initiate:** The Seller lists products. The Buyer initiates a trade, depositing funds that are converted to cNGN via a Stellar Path Payment.
-2. **Lock:** The Smart Contract locks the funds and stores the agreed-upon `Loss_Ratio`.
-3. **Dispatch:** The Seller provides the driver's name, phone number, and vehicle manifest.
-4. **Verification:** - **Success:** Buyer receives goods and uploads a confirmation video. Funds release to Seller.
-   - **Dispute:** Buyer uploads a video of loss/damage with driver affirmation. A mediator reviews the evidence.
-5. **Settlement:** Based on the outcome, funds are distributed (either 100% to one party or split via the `Loss_Ratio`).
+- [System Architecture](./docs/architecture.md)
+- [Sequence Diagrams](./docs/sequence-diagrams.md)
+- [Audit Logging](./docs/audit-logging.md)
+- [Mediator Dashboard Spec](./docs/mediator-dashboard-spec.md)
 
----
-
-## 🗺 Roadmap
-
-### Phase 1: The Vault (MVP)
-
-- [x] Develop core Soroban contract logic (`deposit`, `release`, `refund`).
-- [x] Implement basic Next.js UI for trade creation.
-
-### Phase 2: The Agreement Engine
-
-- [x] Integrate `Loss_Ratio` variables into the smart contract.
-- [x] Build the "Mediator" dashboard for dispute resolution.
-
-### Phase 3: Evidence & Logistics
-
-- [x] IPFS integration for video evidence uploads.
-- [x] Driver manifest logging and tracking interface.
-
-### Phase 4: Mainnet & Scale
-
-- [ ] Public pilot program with regional agricultural cooperatives.
-- [x] Implementation of a "Trust Score" reputation system.
-
----
-
-## 🔍 Distributed Tracing
-
-AgroPush includes comprehensive distributed tracing with OpenTelemetry for end-to-end request visibility and faster incident triage.
-
-### Features
-
-- **Correlation IDs**: Unique identifiers spanning frontend-backend requests
-- **Request Tracing**: Complete request lifecycle tracking
-- **Service Integration**: Automatic tracing for external services (IPFS, Stellar)
-- **Observability**: Jaeger, Zipkin, and Prometheus integration
-
-### Quick Start
-
-1. Configure tracing environment variables (see `backend/.env.tracing.example`)
-2. Start Jaeger for trace visualization: `docker run -p 16686:16686 jaegertracing/all-in-one`
-3. View traces at `http://localhost:16686`
-4. Check metrics at `http://localhost:9464/metrics`
-
-### Documentation
-
-See [DISTRIBUTED_TRACING_GUIDE.md](./DISTRIBUTED_TRACING_GUIDE.md) for detailed setup and usage instructions.
-
-**Application Metrics & Monitoring**:
-- **[Prometheus Metrics](./docs/PROMETHEUS_METRICS.md)** — Trade throughput, dispute counts, and processing latency metrics exposed at `/metrics`
-
-#### System Architecture & Data Flow
-
-- **[System Architecture](./docs/architecture.md)** — High-level architecture overview, component interactions, and deployment topology
-- **[Sequence Diagrams](./docs/sequence-diagrams.md)** — Detailed workflow sequences for trade creation, dispute resolution, audit trails, and more
-- **[Audit Logging](./docs/audit-logging.md)** — Tamper-evident audit trail with cryptographic signatures and verification
-- **[Mediator Dashboard Spec](./docs/mediator-dashboard-spec.md)** — Complete specification for mediator dashboard including user stories, UI mockups, and implementation tasks
-
-**Testing & Quality Assurance**:
-- **[Visual Regression Testing](./docs/VISUAL_REGRESSION_TESTING.md)** — Frontend UI regression tests using Playwright with multi-viewport support
-
----
-
-## 📐 Architecture Decision Records
-
-Key architectural decisions are documented as ADRs in [`docs/adr/`](./docs/adr):
+**ADRs** ([`docs/adr/`](./docs/adr)):
 
 - [ADR-001: Stellar Path Payment Architecture](./docs/adr/ADR-001-stellar-path-payment-architecture.md)
 - [ADR-002: Escrow Loss-Sharing Model](./docs/adr/ADR-002-escrow-loss-sharing-model.md)
@@ -257,23 +255,30 @@ Key architectural decisions are documented as ADRs in [`docs/adr/`](./docs/adr):
 - [ADR-004: Idempotency and Retry Strategy](./docs/adr/ADR-004-idempotency-and-retry-strategy.md)
 - [ADR-005: Frontend State Management](./docs/adr/ADR-005-frontend-state-management.md)
 
-## 🤝 Contributing
+## Roadmap
 
-AgroPush is an open-source project aimed at improving food security and trade efficiency. We welcome developers, designers, and agricultural experts!
+- [x] **The Vault** — core Soroban contract logic (`deposit`, `release`, `refund`); basic Next.js trade-creation UI
+- [x] **The Agreement Engine** — `Loss_Ratio` built into the contract; mediator dashboard for dispute resolution
+- [x] **Evidence & Logistics** — IPFS video evidence uploads; driver manifest logging and tracking
+- [x] **Trust Score** — on-chain reputation system
+- [ ] **Mainnet & Scale** — public pilot program with regional trading cooperatives
 
-**New to the project?** Start with the [Contributor Onboarding Guide](./docs/CONTRIBUTOR_ONBOARDING.md) for setup instructions and development workflows.
+## Contributing
 
-**Full guidelines**: See [CONTRIBUTING.md](./CONTRIBUTING.md) for code standards, testing requirements, and PR process. All participants are expected to follow the [Code of Conduct](./CODE_OF_CONDUCT.md).
+Grayfix is open source and welcomes developers, designers, and domain
+experts. New here? Start with the
+[Contributor Onboarding Guide](./docs/CONTRIBUTOR_ONBOARDING.md). Full
+standards live in [CONTRIBUTING.md](./CONTRIBUTING.md); everyone is expected
+to follow the [Code of Conduct](./CODE_OF_CONDUCT.md).
 
-Quick start:
-1. Fork the Project.
-2. Create your Feature Branch (`git checkout -b feature/NewFeature`).
-3. Commit your Changes (`git commit -m 'Add NewFeature'`).
-4. Push to the Branch (`git push origin feature/NewFeature`).
-5. Open a Pull Request.
+```bash
+git checkout -b feature/your-feature
+# make your changes
+git commit -m "Add your feature"
+git push origin feature/your-feature
+# open a pull request
+```
 
-## 📄 License
+## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
-// setting up and starting out
+Distributed under the MIT License. See [`LICENSE`](./LICENSE) for details.
