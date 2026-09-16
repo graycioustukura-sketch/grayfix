@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted (implemented across `contracts/agropush_escrow`, `backend/prisma/schema.prisma`,
+Accepted (implemented across `contracts/grayfix_escrow`, `backend/prisma/schema.prisma`,
 and the event-sync pipeline documented in [docs/event-flow.md](../event-flow.md)
 and [docs/data-model-relationships.md](../data-model-relationships.md), which
 remain the detailed references for the mechanics this ADR only summarizes the
@@ -10,7 +10,7 @@ reasoning for).
 
 ## Context
 
-AgroPush needs both the trustlessness of on-chain escrow (funds move only
+Grayfix needs both the trustlessness of on-chain escrow (funds move only
 according to contract rules, verifiable by anyone) and the practicality of
 a queryable, indexable backend (list a user's trades, filter by status,
 paginate, join to disputes/evidence/manifests). Putting everything on-chain
@@ -24,7 +24,7 @@ clients to report their own trade status.
 
 ## Decision
 
-**On-chain (Soroban contract, `contracts/agropush_escrow`) holds only what
+**On-chain (Soroban contract, `contracts/grayfix_escrow`) holds only what
 must be trust-minimized:**
 
 - The escrowed funds themselves (held by the contract, not any party or

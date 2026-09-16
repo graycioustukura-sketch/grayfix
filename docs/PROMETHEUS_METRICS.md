@@ -1,6 +1,6 @@
 # Prometheus Metrics Documentation
 
-This document describes the Prometheus metrics exposed by the AgroPush backend for observability and monitoring.
+This document describes the Prometheus metrics exposed by the Grayfix backend for observability and monitoring.
 
 ## Overview
 
@@ -213,11 +213,11 @@ errors_total{error_type="validation_error",error_code="SCHEMA_VALIDATION",endpoi
 
 ### Configuration
 
-To scrape metrics from the AgroPush backend, configure your Prometheus `scrape_config`:
+To scrape metrics from the Grayfix backend, configure your Prometheus `scrape_config`:
 
 ```yaml
 scrape_configs:
-  - job_name: 'agropush-backend'
+  - job_name: 'grayfix-backend'
     scrape_interval: 30s
     scrape_timeout: 10s
     metrics_path: '/metrics'
@@ -239,7 +239,7 @@ prometheus:
   command:
     - '--config.file=/etc/prometheus/prometheus.yml'
   networks:
-    - agropush-network
+    - grayfix-network
 ```
 
 ## Example Prometheus Queries
@@ -288,12 +288,12 @@ rate(errors_total[5m])
 
 ## Grafana Dashboard Example
 
-A sample Grafana dashboard configuration for monitoring AgroPush KPIs:
+A sample Grafana dashboard configuration for monitoring Grayfix KPIs:
 
 ```json
 {
   "dashboard": {
-    "title": "AgroPush KPI Dashboard",
+    "title": "Grayfix KPI Dashboard",
     "panels": [
       {
         "title": "Trades Created (24h)",

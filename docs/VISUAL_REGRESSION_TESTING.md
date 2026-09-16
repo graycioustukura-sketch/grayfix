@@ -1,6 +1,6 @@
 # Visual Regression Testing Guide
 
-This document describes the visual regression testing strategy for the AgroPush frontend application using Playwright.
+This document describes the visual regression testing strategy for the Grayfix frontend application using Playwright.
 
 ## Overview
 

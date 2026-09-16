@@ -105,7 +105,7 @@ completes. It restores the latest backup into a scratch database
 **If `BackupVerificationFailed` fires** (P1 — a broken backup is not yet an
 outage, but treat it with urgency):
 
-1. Check the failed Job's logs (`kubectl logs -n agropush job/db-backup-verify-daily-<timestamp>`)
+1. Check the failed Job's logs (`kubectl logs -n grayfix job/db-backup-verify-daily-<timestamp>`)
    for which specific check(s) failed — logged per-table, per-constraint.
 2. The scratch database is deliberately **left in place on failure** (not
    torn down) — connect to it directly to investigate further before the
@@ -122,4 +122,4 @@ outage, but treat it with urgency):
 **If `BackupVerificationNotRunRecently` fires**: the CronJob itself may be
 disabled, the cluster scheduler may be unhealthy, or a prior failed run's
 `concurrencyPolicy: Forbid` may be blocking new runs — check
-`kubectl get cronjob db-backup-verify-daily -n agropush` first.
+`kubectl get cronjob db-backup-verify-daily -n grayfix` first.

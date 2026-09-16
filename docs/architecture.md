@@ -1,8 +1,8 @@
-# AgroPush System Architecture
+# Grayfix System Architecture
 
 ## Overview
 
-AgroPush is a decentralized financial escrow platform built on Stellar blockchain. The system architecture follows a three-tier model with frontend, backend, and smart contracts.
+Grayfix is a decentralized financial escrow platform built on Stellar blockchain. The system architecture follows a three-tier model with frontend, backend, and smart contracts.
 
 ## High-Level Architecture Diagram
 
@@ -21,7 +21,7 @@ AgroPush is a decentralized financial escrow platform built on Stellar blockchai
                     HTTPS (REST/JSON)
                            │
 ┌──────────────────────────┴──────────────────────────────────────────┐
-│                    AgroPush Backend (Node.js)                           │
+│                    Grayfix Backend (Node.js)                           │
 │  ┌────────────────────────────────────────────────────────────┐   │
 │  │ API Gateway & Express Middleware                          │   │
 │  │ - JWT Authentication & Authorization                      │   │

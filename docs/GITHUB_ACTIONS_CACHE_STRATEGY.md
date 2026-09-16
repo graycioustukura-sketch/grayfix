@@ -1,10 +1,10 @@
 # GitHub Actions Cache Strategy
 
-This document explains the cache key strategy used in AgroPush's GitHub Actions workflows to improve build times and ensure reproducibility.
+This document explains the cache key strategy used in Grayfix's GitHub Actions workflows to improve build times and ensure reproducibility.
 
 ## Overview
 
-AgroPush uses GitHub Actions caching to store dependencies and build artifacts across workflow runs. The caching strategy balances performance (faster builds) with correctness (accurate dependency resolution).
+Grayfix uses GitHub Actions caching to store dependencies and build artifacts across workflow runs. The caching strategy balances performance (faster builds) with correctness (accurate dependency resolution).
 
 ## Cache Keys by Stack
 
@@ -127,7 +127,7 @@ Caches are invalidated when:
 
 ## Cache Storage Limits
 
-GitHub Actions cache has a 10GB storage limit per repository. AgroPush's current cache usage:
+GitHub Actions cache has a 10GB storage limit per repository. Grayfix's current cache usage:
 
 - **Frontend pnpm**: ~200MB
 - **Backend pnpm**: ~300MB

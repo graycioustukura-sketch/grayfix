@@ -1,7 +1,7 @@
 # Event Flow
 
 This document describes the end-to-end flow of on-chain Soroban contract events into
-the AgroPush backend, including how they are polled, parsed, deduplicated, handled, and
+the Grayfix backend, including how they are polled, parsed, deduplicated, handled, and
 dispatched to external webhooks.
 
 ---
@@ -54,7 +54,7 @@ dispatched to external webhooks.
 
 ## 2. Smart Contract Events
 
-The Soroban contract (`contracts/agropush_escrow/src/lib.rs`) emits 14 event types.
+The Soroban contract (`contracts/grayfix_escrow/src/lib.rs`) emits 14 event types.
 The backend listens for the 6 **status-transition** events below. Other events
 (EvidenceSubmitted, VideoProofSubmitted, ManifestSubmitted, etc.) are recorded on-chain
 but not currently handled by the backend event listener.
@@ -449,5 +449,5 @@ overridable via environment variables.
 | `backend/src/__tests__/eventListener.outbox.test.ts` | Outbox retry & dead-letter behavior | 170 |
 | `backend/src/__tests__/eventListener.idempotency.test.ts` | Exactly-once dedup semantics | 511 |
 | `backend/src/__tests__/event.ingestion.test.ts` | Event ingestion pipeline | — |
-| `contracts/agropush_escrow/tests/event_emission_tests.rs` | Contract-level event emission validation | 469 |
-| `contracts/agropush_escrow/src/tests/event_schema_tests.rs` | Unit-level event schema validation | — |
+| `contracts/grayfix_escrow/tests/event_emission_tests.rs` | Contract-level event emission validation | 469 |
+| `contracts/grayfix_escrow/src/tests/event_schema_tests.rs` | Unit-level event schema validation | — |

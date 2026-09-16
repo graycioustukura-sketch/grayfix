@@ -1,6 +1,6 @@
 # Docker Compose Profiles
 
-AgroPush uses [Docker Compose profiles](https://docs.docker.com/compose/profiles/) to give each environment a consistent, isolated set of services.
+Grayfix uses [Docker Compose profiles](https://docs.docker.com/compose/profiles/) to give each environment a consistent, isolated set of services.
 
 ## Profiles at a Glance
 
@@ -49,12 +49,12 @@ Each profile honours environment variables with profile-specific prefixes:
 |---------------------------|----------------------------|----------|
 | `POSTGRES_USER`           | `postgres`                 | dev      |
 | `POSTGRES_PASSWORD`       | `password`                 | dev      |
-| `POSTGRES_DB`             | `agropush`                    | dev      |
+| `POSTGRES_DB`             | `grayfix`                    | dev      |
 | `POSTGRES_PORT`           | `5432`                     | dev      |
 | `REDIS_PORT`              | `6379`                     | dev      |
 | `STAGING_POSTGRES_USER`   | `postgres`                 | staging  |
 | `STAGING_POSTGRES_PASSWORD`| `staging-password`        | staging  |
-| `STAGING_POSTGRES_DB`     | `agropush_staging`            | staging  |
+| `STAGING_POSTGRES_DB`     | `grayfix_staging`            | staging  |
 | `STAGING_POSTGRES_PORT`   | `5434`                     | staging  |
 | `STAGING_REDIS_PASSWORD`  | `staging-redis-pass`       | staging  |
 | `STAGING_REDIS_PORT`      | `6380`                     | staging  |

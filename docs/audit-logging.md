@@ -2,7 +2,7 @@
 
 ## Overview
 
-The AgroPush escrow platform implements tamper-evident audit logging for all trade events with cryptographic signatures. This enables verifiable audits and provides complete traceability of trade lifecycle events for compliance, dispute resolution, and forensic analysis.
+The Grayfix escrow platform implements tamper-evident audit logging for all trade events with cryptographic signatures. This enables verifiable audits and provides complete traceability of trade lifecycle events for compliance, dispute resolution, and forensic analysis.
 
 ## Architecture
 

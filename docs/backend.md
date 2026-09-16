@@ -1,6 +1,6 @@
-# AgroPush Backend Reliability Layer
+# Grayfix Backend Reliability Layer
 
-This document describes the reliability features implemented in the AgroPush API.
+This document describes the reliability features implemented in the Grayfix API.
 
 ## 1. Schema Validation Coverage
 

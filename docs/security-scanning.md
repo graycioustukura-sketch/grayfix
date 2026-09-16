@@ -1,6 +1,6 @@
 # Security Scanning
 
-AgroPush runs automated dependency vulnerability scanning on every CI run and provides a local script for ad-hoc scans.
+Grayfix runs automated dependency vulnerability scanning on every CI run and provides a local script for ad-hoc scans.
 
 ## CI Pipeline
 

@@ -8,7 +8,7 @@ exposed via `GET /wallet/path-payment-quote` - see
 
 ## Context
 
-AgroPush settles trades in USDC on Stellar, but buyers frequently hold other
+Grayfix settles trades in USDC on Stellar, but buyers frequently hold other
 assets (most notably NGN-pegged tokens, or XLM). Requiring a buyer to
 manually acquire USDC before funding a trade is friction that pushes people
 off the platform. Stellar's DEX supports **path payments**, which let a

@@ -1,6 +1,6 @@
 # Sequence Diagrams
 
-This document provides detailed sequence diagrams for key AgroPush workflows.
+This document provides detailed sequence diagrams for key Grayfix workflows.
 
 ## Trade Creation and Funding Flow
 

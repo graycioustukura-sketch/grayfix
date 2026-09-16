@@ -1,6 +1,6 @@
 # Rollback Procedures
 
-How to roll back each deployable piece of AgroPush after a bad deploy. If the
+How to roll back each deployable piece of Grayfix after a bad deploy. If the
 bad deploy included a database migration, read
 [database-migration.md](./database-migration.md) and
 [migration-rollback-playbook.md](../migration-rollback-playbook.md) first -

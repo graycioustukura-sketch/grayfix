@@ -9,7 +9,7 @@ consumer-facing contract).
 
 ## Context
 
-AgroPush's mutating endpoints build Stellar/Soroban transactions - operations
+Grayfix's mutating endpoints build Stellar/Soroban transactions - operations
 where a client retry after a network timeout is dangerous if the original
 request actually succeeded server-side (e.g. a trade got created, but the
 client never saw the response and retries "create trade" again). Separately,

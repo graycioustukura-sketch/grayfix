@@ -1,6 +1,6 @@
 # Deployment Runbook
 
-Step-by-step deploy process for the three deployable pieces of AgroPush:
+Step-by-step deploy process for the three deployable pieces of Grayfix:
 backend, frontend, and the Soroban escrow contract. Companion docs:
 [docker-profiles.md](../docker-profiles.md) (environment topology),
 [migration-rollback-playbook.md](../migration-rollback-playbook.md)
@@ -108,7 +108,7 @@ environment (staging backend for a staging frontend deploy, etc.).
 
 ## Contract deployment
 
-The Soroban escrow contract lives in `contracts/agropush_escrow`.
+The Soroban escrow contract lives in `contracts/grayfix_escrow`.
 
 - **Local network**: fully scripted and documented -
   `./scripts/deploy-contract-local.sh --network standalone --admin <pubkey> --token-contract <id> --treasury <pubkey>`.

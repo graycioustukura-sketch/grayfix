@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document outlines the research plan to validate AgroPush's value proposition with regional cooperative partners in pilot regions. The goal is to test core assumptions about agricultural escrow needs, understand regional trust dynamics, and gather feedback to refine the product before scaling.
+This document outlines the research plan to validate Grayfix's value proposition with regional cooperative partners in pilot regions. The goal is to test core assumptions about agricultural escrow needs, understand regional trust dynamics, and gather feedback to refine the product before scaling.
 
 ## Research Objectives
 
@@ -67,7 +67,7 @@ This document outlines the research plan to validate AgroPush's value propositio
 
 ### 3. Active Trading Period (Week 4-11)
 
-**Format**: Real trades using AgroPush platform
+**Format**: Real trades using Grayfix platform
 
 **Support**:
 - WhatsApp support group for each region
@@ -92,7 +92,7 @@ This document outlines the research plan to validate AgroPush's value propositio
 - What's confusing or frustrating?
 - Are loss-sharing ratios fair and clear?
 - Is proof-of-delivery protocol practical?
-- Would you recommend AgroPush to others?
+- Would you recommend Grayfix to others?
 
 **Deliverable**: Mid-pilot feedback synthesis report
 
@@ -103,10 +103,10 @@ This document outlines the research plan to validate AgroPush's value propositio
 **Participants**: 10-15 active users per region
 
 **Key Questions**:
-- Would you continue using AgroPush after the pilot?
+- Would you continue using Grayfix after the pilot?
 - What features are most valuable?
 - What features are missing?
-- How does AgroPush compare to your previous trade methods?
+- How does Grayfix compare to your previous trade methods?
 - What would make you trust the platform more?
 
 **Deliverable**: Post-pilot interview insights report
@@ -139,7 +139,7 @@ This document outlines the research plan to validate AgroPush's value propositio
 3. **User Retention**: % of users who complete 2+ trades
    - **Target**: ≥60% retention
 
-4. **Net Promoter Score (NPS)**: Likelihood to recommend AgroPush
+4. **Net Promoter Score (NPS)**: Likelihood to recommend Grayfix
    - **Target**: NPS ≥40
 
 ### Secondary Metrics
@@ -163,7 +163,7 @@ This document outlines the research plan to validate AgroPush's value propositio
 
 ### Primary Stakeholders
 
-1. **AgroPush Product Team**: Receives research insights for product iteration
+1. **Grayfix Product Team**: Receives research insights for product iteration
 2. **Cooperative Leaders**: Gatekeeper relationships, user recruitment partners
 3. **Regional Buyers/Sellers**: End users providing feedback
 4. **Logistics Partners**: Drivers and transporters testing PoD protocols

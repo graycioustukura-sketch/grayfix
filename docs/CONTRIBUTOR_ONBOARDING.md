@@ -1,13 +1,13 @@
 # Contributor Onboarding Guide
 
-Welcome to the AgroPush project! This guide will help you get started with the codebase, set up your development environment, and understand the recommended workflows for contributions.
+Welcome to the Grayfix project! This guide will help you get started with the codebase, set up your development environment, and understand the recommended workflows for contributions.
 
 ## Quick Start (5 minutes)
 
 1. **Fork and Clone**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/AgroPush.git
-   cd AgroPush
+   git clone https://github.com/YOUR-USERNAME/Grayfix.git
+   cd Grayfix
    ```
 
 2. **Install Dependencies**
@@ -40,7 +40,7 @@ For detailed setup instructions per stack, continue reading.
 ### Top-Level Directories
 
 ```
-AgroPush/
+Grayfix/
 ├── backend/           # Node.js/TypeScript API (Express)
 ├── frontend/          # Next.js web application
 ├── mobile/            # React Native Expo app
@@ -187,7 +187,7 @@ npm start
 #### Contracts Setup
 
 ```bash
-cd contracts/agropush_escrow
+cd contracts/grayfix_escrow
 
 # Build WebAssembly artifact
 cargo build --target wasm32-unknown-unknown --release
@@ -331,7 +331,7 @@ npm test -- --coverage
 ### Contract Tests
 
 ```bash
-cd contracts/agropush_escrow
+cd contracts/grayfix_escrow
 
 # Run tests
 cargo test --locked
@@ -359,7 +359,7 @@ npm test
 npm run test:visual
 
 # Contracts
-cd contracts/agropush_escrow
+cd contracts/grayfix_escrow
 cargo test --locked
 cargo build --target wasm32-unknown-unknown --release
 ```
@@ -392,7 +392,7 @@ Create `.env.local` files to override development defaults:
 ```bash
 # backend/.env.local
 NODE_ENV=development
-DEBUG=agropush:*
+DEBUG=grayfix:*
 
 # frontend/.env.local
 NEXT_PUBLIC_DEBUG=true
@@ -498,7 +498,7 @@ npm run lint -- --fix
 
 ### Deploying a Smart Contract Update
 
-1. **Update** `contracts/agropush_escrow/src/lib.rs`
+1. **Update** `contracts/grayfix_escrow/src/lib.rs`
 2. **Test locally** (`cargo test`)
 3. **Build WASM** (`cargo build --features wasm --release`)
 4. **Run safety check** (`./scripts/check-contract-deployment-safety.sh`)
@@ -629,4 +629,4 @@ Have suggestions for this onboarding guide? Found an error? Please:
 2. Submit a PR with improvements
 3. Ask in our community Discord
 
-Thank you for contributing to AgroPush! 🌾
+Thank you for contributing to Grayfix! 🌾

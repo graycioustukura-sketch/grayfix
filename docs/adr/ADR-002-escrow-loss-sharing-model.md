@@ -2,14 +2,14 @@
 
 ## Status
 
-Accepted (implemented in `contracts/agropush_escrow/src/lib.rs`,
+Accepted (implemented in `contracts/grayfix_escrow/src/lib.rs`,
 `resolve_dispute`; surfaced to API consumers as `buyerLossBps`/
 `sellerLossBps` on trade creation - see
 [docs/api/trades.md](../api/trades.md#create-a-trade)).
 
 ## Context
 
-AgroPush escrows funds during a trade and, on a dispute, a mediator has to
+Grayfix escrows funds during a trade and, on a dispute, a mediator has to
 decide how much of the total goes to the seller vs. is refunded to the
 buyer. A binary "seller gets everything" or "buyer gets everything"
 outcome doesn't reflect the reality of most delivery disputes (e.g. goods
@@ -97,7 +97,7 @@ Key design choices worth calling out explicitly:
 - **Positive:** The three-way payout (seller/buyer/treasury) always sums
   exactly to the escrowed total by construction, which makes the
   calculation straightforward to unit-test and fuzz-test exhaustively (see
-  `contracts/agropush_escrow/src/tests/bps_fuzz_tests.rs`).
+  `contracts/grayfix_escrow/src/tests/bps_fuzz_tests.rs`).
 - **Negative:** `buyer_loss_bps`/`seller_loss_bps` are fixed at trade
   creation and cannot be renegotiated later, even if circumstances change
   before a dispute arises - amending them requires cancelling and

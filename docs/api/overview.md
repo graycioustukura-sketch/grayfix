@@ -1,6 +1,6 @@
 # API Overview
 
-This is the consumer-facing entry point for the AgroPush backend API. It covers
+This is the consumer-facing entry point for the Grayfix backend API. It covers
 authentication, base URLs, rate limits, and pagination conventions that apply
 across every endpoint. For endpoint-by-endpoint detail see:
 
@@ -27,7 +27,7 @@ guide are relative to the base URL above.
 
 ## Authentication
 
-AgroPush authenticates wallets with a challenge/response flow instead of
+Grayfix authenticates wallets with a challenge/response flow instead of
 passwords, since the only identity a client has is a Stellar keypair:
 
 1. `POST /auth/challenge` with your wallet's public key. The server returns a
@@ -45,7 +45,7 @@ passwords, since the only identity a client has is a Stellar keypair:
 curl -X POST http://localhost:4000/auth/challenge \
   -H 'Content-Type: application/json' \
   -d '{"walletAddress":"GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"}'
-# => {"challenge":"agropush:login:1742794421:7ced1c65a9a44a7d"}
+# => {"challenge":"grayfix:login:1742794421:7ced1c65a9a44a7d"}
 
 curl -X POST http://localhost:4000/auth/verify \
   -H 'Content-Type: application/json' \
@@ -61,8 +61,8 @@ The auth middleware rejects a token if any of these fail:
 
 | Claim | Requirement |
 |---|---|
-| `iss` | Must match `JWT_ISSUER` (default `agropush`) |
-| `aud` | Must match `JWT_AUDIENCE` (default `agropush-api`) |
+| `iss` | Must match `JWT_ISSUER` (default `grayfix`) |
+| `aud` | Must match `JWT_AUDIENCE` (default `grayfix-api`) |
 | `jti` | Required, and must not be on the revocation denylist (see logout above) |
 | `nbf` | Required, and must not be in the future |
 | `exp` | Token lifetime is `JWT_EXPIRES_IN` seconds from issuance (default `86400`, i.e. 24h) |

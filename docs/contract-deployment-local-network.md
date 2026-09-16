@@ -87,7 +87,7 @@ soroban network add --rpc-url http://localhost:8000 --network-passphrase "Standa
   --fee-bps 100
 
 # 3. Update backend .env with CONTRACT_ID
-echo "AGROPUSH_ESCROW_CONTRACT_ID=CXXXXXXX..." >> backend/.env
+echo "GRAYFIX_ESCROW_CONTRACT_ID=CXXXXXXX..." >> backend/.env
 
 # 4. Run backend tests
 cd backend && npm test
@@ -95,7 +95,7 @@ cd backend && npm test
 
 ## Regression Tests
 
-New test suite (`contracts/agropush_escrow/tests/local_deployment_tests.rs`) validates:
+New test suite (`contracts/grayfix_escrow/tests/local_deployment_tests.rs`) validates:
 
 ### Test Coverage
 
@@ -114,7 +114,7 @@ New test suite (`contracts/agropush_escrow/tests/local_deployment_tests.rs`) val
 
 ```bash
 # Run all local deployment tests
-cd contracts/agropush_escrow
+cd contracts/grayfix_escrow
 cargo test local_deployment_tests
 
 # Run specific test
@@ -225,7 +225,7 @@ pub fn initialize(env: Env, admin: Address, ...) {
 
 2. **Store contract ID in `.env`** for backend integration:
    ```bash
-   AGROPUSH_ESCROW_CONTRACT_ID=CXXXXXXX...
+   GRAYFIX_ESCROW_CONTRACT_ID=CXXXXXXX...
    ```
 
 3. **Run regression tests** after contract changes:
@@ -252,7 +252,7 @@ pub fn initialize(env: Env, admin: Address, ...) {
 
 - [Event Flow](./event-flow.md) - On-chain event processing
 - [Migration Rollback Playbook](./migration-rollback-playbook.md) - Database migration safety
-- [Contract README](../contracts/agropush_escrow/README.md) - Contract-specific guidance
+- [Contract README](../contracts/grayfix_escrow/README.md) - Contract-specific guidance
 - [CI Configuration](.github/workflows/ci.yml) - GitHub Actions pipeline
 
 ## Summary

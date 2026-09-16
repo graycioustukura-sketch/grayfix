@@ -1,14 +1,14 @@
-# AgroPush Escrow & Dispute System — Threat Model
+# Grayfix Escrow & Dispute System — Threat Model
 
 **Branch:** `feature/security-48-threat-model-abuse-cases`  
-**Scope:** `contracts/agropush_escrow`, `backend/`, `docs/`  
+**Scope:** `contracts/grayfix_escrow`, `backend/`, `docs/`  
 **Last Updated:** 2026-04-24
 
 ---
 
 ## 1. System Overview
 
-AgroPush is a blockchain-backed agricultural escrow platform running on Stellar/Soroban. The core escrow contract (`agropush_escrow`) mediates funds between a **buyer** and a **seller**, with a trusted **mediator** pool and an **admin** for governance.
+Grayfix is a blockchain-backed agricultural escrow platform running on Stellar/Soroban. The core escrow contract (`grayfix_escrow`) mediates funds between a **buyer** and a **seller**, with a trusted **mediator** pool and an **admin** for governance.
 
 ### Trust Boundaries
 
@@ -353,7 +353,7 @@ Created → Funded → Delivered → Completed
 
 ## 6. Scope & Exclusions
 
-- **In scope:** `contracts/agropush_escrow`, backend API (`/trades`, `/auth`, `/evidence`), IPFS evidence layer.
+- **In scope:** `contracts/grayfix_escrow`, backend API (`/trades`, `/auth`, `/evidence`), IPFS evidence layer.
 - **Out of scope:** Stellar network-level attacks (validator collusion, ledger reorgs), Freighter wallet security, third-party IPFS gateway security.
 - **Not modelled:** Social engineering of end-users outside the system.
 
@@ -362,6 +362,6 @@ Created → Funded → Delivered → Completed
 ## 7. References
 
 - [Soroban Security Best Practices](https://developers.stellar.org/docs/smart-contracts)
-- [AgroPush Backend Reliability Layer](./backend.md)
-- [AgroPush Escrow Contract README](../contracts/agropush_escrow/README.md)
+- [Grayfix Backend Reliability Layer](./backend.md)
+- [Grayfix Escrow Contract README](../contracts/grayfix_escrow/README.md)
 - OWASP Smart Contract Top 10
