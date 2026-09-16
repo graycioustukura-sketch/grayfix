@@ -15,70 +15,70 @@ const config: Config = {
         // surface-1  card / panel (one step up)
         // surface-2  elevated surface — active rows, modals, dropdowns
         // surface-3  overlay / scrim
-        "surface-0": "#0B1A14",
-        "surface-1": "#122A1F",
-        "surface-2": "#1A3D2C",
-        "surface-3": "rgba(11,26,20,0.85)",
+        "surface-0": "#0A0C10",
+        "surface-1": "#13161C",
+        "surface-2": "#1D212B",
+        "surface-3": "rgba(10,12,16,0.85)",
 
         // Legacy bg-* aliases — kept for backward-compat, map to surface tokens
-        "bg-primary": "#0B1A14", // → surface-0
-        "bg-card": "#122A1F", // → surface-1
-        "bg-elevated": "#1A3D2C", // → surface-2
-        "bg-input": "#0F2219",
-        "bg-overlay": "rgba(11,26,20,0.85)", // → surface-3
+        "bg-primary": "#0A0C10", // → surface-0
+        "bg-card": "#13161C", // → surface-1
+        "bg-elevated": "#1D212B", // → surface-2
+        "bg-input": "#0E1117",
+        "bg-overlay": "rgba(10,12,16,0.85)", // → surface-3
 
-        gold: "#D4A853",
-        "gold-hover": "#E0BA6A",
-        "gold-muted": "rgba(212,168,83,0.15)",
+        "accent-primary": "#7C6FEF",
+        "accent-primary-hover": "#9184F5",
+        "accent-primary-muted": "rgba(124,111,239,0.15)",
         emerald: "#34D399",
         "emerald-muted": "rgba(52,211,153,0.15)",
         "accent-emerald": "#34D399",
         teal: "#14B8A6",
-        "text-primary": "#F0F5F1",
-        "text-secondary": "#8BA89A",
-        "text-muted": "#5A7A6A",
-        "text-inverse": "#0B1A14",
+        "text-primary": "#F5F6F8",
+        "text-secondary": "#9AA3B2",
+        "text-muted": "#626B7A",
+        "text-inverse": "#0A0C10",
 
         // Status chip tokens
         "status-success": "#34D399",
         "status-warning": "#F59E0B",
         "status-danger": "#EF4444",
         "status-info": "#3B82F6",
-        "status-locked": "#D4A853",
+        "status-locked": "#7C6FEF",
         "status-draft": "#6B7280",
 
         // ── Border tokens — elevation-aware ───────────────────────────────
-        "border-subtle": "rgba(139,168,154,0.12)", // surface-0 dividers
-        "border-default": "rgba(139,168,154,0.2)", // surface-1 card borders
-        "border-raised": "rgba(139,168,154,0.32)", // surface-2 elevated borders
-        "border-hover": "rgba(139,168,154,0.4)",
-        "border-focus": "rgba(212,168,83,0.6)",
+        "border-subtle": "rgba(154,163,178,0.12)", // surface-0 dividers
+        "border-default": "rgba(154,163,178,0.2)", // surface-1 card borders
+        "border-raised": "rgba(154,163,178,0.32)", // surface-2 elevated borders
+        "border-hover": "rgba(154,163,178,0.4)",
+        "border-focus": "rgba(124,111,239,0.6)",
       },
       backgroundColor: {
         // Surface scale
-        "surface-0": "#0B1A14",
-        "surface-1": "#122A1F",
-        "surface-2": "#1A3D2C",
-        "surface-3": "rgba(11,26,20,0.85)",
+        "surface-0": "#0A0C10",
+        "surface-1": "#13161C",
+        "surface-2": "#1D212B",
+        "surface-3": "rgba(10,12,16,0.85)",
         // Legacy aliases
-        primary: "#0B1A14",
-        card: "#122A1F",
-        elevated: "#1A3D2C",
-        input: "#0F2219",
-        overlay: "rgba(11,26,20,0.85)",
+        primary: "#0A0C10",
+        card: "#13161C",
+        elevated: "#1D212B",
+        input: "#0E1117",
+        overlay: "rgba(10,12,16,0.85)",
       },
       textColor: {
-        primary: "#F0F5F1",
-        secondary: "#8BA89A",
-        muted: "#5A7A6A",
-        inverse: "#0B1A14",
+        primary: "#F5F6F8",
+        secondary: "#9AA3B2",
+        muted: "#626B7A",
+        inverse: "#0A0C10",
       },
       borderColor: {
-        subtle: "rgba(139,168,154,0.12)",
-        default: "rgba(139,168,154,0.2)",
-        raised: "rgba(139,168,154,0.32)",
-        hover: "rgba(139,168,154,0.4)",
-        focus: "rgba(212,168,83,0.6)",
+        subtle: "rgba(154,163,178,0.12)",
+        default: "rgba(154,163,178,0.2)",
+        raised: "rgba(154,163,178,0.32)",
+        hover: "rgba(154,163,178,0.4)",
+        focus: "rgba(124,111,239,0.6)",
       },
       // ── Elevation / shadow scale ─────────────────────────────────────────
       // elev-0  flat — surface-0 canvas, no lift
@@ -93,7 +93,7 @@ const config: Config = {
         // Legacy aliases
         card: "0 1px 4px rgba(0,0,0,0.25), 0 4px 24px rgba(0,0,0,0.3)",
         "card-hover": "0 4px 12px rgba(0,0,0,0.35), 0 8px 32px rgba(0,0,0,0.4)",
-        "glow-gold": "0 0 20px rgba(212,168,83,0.2)",
+        "glow-accent": "0 0 20px rgba(124,111,239,0.2)",
         "glow-emerald": "0 0 20px rgba(52,211,153,0.15)",
         modal: "0 16px 48px rgba(0,0,0,0.5)",
       },
@@ -159,11 +159,11 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-hero":
-          "linear-gradient(135deg, #0B1A14 0%, #122A1F 50%, #1A3D2C 100%)",
-        "gradient-gold-cta":
-          "linear-gradient(135deg, #D4A853 0%, #E0BA6A 100%)",
+          "linear-gradient(135deg, #0A0C10 0%, #13161C 50%, #1D212B 100%)",
+        "gradient-accent-cta":
+          "linear-gradient(135deg, #7C6FEF 0%, #9184F5 100%)",
         "gradient-card-glow":
-          "linear-gradient(135deg, rgba(52,211,153,0.05) 0%, rgba(212,168,83,0.05) 100%)",
+          "linear-gradient(135deg, rgba(52,211,153,0.05) 0%, rgba(124,111,239,0.05) 100%)",
       },
       animation: {
         "slide-up": "slide-up 0.3s ease-out",
